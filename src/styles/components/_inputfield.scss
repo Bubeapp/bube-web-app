@@ -1,0 +1,76 @@
+.inputfield {
+  display: flex;
+  flex-direction: column-reverse;
+  border-radius: 0.8rem;
+  border: none;
+  position: relative;
+
+  &.error > * {
+    color: hsl(24, 100%, 50%);
+  }
+
+  &.error &__input {
+    border: 1.6px solid hsl(24, 100%, 50%);
+  }
+
+  &__label,
+  &__input {
+    font-family: 'Airbnb Cereal App';
+    font-weight: 700;
+  }
+
+  &__label {
+    font-size: 1.4rem;
+    position: absolute;
+    top: 0.2rem;
+    left: 1.3rem;
+    color: hsl(240, 15%, 58%);
+    transition: all 0.2s;
+  }
+
+  &__input {
+    font-size: 1.6rem;
+    line-height: 2.4rem;
+    color: hsl(240, 18%, 5%);
+    border: 1.6px solid hsl(226, 100%, 94%);
+    outline: none;
+    border-radius: 0.8rem;
+    padding: 2rem 1.2rem 0.6rem;
+  }
+
+  &__input::placeholder {
+    color: transparent;
+  }
+
+  &__input:placeholder-shown ~ &__label {
+    font-size: 1.6rem;
+    top: 1.35rem;
+    cursor: text;
+  }
+
+  &__input:focus ~ &__label {
+    font-size: 1.4rem;
+    top: 0.2rem;
+  }
+
+  &__input:focus {
+    border: 1.6px solid hsla(224, 100%, 54%, 1);
+  }
+
+  &__icon {
+    font-size: 2rem;
+    position: absolute;
+    right: 0;
+    height: 100%;
+    padding: 0 1.2rem;
+    color: hsl(240, 15%, 58%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+  }
+
+  &__errormessage {
+    font-size: 1.4rem;
+    color: hsl(24, 100%, 50%);
+  }
+}

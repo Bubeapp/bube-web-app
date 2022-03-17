@@ -1,0 +1,17 @@
+.btn {
+  font-size: 1.6rem;
+  font-weight: 500;
+  padding: 1.6rem;
+  border: none;
+  border-radius: 0.8rem;
+  cursor: pointer;
+
+  &--primary {
+    color: hsl(0, 0%, 100%);
+    background: hsl(224, 76%, 48%);
+  }
+
+  &--full {
+    width: 100%;
+  }
+}
