@@ -1,0 +1,28 @@
+.signup {
+  &__header {
+    margin-bottom: 2.4rem;
+    @include authHeader;
+  }
+
+  &__mail-opt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: var(--fs-400);
+    font-weight: var(--fw-500);
+    color: var(--clr-blk-500);
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      height: 1.4px;
+      width: 4rem;
+      background-color: var(--clr-blk-300);
+    }
+  }
+
+  &__link {
+    color: var(--clr-primary-500);
+  }
+}

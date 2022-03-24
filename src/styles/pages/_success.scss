@@ -1,0 +1,13 @@
+.success {
+  @extend .form;
+  @include authHeader;
+
+  img {
+    margin-left: -0.4rem;
+  }
+
+  &__link {
+    font-weight: var(--fw-700);
+    color: var(--clr-primary-500);
+  }
+}

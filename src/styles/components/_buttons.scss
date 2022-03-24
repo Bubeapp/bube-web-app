@@ -1,14 +1,29 @@
 .btn {
-  font-size: 1.6rem;
-  font-weight: 500;
+  font-size: var(--fs-400);
+  font-weight: var(--fw-500);
   padding: 1.6rem;
   border: none;
   border-radius: 0.8rem;
   cursor: pointer;
 
   &--primary {
+    color: var(--clr-white);
+    background: var(--clr-primary-500);
+    transition: all 0.5s;
+
+    &:hover {
+      background-color: var(--clr-primary-700);
+    }
+  }
+
+  &--gmail {
     color: hsl(0, 0%, 100%);
-    background: hsl(224, 76%, 48%);
+    background-color: hsl(18, 100%, 50%);
+  }
+
+  &--bg-none {
+    background-color: transparent;
+    padding-left: 0;
   }
 
   &--full {

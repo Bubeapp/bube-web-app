@@ -1,0 +1,23 @@
+.signin {
+  &__header {
+    @extend .signup__header;
+    @include authHeader;
+  }
+
+  &__mail-opt {
+    @extend .signup__mail-opt;
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      height: 1.4px;
+      width: 4rem;
+      background-color: var(--clr-blk-300);
+    }
+  }
+
+  &__link {
+    @extend .signup__link;
+  }
+}

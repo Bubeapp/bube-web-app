@@ -1,0 +1,25 @@
+.verifyemail {
+  @extend .form;
+
+  img {
+    margin-left: -0.4rem;
+  }
+
+  @include authHeader;
+
+  h2 {
+    margin-bottom: 2.4rem;
+  }
+
+  a:link,
+  &__link {
+    display: inline-block;
+    text-align: center;
+  }
+
+  &__link,
+  span {
+    font-weight: var(--fw-700);
+    color: var(--clr-primary-500);
+  }
+}

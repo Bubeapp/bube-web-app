@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
-import { IoEye, IoEyeOff } from 'react-icons/io5';
-
-import Button from '../Button';
 
 function InputField({ type, label, errormessage, icon }) {
-  const [hidePasswordField, setHidePasswordField] = useState(true);
+  const [input, setInput] = useState('');
 
-  const togglePassword = () => {
-    setHidePasswordField(prevState => !prevState);
+  const handleInputChange = e => {
+    setInput(e.target.value);
   };
 
   return (
@@ -15,19 +12,16 @@ function InputField({ type, label, errormessage, icon }) {
       <fieldset className="inputfield">
         <input
           className="inputfield__input"
-          type={hidePasswordField ? type : 'text'}
+          type={type ? type : 'text'}
           name={label.toLowerCase()}
           id={label.toLowerCase()}
           placeholder={label}
+          value={input}
+          onChange={handleInputChange}
         />
         <label className="inputfield__label" htmlFor={label.toLowerCase()}>
           {label}
         </label>
-        {icon && (
-          <Button classname="inputfield__icon" type="button" onClick={togglePassword}>
-            {hidePasswordField ? <IoEye /> : <IoEyeOff />}
-          </Button>
-        )}
       </fieldset>
       {errormessage && (
         <span className="inputfield__errormessage">&#9888; {errormessage}</span>

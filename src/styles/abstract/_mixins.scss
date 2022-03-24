@@ -1,0 +1,14 @@
+@mixin authHeader {
+  h2 {
+    font-size: var(--fs-500);
+    font-weight: var(--fw-700);
+    color: var(--clr-blk-500);
+    margin-bottom: 0.8rem;
+  }
+
+  p {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-500);
+    color: var(--clr-blk-500);
+  }
+}
