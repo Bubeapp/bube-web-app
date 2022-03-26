@@ -6,16 +6,20 @@ import PasswordField from '../../components/PasswordField';
 
 function ResetPassword() {
   return (
-    <div className="resetpassword">
+    <div className="forgotpassword">
       <Form>
-        <div className="resetpassword__header">
-          <h2>Reset password</h2>
+        <div className="forgotpassword__header">
+          <h2>Set new password</h2>
           <p>New password must be different from the previous one.</p>
         </div>
         <PasswordField type="password" label="New password" icon />
-        <PasswordField type="password" label="Confirm password" icon />
+        <PasswordField type="password" label="Confirm new password" icon />
         <Button classname="btn btn--primary btn--full">Reset password</Button>
-        <Link className="btn btn--bg-none">Back to Login</Link>
+        <Button classname="forgotpassword__btn btn btn--bg-none">
+          <Link className="forgotpassword__resend" to="/">
+            Back to Login
+          </Link>
+        </Button>
       </Form>
     </div>
   );
