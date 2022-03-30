@@ -1,7 +1,9 @@
 .signup {
+  // margin-bottom: 6.4rem;
+
   &__header {
-    margin-bottom: 2.4rem;
     @include authHeader;
+    margin-bottom: 3.2rem;
   }
 
   &__mail-opt {
