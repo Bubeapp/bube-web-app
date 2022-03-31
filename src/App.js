@@ -2,17 +2,14 @@ import React from 'react';
 
 import Navigation from './components/Navigation';
 import Footer from './components/Footer';
-
-import SignUp from './pages/SignUp';
-import SignIn from './pages/SignIn';
-import VerifyEmail from './pages/VerifyEmail';
+import Homepage from './pages/Homepage';
 
 function App() {
   return (
     <div className="app">
       <>
         <Navigation />
-        <SignUp />
+        <Homepage />
         <Footer />
       </>
     </div>
