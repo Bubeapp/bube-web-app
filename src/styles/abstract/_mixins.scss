@@ -41,6 +41,11 @@
   }
 }
 
+@mixin centerElemVertical($width) {
+  max-width: $width;
+  margin: 0 auto;
+}
+
 @mixin respond($breakpoint) {
   /*************************************
   Media query breakpoint for really small 
