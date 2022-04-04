@@ -1,0 +1,31 @@
+.slider {
+  padding: 5.6rem 0;
+  overflow: hidden;
+}
+
+.swiper {
+  overflow: visible;
+}
+
+.swiper-slide:nth-child(even) {
+  align-self: flex-start;
+}
+
+.swiper-slide:nth-child(odd) {
+  padding-top: 6.4rem;
+  align-self: flex-end;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  width: 4.8rem;
+  height: 4.8rem;
+  background-color: var(--clr-white);
+  padding: 1.6rem;
+  border-radius: 10rem;
+
+  &::after {
+    font-size: var(--fs-400);
+    font-weight: var(--fw-700);
+  }
+}

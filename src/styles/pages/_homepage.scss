@@ -1,4 +1,9 @@
 .hero {
+  &__section {
+    background-color: var(--clr-blk-100);
+    padding: 9.6rem 0 0;
+  }
+
   &__heading {
     font-size: var(--fs-hd-900);
     line-height: 108%;
