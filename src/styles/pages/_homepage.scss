@@ -74,3 +74,152 @@
     }
   }
 }
+
+.features {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 64rem;
+  margin: 0 auto;
+
+  &__section {
+    padding: 8rem 0;
+  }
+
+  &__content {
+    h2 {
+      max-width: 23.3rem;
+      font-size: var(--fs-hd-800);
+      font-weight: var(--fw-500);
+      line-height: 112%;
+      color: var(--clr-blk-600);
+      margin-bottom: 1.6rem;
+    }
+
+    p {
+      color: var(--clr-blk-500);
+      max-width: 32rem;
+      margin-bottom: 2.4rem;
+    }
+
+    span {
+      color: var(--clr-primary-500);
+    }
+
+    button span {
+      font-size: var(--fs-400);
+      font-weight: var(--fw-700);
+      color: var(--clr-primary-500);
+    }
+  }
+
+  &__card {
+    flex: 45%;
+    padding: 5rem 2.4rem;
+    border-radius: 0.8rem;
+    margin-bottom: 7.2rem;
+
+    &:nth-child(odd) {
+      margin-right: 2.4rem;
+    }
+
+    & > *:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+
+    &--bg {
+      background-color: var(--clr-primary-50);
+    }
+
+    h3 {
+      font-size: var(--fs-hd-500);
+      font-weight: var(--fw-500);
+      color: var(--clr-primary-500);
+    }
+
+    p {
+      color: var(--clr-blk-500);
+    }
+  }
+}
+
+.app-features {
+  &__feature {
+    display: flex;
+    height: 100%;
+    justify-content: center;
+  }
+
+  &__feature-img {
+    max-width: 53.6rem;
+    margin: 0 auto;
+  }
+
+  &__feature-content {
+    align-self: center;
+
+    & > *:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+
+    h2 {
+      max-width: 37.1rem;
+      font-size: var(--fs-hd-800);
+      font-weight: var(--fw-500);
+      line-height: 112%;
+      color: var(--clr-blk-600);
+    }
+
+    p {
+      max-width: 43rem;
+      color: var(--clr-blk-500);
+    }
+  }
+
+  &__feature-cta {
+    display: flex;
+
+    button {
+      max-width: 15.6rem;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 2.4rem;
+      }
+    }
+  }
+}
+
+.app-features-2 {
+  &__section {
+    padding: 16.4rem 0 9.6rem;
+  }
+
+  &__feature {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+
+  &__caption {
+    font-size: var(--fs-hd-900);
+    font-weight: var(--fw-700);
+    line-height: 108%;
+    color: var(--clr-blk-600);
+    max-width: 93.5rem;
+  }
+
+  &__feature-content {
+    p {
+      max-width: 37.8rem;
+      color: var(--clr-blk-500);
+      font-weight: var(--fw-400);
+
+      &:not(:last-child) {
+        margin-bottom: 4rem;
+      }
+    }
+  }
+}
