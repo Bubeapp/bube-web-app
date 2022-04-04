@@ -24,9 +24,19 @@ a:active {
   text-decoration: none;
 }
 
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
 .app {
   position: relative;
   min-height: 100vh;
+}
+
+.accent {
+  color: var(--clr-primary-500);
 }
 
 @import './main';

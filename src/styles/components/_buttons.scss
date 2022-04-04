@@ -22,6 +22,8 @@
   }
 
   &--bg-none {
+    display: flex;
+    align-items: center;
     background-color: transparent;
     padding-left: 0;
   }

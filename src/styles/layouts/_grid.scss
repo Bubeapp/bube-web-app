@@ -7,6 +7,19 @@ Global Container
   margin: 0 auto;
 }
 
+.col-1-of-2 {
+  width: calc(100% / 2);
+}
+
+.col-1-of-3 {
+  width: calc(100% / 3);
+}
+
+.col-2-of-3 {
+  width: calc(100% / 3 * 2);
+  // background-color: red;
+}
+
 /****************************
 ****************************
 Flex Containers
@@ -14,4 +27,8 @@ Flex Containers
 
 .flex {
   display: flex;
+
+  & > *:not(:last-child) {
+    margin-right: 2.4rem;
+  }
 }
