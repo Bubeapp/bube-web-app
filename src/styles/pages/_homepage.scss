@@ -249,3 +249,43 @@
     height: 100%;
   }
 }
+
+.download {
+  &__download {
+    background-color: var(--clr-primary-500);
+    border-radius: 2.4rem;
+
+    & > * {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  &__cta {
+    h2 {
+      max-width: 47.3rem;
+      font-size: var(--fs-hd-800);
+      font-weight: var(--fw-500);
+      line-height: 112%;
+      color: var(--clr-white);
+      margin-bottom: 2.4rem;
+    }
+  }
+
+  &__btns {
+    @extend .app-features__feature-cta;
+
+    button {
+      max-width: 15.6rem;
+      display: inline-block;
+      border: none;
+      background: none;
+      cursor: pointer;
+
+      &:not(:last-child) {
+        margin-right: 2.4rem;
+      }
+    }
+  }
+}

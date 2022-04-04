@@ -6,6 +6,7 @@ import BecomeAnArtisans from './BecomeAnArtisans';
 import MeetArtisansSection from './MeetArtisansSection';
 import AppFeaturesSection01 from './AppFeaturesSection01';
 import AppFeaturesSection02 from './AppFeaturesSection02';
+import DownloadAppSection from './DownloadAppSection';
 
 function Homepage() {
   return (
@@ -16,6 +17,7 @@ function Homepage() {
       <AppFeaturesSection02 />
       <MeetArtisansSection />
       <BecomeAnArtisans />
+      <DownloadAppSection />
     </main>
   );
 }

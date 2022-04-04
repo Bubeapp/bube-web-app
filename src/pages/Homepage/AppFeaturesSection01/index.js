@@ -4,8 +4,7 @@ import Button from '../../../components/Button';
 import Container from '../../../layouts/Container';
 
 import illustration_01 from '../../../assets/illustration_01.png';
-import google_play from '../../../assets/google_play.png';
-import apple_store from '../../../assets/app_store.png';
+import DownloadAppCta from '../../../components/DownloadAppCta';
 
 function AppFeaturesSection01() {
   return (
@@ -31,12 +30,7 @@ function AppFeaturesSection01() {
                 veniam consequat sunt nostrud amet.
               </p>
               <div className="app-features__feature-cta">
-                <Button>
-                  <img src={google_play} alt="Download on Google play button" />
-                </Button>
-                <Button>
-                  <img src={apple_store} alt="Download on Google play button" />
-                </Button>
+                <DownloadAppCta />
               </div>
             </div>
           </div>
