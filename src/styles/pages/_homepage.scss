@@ -223,3 +223,29 @@
     }
   }
 }
+
+.become-an-artisan {
+  &__section {
+    padding: 9.6rem 0;
+  }
+
+  &__content {
+    max-width: 49.7rem;
+    margin: 0 auto;
+
+    h2 {
+      font-size: var(--fs-hd-900);
+      font-weight: var(--fw-700);
+      line-height: 108%;
+      color: var(--clr-blk-600);
+      margin-bottom: 0.8rem;
+    }
+  }
+
+  &__cta {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+}
