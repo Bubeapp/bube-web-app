@@ -1,0 +1,20 @@
+%display-heading {
+  font-size: var(--fs-hd-900);
+  line-height: 108%;
+  letter-spacing: -1px;
+  color: var(--clr-dark-800);
+
+  @include respond(tablet-land) {
+    font-size: 4.8rem;
+  }
+}
+
+%heading-2 {
+  font-size: var(--fs-hd-800);
+  font-weight: var(--fw-500);
+  line-height: 112%;
+}
+
+%section-spacing {
+  padding: 9.6rem 0;
+}

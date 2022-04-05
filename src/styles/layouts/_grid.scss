@@ -5,6 +5,16 @@ Global Container
 .container {
   max-width: 114rem;
   margin: 0 auto;
+
+  @include respond(laptop-s) {
+    padding: 2.4rem;
+  }
+}
+
+[class^='col-'] {
+  @include respond(tablet-port) {
+    width: 100% !important;
+  }
 }
 
 .col-1-of-2 {
@@ -41,5 +51,11 @@ Flex Containers
 
   & > *:not(:last-child) {
     margin-right: 2.4rem;
+  }
+
+  @include respond(tablet-port) {
+    flex-direction: column;
+    margin-right: 0;
+    margin-bottom: 2.4rem;
   }
 }

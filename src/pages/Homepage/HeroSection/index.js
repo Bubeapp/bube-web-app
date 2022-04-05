@@ -13,7 +13,7 @@ function HeroSection() {
           is with <span>BuBe</span>
         </h1>
         <p className="hero__description">
-          Flashlive makes it easier for you to connect with artisans around you for your
+          Bube makes it easier for you to connect with artisans around you for your
           various needs. Download the App today to get started
         </p>
         <form className="hero__form">

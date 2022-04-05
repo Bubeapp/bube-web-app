@@ -46,6 +46,16 @@
   margin: 0 auto;
 }
 
+@mixin flex($justify: flex-start, $align: flex-start) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin section-spacing($size) {
+  padding: $size 0;
+}
+
 @mixin respond($breakpoint) {
   /*************************************
   Media query breakpoint for really small 
@@ -71,19 +81,19 @@
   }
 
   @if ($breakpoint == tablet-port) {
-    @media only screen and (max-width: 768px) {
+    @media only screen and (max-width: 840px) {
       @content;
     }
   }
 
-  @if ($breakpoint == laptop) {
-    @media only screen and (max-width: 1024px) {
+  @if ($breakpoint == tablet-land) {
+    @media only screen and (max-width: 960px) {
       @content;
     }
   }
 
   @if ($breakpoint == laptop-s) {
-    @media only screen and (max-width: 1024px) {
+    @media only screen and (max-width: 1160px) {
       @content;
     }
   }
