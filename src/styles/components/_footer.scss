@@ -7,6 +7,12 @@
     position: relative;
     margin-top: 4.8rem;
   }
+
+  h3 {
+    font-size: var(--fs-hd-600);
+    font-weight: var(--fw-700);
+    margin-bottom: 2.4rem;
+  }
 }
 
 .footer {
@@ -14,6 +20,10 @@
   justify-content: space-between;
   align-items: center;
   padding: 1.6rem 0;
+
+  &__section {
+    padding: 6.4rem 0;
+  }
 
   p {
     font-size: var(--fs-400);
@@ -26,6 +36,24 @@
   &__list:last-of-type &__item {
     &:not(:last-child) {
       margin-right: 1.6rem;
+    }
+  }
+
+  &__main {
+    flex-direction: column;
+
+    & > * {
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  &__content {
+    & > *:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+
+    p {
+      max-width: 36.4rem;
     }
   }
 }

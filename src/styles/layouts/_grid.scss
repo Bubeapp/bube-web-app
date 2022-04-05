@@ -20,6 +20,17 @@ Global Container
   // background-color: red;
 }
 
+.col-1-of-4 {
+  width: calc(100% / 4);
+}
+
+.col-1-of-5 {
+  width: calc(100% / 5);
+}
+
+.col-2-of-5 {
+  width: calc(100% / 5 * 2);
+}
 /****************************
 ****************************
 Flex Containers
