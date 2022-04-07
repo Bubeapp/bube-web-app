@@ -276,3 +276,58 @@
     }
   }
 }
+
+.meet-artisans {
+  &__section {
+    padding: 4.8rem 0 0;
+  }
+
+  &__caption {
+    @extend %heading-2;
+    text-align: center;
+    margin-bottom: 6.4rem;
+  }
+
+  &__slider {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+  }
+
+  &__slider-img {
+    flex-shrink: 0;
+    width: calc((100% / 4) + (100% / 4 / 2));
+    // width: 54.7rem;
+    height: 32.7rem;
+    background-color: peru;
+    border: 1px solid purple;
+  }
+
+  &__btn {
+    position: absolute;
+    cursor: pointer;
+  }
+
+  &__prev,
+  &__next {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 4.8rem;
+    height: 4.8rem;
+    border-radius: 4.8rem;
+    border: none;
+    background-color: var(--clr-white);
+    box-shadow: 0 1.2rem 3.2rem 0 hsla(0, 0%, 77%, 0.15);
+  }
+
+  &__prev {
+    left: 60px;
+  }
+
+  &__next {
+    right: 60px;
+  }
+}
