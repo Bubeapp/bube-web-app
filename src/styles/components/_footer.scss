@@ -8,6 +8,10 @@
     margin-top: 4.8rem;
   }
 
+  @include respond(tablet-port) {
+    text-align: center;
+  }
+
   h3 {
     font-size: var(--fs-hd-600);
     font-weight: var(--fw-700);
@@ -49,12 +53,30 @@
   }
 
   &__content {
+    @include respond(tablet-port) {
+      text-align: center;
+    }
+
     & > *:not(:last-child) {
       margin-bottom: 2.4rem;
     }
 
     p {
       max-width: 36.4rem;
+
+      @include respond(tablet-port) {
+        max-width: 100%;
+      }
+    }
+
+    img {
+      @include respond(tablet-port) {
+        margin: 0 auto;
+      }
+    }
+
+    @include respond(tablet-port) {
+      text-align: center;
     }
   }
 }
