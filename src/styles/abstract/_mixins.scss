@@ -105,7 +105,7 @@
   }
 
   @if ($breakpoint == viewport-h) {
-    @media only screen and (max-height: 940px) {
+    @media only screen and (max-height: 1200px) {
       @content;
     }
   }

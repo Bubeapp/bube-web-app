@@ -9,7 +9,7 @@ function HeroSection() {
     <section className="hero__section">
       <Container>
         <h1 className="hero__heading">
-          The easiest way to access <span classname="accent">artisans</span> around you
+          The easiest way to access <span className="accent">artisans</span> around you
           is with <span>BuBe</span>
         </h1>
         <p className="hero__description">

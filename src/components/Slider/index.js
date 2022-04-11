@@ -28,6 +28,20 @@ const Slider = () => {
         // pagination={{ clickable: true }}
         onSwiper={swiper => console.log(swiper)}
         onSlideChange={() => console.log('slide change')}
+        breakpoints={{
+          200: {
+            slidesPerView: 2,
+          },
+          540: {
+            slidesPerView: 3,
+          },
+          768: {
+            slidesPerView: 4,
+          },
+          960: {
+            slidesPerView: 5,
+          },
+        }}
       >
         <SwiperSlide>
           <CategoryCard image={category_img_01} title="Painting" numOfAvailable={25} />

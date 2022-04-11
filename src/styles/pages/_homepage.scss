@@ -6,6 +6,10 @@
     @include respond(tablet-land) {
       padding: 7.2rem 0 0;
     }
+
+    @include respond(tablet-port) {
+      padding: 5.6rem 0 0;
+    }
   }
 
   &__heading {
@@ -13,6 +17,12 @@
     @include centerElemVertical(88.6rem);
     text-align: center;
     margin-bottom: 2.4rem;
+
+    @include respond(tablet-port) {
+      max-width: 60rem;
+      margin: 0 auto;
+      margin-bottom: 2.4rem;
+    }
 
     span {
       color: var(--clr-primary-500);
@@ -32,6 +42,18 @@
       font-size: var(--fs-hd-500);
       margin-bottom: 4.8rem;
     }
+
+    @include respond(tablet-port) {
+      font-size: var(--fs-hd-400);
+      line-height: 2.8rem;
+      max-width: 60rem;
+      margin: 0 auto;
+      margin-bottom: 4.8rem;
+    }
+
+    @include respond(mobile-l) {
+      margin-bottom: 3.2rem;
+    }
   }
 
   &__form {
@@ -42,6 +64,15 @@
     border-radius: 7.2rem;
     padding: 1.2rem 1.6rem 1.2rem 0;
     margin-bottom: 1.2rem;
+
+    @include respond(tablet-port) {
+      padding: 0.6rem 0.8rem 0.6rem 0;
+    }
+
+    @include respond(mobile-l) {
+      flex-direction: column;
+      background: transparent;
+    }
   }
 
   &__search {
@@ -54,6 +85,15 @@
     border: none;
     border-radius: 7.2rem;
     padding: 1.2rem 1.6rem 1.2rem 3.2rem;
+
+    @include respond(tablet-port) {
+      padding: 1.2rem 1.6rem 1.2rem 2.4rem;
+    }
+
+    @include respond(mobile-l) {
+      padding: 1.6rem;
+      margin-bottom: 1.6rem;
+    }
 
     &::placeholder {
       color: var(--clr-blk-300);
@@ -89,6 +129,10 @@
 
   &__section {
     @include section-spacing(8rem);
+
+    @include respond(tablet-port) {
+      padding: 5.6rem 0 0;
+    }
   }
 
   &__content {
@@ -128,6 +172,7 @@
 
       @include respond(tablet-port) {
         display: inline-flex;
+        align-items: center;
       }
 
       span {
@@ -145,8 +190,22 @@
     border-radius: 0.8rem;
     margin-bottom: 7.2rem;
 
+    @include respond(tablet-port) {
+      margin-bottom: 5.6rem;
+    }
+
+    @include respond(mobile-l) {
+      flex: 100%;
+      margin-bottom: 3.2rem;
+    }
+
     &:nth-child(odd) {
       margin-right: 2.4rem;
+
+      @include respond(mobile-l) {
+        margin-right: 0;
+        background-color: var(--clr-primary-50);
+      }
     }
 
     & > *:not(:last-child) {
@@ -155,6 +214,9 @@
 
     &--bg {
       background-color: var(--clr-primary-50);
+      @include respond(mobile-l) {
+        background-color: transparent;
+      }
     }
 
     h3 {
@@ -178,6 +240,17 @@
   &__feature-img {
     max-width: 53.6rem;
     margin: 0 auto;
+
+    img {
+      @include respond(tablet-port) {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+
+      @include respond(mobile-m) {
+        max-width: 95%;
+      }
+    }
   }
 
   &__feature-content {
@@ -233,6 +306,10 @@
 .app-features-2 {
   &__section {
     padding: 16.4rem 0 9.6rem;
+
+    @include respond(tablet-port) {
+      padding: 9.6rem 0 3.2rem;
+    }
   }
 
   &__feature {
@@ -245,6 +322,7 @@
     max-width: 93.5rem;
     @include respond(tablet-port) {
       text-align: center;
+      margin-bottom: 1.6rem;
     }
   }
 
@@ -260,10 +338,27 @@
 
       &:not(:last-child) {
         margin-bottom: 4rem;
+
+        @include respond(tablet-port) {
+          margin-bottom: 2.4rem;
+        }
       }
 
       @include respond(tablet-port) {
         max-width: 60rem;
+      }
+    }
+  }
+
+  &__feature-img {
+    img {
+      @include respond(tablet-port) {
+        max-width: 80%;
+        margin: 0 auto;
+      }
+
+      @include respond(mobile-m) {
+        max-width: 95%;
       }
     }
   }
@@ -275,6 +370,7 @@
 
     @include respond(tablet-port) {
       text-align: center;
+      padding: 5.6rem 0;
     }
   }
 
@@ -299,12 +395,19 @@
     background-color: var(--clr-primary-500);
     border-radius: 2.4rem;
 
-    & > * {
-      @include flex(center, center);
+    @include respond(tablet-port) {
+      padding: 4.8rem 2.4rem;
+      border-radius: 1.2rem;
     }
 
-    @include respond(tablet-port) {
-      padding: 2.4rem;
+    .col-1-of-2 {
+      @include respond(tablet-port) {
+        margin-bottom: 0;
+      }
+    }
+
+    & > * {
+      @include flex(center, center);
     }
   }
 

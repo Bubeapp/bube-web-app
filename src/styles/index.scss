@@ -1,4 +1,5 @@
 @import './fonts';
+@import './abstract/mixins';
 
 * {
   padding: 0;
@@ -8,6 +9,10 @@
 
 html {
   font-size: 10px;
+
+  @include respond(tablet-port) {
+    font-size: 9.5px;
+  }
 }
 
 body {

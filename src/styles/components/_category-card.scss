@@ -21,10 +21,18 @@
     font-weight: var(--fw-700);
     color: var(--clr-blk-700);
     line-height: 2rem;
+
+    @include respond(tablet-port) {
+      font-size: var(--fs-hd-400);
+    }
   }
 
   span {
     font-size: var(--fs-300);
     color: var(--clr-blk-500);
+
+    @include respond(tablet-port) {
+      font-size: var(--fs-200);
+    }
   }
 }
