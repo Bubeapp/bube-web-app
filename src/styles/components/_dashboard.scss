@@ -1,0 +1,88 @@
+.dashboard {
+  &__header {
+    padding: 7.2rem 0 2.4rem;
+    box-shadow: 0 1.2rem 1.6rem 0 hsla(0, 0%, 78%, 0.15);
+  }
+
+  &__top {
+    margin-bottom: 4.8rem;
+  }
+
+  &__top,
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__welcome {
+    h2 {
+      font-size: var(--fs-hd-700);
+      font-family: var(--fw-900);
+      color: var(--clr-blk-600);
+      margin-bottom: 1.6rem;
+    }
+
+    span {
+      font-size: var(--fs-hd-700);
+    }
+  }
+
+  &__request-btn {
+    display: flex;
+    align-items: center;
+    padding: 1.6rem;
+
+    img {
+      margin-right: 0.8rem;
+    }
+  }
+
+  &__search-form {
+    display: flex;
+    align-items: center;
+    border: 1px solid var(--clr-blk-200);
+    border-radius: 1.2rem;
+    padding: 0.8rem 1.6rem;
+
+    button {
+      margin-right: 0.8rem;
+      background-color: transparent;
+      border: none;
+      cursor: pointer;
+    }
+
+    input {
+      font-size: inherit;
+      font-family: inherit;
+      font-weight: var(--fw-700);
+      color: var(--clr-blk-600);
+      border: none;
+      background-color: transparent;
+      align-self: stretch;
+
+      &:focus {
+        outline: none;
+      }
+
+      &::placeholder {
+        font-family: inherit;
+        font-weight: var(--fw-700);
+        font-size: var(--fs-300);
+        color: var(--clr-blk-300);
+      }
+    }
+  }
+
+  #simple-tab-0,
+  #simple-tab-1,
+  #simple-tab-2 {
+    padding: 0;
+    min-width: fit-content;
+    font-size: var(--fs-400);
+    font-weight: var(--fw-500);
+    text-transform: initial;
+    color: var(--clr-blk-500);
+    margin-right: 4.8rem;
+  }
+}

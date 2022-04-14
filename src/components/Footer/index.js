@@ -12,7 +12,7 @@ import whatsapp_logo from '../../assets/whatsapp_icon.svg';
 function Footer() {
   const { pathname } = useLocation();
 
-  return pathname !== '/' ? (
+  return pathname !== '/' && pathname !== '/faqs' ? (
     <footer id="footer">
       <Container>
         <div className="footer">

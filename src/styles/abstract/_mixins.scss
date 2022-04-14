@@ -16,6 +16,7 @@
 @mixin listStyles {
   &__list {
     display: flex;
+    align-items: center;
     list-style-type: none;
   }
 

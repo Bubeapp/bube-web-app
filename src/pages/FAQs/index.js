@@ -1,11 +1,9 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import Button from '../../components/Button';
 import Container from '../../layouts/Container';
 
 import bube_logo from '../../assets/bube_logo.svg';
 import external_icon from '../../assets/external_icon.svg';
-import Footer from '../../components/Footer';
 import FaqsCard from '../../components/FaqsCard';
 
 function FAQs() {
@@ -75,8 +73,6 @@ function FAQs() {
           </div>
         </Container>
       </main>
-
-      <Footer />
     </div>
   );
 }

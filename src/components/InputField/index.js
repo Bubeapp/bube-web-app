@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function InputField({ type, label, errormessage, icon }) {
+function InputField({ type, label = '', errormessage, icon }) {
   const [input, setInput] = useState('');
 
   const handleInputChange = e => {
@@ -19,9 +19,11 @@ function InputField({ type, label, errormessage, icon }) {
           value={input}
           onChange={handleInputChange}
         />
-        <label className="inputfield__label" htmlFor={label.toLowerCase()}>
-          {label}
-        </label>
+        {label && (
+          <label className="inputfield__label" htmlFor={label.toLowerCase()}>
+            {label}
+          </label>
+        )}
       </fieldset>
       {errormessage && (
         <span className="inputfield__errormessage">&#9888; {errormessage}</span>
