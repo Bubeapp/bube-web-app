@@ -45,4 +45,9 @@
   &--lg {
     padding: 1.6rem;
   }
+
+  &--ghost {
+    border: 1px solid var(--clr-primary-200);
+    color: var(--clr-primary-500);
+  }
 }

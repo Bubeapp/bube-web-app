@@ -5,11 +5,16 @@ import Tab from '@mui/material/Tab';
 
 import Button from '../../../components/Button';
 import TabPanel from '../../../components/TabPanel';
+import ServicesCard from '../../../components/ServicesCard';
 import DashhoardHeader from '../../../components/DashboardHeader';
 import DashboardBody from '../../../components/DashboardBody';
 
 import plus_icon from '../../../assets/plus_icon.svg';
 import search_icon from '../../../assets/search_icon.svg';
+import categories_img_01 from '../../../assets/categories_img_01.png';
+import categories_img_02 from '../../../assets/categories_img_02.png';
+import categories_img_03 from '../../../assets/categories_img_03.png';
+import categories_img_04 from '../../../assets/categories_img_04.png';
 
 function Dashboard() {
   const [value, setValue] = useState(0);
@@ -65,7 +70,28 @@ function Dashboard() {
       </DashhoardHeader>
       <DashboardBody>
         <TabPanel value={value} index={0}>
-          Categories
+          <div className="services">
+            <div className="services__categories">
+              <ServicesCard
+                cardTitle="Events and entertainment"
+                cardImage={categories_img_01}
+              />
+              <ServicesCard
+                cardTitle="Home office improvement"
+                cardImage={categories_img_02}
+              />
+              <ServicesCard cardTitle="Painting" cardImage={categories_img_03} />
+              <ServicesCard
+                cardTitle="Construction & renovation"
+                cardImage={categories_img_02}
+              />
+              <ServicesCard
+                cardTitle="Thorough Cleaning"
+                cardImage={categories_img_01}
+              />
+              <ServicesCard cardTitle="Beauty services" cardImage={categories_img_01} />
+            </div>
+          </div>
         </TabPanel>
         <TabPanel value={value} index={1}>
           My Request

@@ -1,0 +1,47 @@
+.services {
+  &__categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    grid-gap: 2.4rem;
+
+    @include respond(tablet-port) {
+      grid-template-columns: repeat(auto-fill, minmax(25rem, 1fr));
+    }
+  }
+
+  &__card {
+    overflow: hidden;
+    border-radius: 1.2rem;
+    position: relative;
+
+    img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    span {
+      position: absolute;
+      font-size: var(--fs-hd-700);
+      font-family: var(--fw-700);
+      line-height: 3.2rem;
+      color: var(--clr-white);
+      left: 2.4rem;
+      bottom: 2.4rem;
+      z-index: 2;
+    }
+
+    &::after {
+      content: '';
+      display: block;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: hsla(0, 0, 0, 0.4);
+      top: 0;
+    }
+
+    // &::after:hover {
+    //   background-color: hsla(0, 0%, 0%, 0.104);
+    // }
+  }
+}

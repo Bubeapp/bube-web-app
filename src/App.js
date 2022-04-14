@@ -14,6 +14,7 @@ import ResetPassword from './pages/ResetPassword';
 import ForgotPassword from './pages/ForgotPassword';
 
 import Dashboard from './pages/UserDashboard/Dashboard';
+import Services from './pages/UserDashboard/Services';
 
 function App() {
   const { pathname } = useLocation();
@@ -23,6 +24,7 @@ function App() {
       {pathname !== '/faqs' && <Navigation />}
       <Routes>
         <Route exact path="/dashboard/:user" element={<Dashboard />} />
+        <Route exact path="/services/:service" element={<Services />} />
         <Route exact path="/signup" element={<SignUp />} />
         <Route exact path="/signin" element={<SignIn />} />
         <Route exact path="/success" element={<Success />} />
