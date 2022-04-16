@@ -16,8 +16,11 @@ const validationSchema = Yup.object().shape({
   email: Yup.string()
     .email('Invalid email')
     .required('Please enter your email address'),
-  phone: Yup.number().required(),
+  phone: Yup.number().required('Please enter phone number'),
   password: Yup.string().min(8).required('Password field is required'),
+  confirmpassword: Yup.string()
+    .oneOf([Yup.ref('password'), null], 'Passwords must match')
+    .required('Please confirm password'),
 });
 
 const initialValues = {
@@ -27,7 +30,7 @@ const initialValues = {
   email: '',
   phone: '',
   password: '',
-  confirmPassword: '',
+  confirmpassword: '',
 };
 
 const onSubmit = values => {
@@ -115,11 +118,11 @@ function SignUp() {
           type="password"
           label="Confirm Password"
           icon
-          value={values.confirmPassword}
+          value={values.confirmpassword}
           handleOnChange={handleChange}
-          errormessage={errors['confirm password']}
-          onBlur={() => setFieldTouched('confirmPassword')}
-          visible={touched.confirmPassword}
+          errormessage={errors.confirmpassword}
+          onBlur={() => setFieldTouched('confirmpassword')}
+          visible={touched.confirmpassword}
         />
         <Checkbox handleOnChange={handleChange} />
         <Button type="submit" classname="btn btn--primary btn--full">
