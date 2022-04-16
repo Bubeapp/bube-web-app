@@ -3,10 +3,10 @@ import React from 'react';
 import HeroSection from './HeroSection';
 import FeaturesSection from './FeaturesSection';
 import BecomeAnArtisans from './BecomeAnArtisans';
+import DownloadAppSection from './DownloadAppSection';
 import MeetArtisansSection from './MeetArtisansSection';
 import AppFeaturesSection01 from './AppFeaturesSection01';
 import AppFeaturesSection02 from './AppFeaturesSection02';
-import DownloadAppSection from './DownloadAppSection';
 
 function Homepage() {
   return (

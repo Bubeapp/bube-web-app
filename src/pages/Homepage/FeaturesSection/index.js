@@ -24,7 +24,7 @@ function FeaturesSection() {
               amet lacus. Facilisis aliquam turpis.
             </p>
             <Button type="button" classname="flex btn btn--bg-none">
-              <span>Try now</span>
+              <span className="margin-btm-0">Try now</span>
               <img src={right_arrow_icon} alt="target lock icon" />
             </Button>
           </div>

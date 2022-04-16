@@ -1,13 +1,13 @@
 import React from 'react';
-import { Navigation, Pagination, Scrollbar, A11y } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
 
-// Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/scrollbar';
 import Container from '../../../layouts/Container';
+
+import artisans__img_01 from '../../../assets/artisans_img_01.png';
+import artisans__img_02 from '../../../assets/artisans_img_02.png';
+import artisans__img_03 from '../../../assets/artisans_img_03.png';
+import artisans__img_04 from '../../../assets/artisans_img_04.png';
+import chevron_left from '../../../assets/chevron-left_icon.svg';
+import chevron_right from '../../../assets/chevron-right_icon.svg';
 
 function MeetArtisansSection() {
   return (
@@ -19,13 +19,25 @@ function MeetArtisansSection() {
       </Container>
 
       <div className="meet-artisans__slider">
-        <div className="meet-artisans__slider-img">IMG 1</div>
-        <div className="meet-artisans__slider-img">IMG 2</div>
-        <div className="meet-artisans__slider-img">IMG 3</div>
-        <div className="meet-artisans__slider-img">IMG 4</div>
+        <div className="meet-artisans__slider-img">
+          <img src={artisans__img_01} alt="Artisans shots" />
+        </div>
+        <div className="meet-artisans__slider-img">
+          <img src={artisans__img_02} alt="Artisans shots" />
+        </div>
+        <div className="meet-artisans__slider-img">
+          <img src={artisans__img_03} alt="Artisans shots" />
+        </div>
+        <div className="meet-artisans__slider-img">
+          <img src={artisans__img_04} alt="Artisans shots" />
+        </div>
 
-        <button className="meet-artisans__btn meet-artisans__prev">prev</button>
-        <button className="meet-artisans__btn meet-artisans__next">Next</button>
+        <button className="meet-artisans__btn meet-artisans__prev">
+          <img src={chevron_left} alt="Chevron left icon" />
+        </button>
+        <button className="meet-artisans__btn meet-artisans__next">
+          <img src={chevron_right} alt="Chevron right icon" />
+        </button>
       </div>
     </section>
   );

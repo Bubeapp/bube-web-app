@@ -14,4 +14,10 @@
   }
 
   @include listStyles;
+
+  &__list {
+    @include respond(tablet-port) {
+      display: none;
+    }
+  }
 }

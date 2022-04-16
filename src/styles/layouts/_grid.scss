@@ -7,7 +7,7 @@ Global Container
   margin: 0 auto;
 
   @include respond(laptop-s) {
-    padding: 2.4rem;
+    padding: 0 2.4rem;
   }
 }
 
@@ -49,13 +49,20 @@ Flex Containers
 .flex {
   display: flex;
 
-  & > *:not(:last-child) {
-    margin-right: 2.4rem;
-  }
-
   @include respond(tablet-port) {
     flex-direction: column;
-    margin-right: 0;
-    margin-bottom: 2.4rem;
+  }
+
+  & > *:not(:last-child) {
+    margin-right: 2.4rem;
+
+    @include respond(tablet-port) {
+      margin-right: 0;
+      margin-bottom: 5.6rem;
+    }
+
+    @include respond(mobile-l) {
+      margin-bottom: 4.8rem;
+    }
   }
 }

@@ -14,6 +14,8 @@
 @import './components/footer';
 @import './components/category-card';
 @import './components/slider';
+@import './components/dropdown';
+@import './components/services';
 
 // Layout Imports
 @import './layouts/grid';
@@ -26,3 +28,5 @@
 @import './pages/resetpassword';
 @import './pages/success';
 @import './pages/homepage';
+@import './pages/faqs';
+@import './pages/dashboard';

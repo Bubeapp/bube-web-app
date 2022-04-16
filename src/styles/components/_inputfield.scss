@@ -72,5 +72,11 @@
   &__errormessage {
     font-size: 1.4rem;
     color: hsl(24, 100%, 50%);
+    position: absolute;
+    bottom: -2.1rem;
   }
+}
+
+::-webkit-inner-spin-button {
+  display: none;
 }

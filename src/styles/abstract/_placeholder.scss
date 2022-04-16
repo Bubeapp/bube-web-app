@@ -7,12 +7,29 @@
   @include respond(tablet-land) {
     font-size: 4.8rem;
   }
+
+  @include respond(tablet-port) {
+    font-size: var(--fs-hd-800);
+  }
+
+  @include respond(mobile-s) {
+    font-size: var(--fs-hd-700);
+  }
 }
 
 %heading-2 {
   font-size: var(--fs-hd-800);
   font-weight: var(--fw-500);
   line-height: 112%;
+  color: var(--clr-blk-600);
+
+  @include respond(tablet-port) {
+    font-size: var(--fs-hd-700);
+  }
+
+  @include respond(mobile-s) {
+    font-size: var(--fs-hd-600);
+  }
 }
 
 %section-spacing {

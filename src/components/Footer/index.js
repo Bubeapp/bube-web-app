@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 import Container from '../../layouts/Container';
 
@@ -10,9 +10,9 @@ import instagram_logo from '../../assets/instagram_icon.svg';
 import whatsapp_logo from '../../assets/whatsapp_icon.svg';
 
 function Footer() {
-  const [isSignedIn, setIsSignedIn] = useState();
+  const { pathname } = useLocation();
 
-  return isSignedIn ? (
+  return pathname !== '/' && pathname !== '/faqs' ? (
     <footer id="footer">
       <Container>
         <div className="footer">

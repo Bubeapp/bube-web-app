@@ -1,31 +1,37 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function InputField({ type, label, errormessage, icon }) {
-  const [input, setInput] = useState('');
-
-  const handleInputChange = e => {
-    setInput(e.target.value);
-  };
-
+function InputField({
+  type,
+  label,
+  errormessage,
+  icon,
+  value,
+  handleOnChange,
+  onBlur,
+  visible,
+}) {
   return (
     <>
-      <fieldset className="inputfield">
+      <fieldset className={`inputfield ${visible && errormessage ? 'error' : ''}`}>
         <input
           className="inputfield__input"
           type={type ? type : 'text'}
           name={label.toLowerCase()}
           id={label.toLowerCase()}
           placeholder={label}
-          value={input}
-          onChange={handleInputChange}
+          value={value}
+          onChange={handleOnChange}
+          onBlur={onBlur}
         />
-        <label className="inputfield__label" htmlFor={label.toLowerCase()}>
-          {label}
-        </label>
+        {label && (
+          <label className="inputfield__label" htmlFor={label.toLowerCase()}>
+            {label}
+          </label>
+        )}
+        {visible && errormessage && (
+          <span className="inputfield__errormessage">&#9888; {errormessage}</span>
+        )}
       </fieldset>
-      {errormessage && (
-        <span className="inputfield__errormessage">&#9888; {errormessage}</span>
-      )}
     </>
   );
 }

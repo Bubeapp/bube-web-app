@@ -1,10 +1,14 @@
 .btn {
   font-size: var(--fs-400);
-  font-weight: var(--fw-500);
+  font-weight: var(--fw-700);
   padding: 1.2rem 1.6rem;
   border: none;
   border-radius: 0.8rem;
   cursor: pointer;
+
+  @include respond(mobile-l) {
+    padding: 1.6rem;
+  }
 
   &--primary {
     color: var(--clr-white);
@@ -40,5 +44,10 @@
 
   &--lg {
     padding: 1.6rem;
+  }
+
+  &--ghost {
+    border: 1px solid var(--clr-primary-200);
+    color: var(--clr-primary-500);
   }
 }

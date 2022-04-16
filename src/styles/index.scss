@@ -1,4 +1,5 @@
 @import './fonts';
+@import './abstract/mixins';
 
 * {
   padding: 0;
@@ -8,6 +9,10 @@
 
 html {
   font-size: 10px;
+
+  @include respond(tablet-port) {
+    font-size: 9.5px;
+  }
 }
 
 body {
@@ -15,6 +20,7 @@ body {
   font-family: 'Airbnb Cereal App';
   font-weight: 400;
   line-height: 2.4rem;
+  color: var(--clr-blk-500);
   background-color: hsl(0, 0%, 96%);
 }
 

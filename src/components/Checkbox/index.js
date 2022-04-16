@@ -1,8 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-function Checkbox() {
-  const [isChecked, setIsChecked] = useState(false);
-
+function Checkbox({ handleOnChange }) {
   return (
     <>
       <fieldset className="checkbox">
@@ -11,9 +9,7 @@ function Checkbox() {
           type="checkbox"
           name="checkbox"
           id="checkbox"
-          onChange={() => {
-            setIsChecked(!isChecked);
-          }}
+          onChange={handleOnChange}
         />
 
         <label className="checkbox__label" htmlFor="checkbox">
