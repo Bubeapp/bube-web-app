@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -8,27 +8,41 @@ import Form from '../../components/Form';
 import InputField from '../../components/InputField';
 import PasswordField from '../../components/PasswordField';
 
-const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Email field is required'),
-  password: Yup.string().min(8).required('Password field is required'),
-});
-
-const initialValues = {
-  email: '',
-  password: '',
-};
-
-const onSubmit = values => {
-  console.log(values);
-};
+import { AuthContext } from '../../contexts/auth/authContext';
 
 function SignIn() {
-  const { values, errors, handleChange, handleSubmit, setFieldTouched, touched } =
-    useFormik({
-      initialValues,
-      onSubmit,
-      validationSchema,
-    });
+  const { signIn } = useContext(AuthContext);
+
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().email('Invalid email').required('Email field is required'),
+    password: Yup.string().min(8).required('Password field is required'),
+  });
+
+  const initialValues = {
+    email: '',
+    password: '',
+  };
+
+  const onSubmit = (values, onSubmitProps) => {
+    signIn({ ...values });
+    setTimeout(() => onSubmitProps.setSubmitting(false), 5000);
+  };
+
+  const {
+    values,
+    errors,
+    handleChange,
+    handleSubmit,
+    setFieldTouched,
+    touched,
+    isValid,
+    dirty,
+    isSubmitting,
+  } = useFormik({
+    initialValues,
+    onSubmit,
+    validationSchema,
+  });
 
   return (
     <div className="signin">
@@ -63,7 +77,11 @@ function SignIn() {
           onBlur={() => setFieldTouched('password')}
           visible={touched.password}
         />
-        <Button type="submit" classname="btn btn--primary btn--full">
+        <Button
+          type="submit"
+          classname="btn btn--primary btn--full"
+          disabled={!(dirty && isValid) || isSubmitting}
+        >
           Sign up
         </Button>
       </Form>

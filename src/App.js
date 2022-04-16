@@ -15,27 +15,30 @@ import ForgotPassword from './pages/ForgotPassword';
 
 import Dashboard from './pages/UserDashboard/Dashboard';
 import Services from './pages/UserDashboard/Services';
+import AuthProvider from './contexts/auth/authContext';
 
 function App() {
   const { pathname } = useLocation();
 
   return (
-    <div className="app" style={{ backgroundColor: 'hsla(0, 0%, 95%, 1)' }}>
-      {pathname !== '/faqs' && <Navigation />}
-      <Routes>
-        <Route exact path="/dashboard/:user" element={<Dashboard />} />
-        <Route exact path="/services/:service" element={<Services />} />
-        <Route exact path="/signup" element={<SignUp />} />
-        <Route exact path="/signin" element={<SignIn />} />
-        <Route exact path="/success" element={<Success />} />
-        <Route exact path="/forgotpassword" element={<ForgotPassword />} />
-        <Route exact path="/resetpassword" element={<ResetPassword />} />
-        <Route exact path="/verify" element={<VerifyEmail />} />
-        <Route exact path="/faqs" element={<FAQs />} />
-        <Route exact path="/" element={<Homepage />} />
-      </Routes>
-      <Footer />
-    </div>
+    <AuthProvider>
+      <div className="app" style={{ backgroundColor: 'hsla(0, 0%, 95%, 1)' }}>
+        {pathname !== '/faqs' && <Navigation />}
+        <Routes>
+          <Route exact path="/dashboard/:user" element={<Dashboard />} />
+          <Route exact path="/services/:service" element={<Services />} />
+          <Route exact path="/signup" element={<SignUp />} />
+          <Route exact path="/signin" element={<SignIn />} />
+          <Route exact path="/success" element={<Success />} />
+          <Route exact path="/forgotpassword" element={<ForgotPassword />} />
+          <Route exact path="/resetpassword" element={<ResetPassword />} />
+          <Route exact path="/verify" element={<VerifyEmail />} />
+          <Route exact path="/faqs" element={<FAQs />} />
+          <Route exact path="/" element={<Homepage />} />
+        </Routes>
+        <Footer />
+      </div>
+    </AuthProvider>
   );
 }
 
