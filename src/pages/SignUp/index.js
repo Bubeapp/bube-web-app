@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -9,41 +9,59 @@ import Checkbox from '../../components/Checkbox';
 import InputField from '../../components/InputField';
 import PasswordField from '../../components/PasswordField';
 
-const validationSchema = Yup.object().shape({
-  username: Yup.string().required('Please enter a username'),
-  firstname: Yup.string().required('Please enter your firstname'),
-  lastname: Yup.string().required('Please enter your lastname'),
-  email: Yup.string()
-    .email('Invalid email')
-    .required('Please enter your email address'),
-  phone: Yup.number().required('Please enter phone number'),
-  password: Yup.string().min(8).required('Password field is required'),
-  confirmpassword: Yup.string()
-    .oneOf([Yup.ref('password'), null], 'Passwords must match')
-    .required('Please confirm password'),
-});
-
-const initialValues = {
-  username: '',
-  firstname: '',
-  lastname: '',
-  email: '',
-  phone: '',
-  password: '',
-  confirmpassword: '',
-};
-
-const onSubmit = values => {
-  console.log('Form Data:', values);
-};
+import { AuthContext } from '../../contexts/auth/authContext';
 
 function SignUp() {
-  const { values, errors, handleChange, handleSubmit, setFieldTouched, touched } =
-    useFormik({
-      initialValues,
-      onSubmit,
-      validationSchema,
-    });
+  const { signUp } = useContext(AuthContext);
+
+  ////////////////////////////////////////////
+  // Sign up form validationSchema
+  const validationSchema = Yup.object().shape({
+    username: Yup.string().required('Please enter a username'),
+    firstname: Yup.string().required('Please enter your firstname'),
+    lastname: Yup.string().required('Please enter your lastname'),
+    email: Yup.string()
+      .email('Invalid email')
+      .required('Please enter your email address'),
+    phone: Yup.number().required('Please enter phone number'),
+    password: Yup.string().min(8).required('Password field is required'),
+    confirmpassword: Yup.string()
+      .oneOf([Yup.ref('password'), null], 'Passwords must match')
+      .required('Please confirm password'),
+  });
+
+  ////////////////////////////////////////////
+  // initial form Values
+  const initialValues = {
+    username: '',
+    firstname: '',
+    lastname: '',
+    email: '',
+    phone: '',
+    password: '',
+    confirmpassword: '',
+  };
+
+  const onSubmit = (values, onSubmitProps) => {
+    signUp({ ...values });
+    setTimeout(() => onSubmitProps.setSubmitting(false), 5000);
+  };
+
+  const {
+    values,
+    errors,
+    handleChange,
+    handleSubmit,
+    setFieldTouched,
+    touched,
+    isValid,
+    dirty,
+    isSubmitting,
+  } = useFormik({
+    initialValues,
+    onSubmit,
+    validationSchema,
+  });
 
   return (
     <div className="signup">
@@ -125,8 +143,12 @@ function SignUp() {
           visible={touched.confirmpassword}
         />
         <Checkbox handleOnChange={handleChange} />
-        <Button type="submit" classname="btn btn--primary btn--full">
-          Sign up
+        <Button
+          type="submit"
+          classname="btn btn--primary btn--full"
+          disabled={!(dirty && isValid) || isSubmitting}
+        >
+          Sign in
         </Button>
       </Form>
     </div>

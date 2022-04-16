@@ -10,6 +10,14 @@
     padding: 1.6rem;
   }
 
+  &:disabled {
+    background-color: var(--clr-primary-200);
+
+    &:hover {
+      background-color: var(--clr-primary-200);
+    }
+  }
+
   &--primary {
     color: var(--clr-white);
     background: var(--clr-primary-500);

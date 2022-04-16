@@ -46,7 +46,10 @@ function Navigation() {
             <NavItem name="About Us" />
             <NavItem name="Contact" />
           </NavList>
-          <Button classname="navbar__cta btn btn--primary">
+          <Button
+            onClick={() => console.log('Goto sign up page')}
+            classname="navbar__cta btn btn--primary"
+          >
             {pathname === '/'
               ? 'Login / Register'
               : pathname === '/signup'
