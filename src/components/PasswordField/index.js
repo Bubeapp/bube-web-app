@@ -25,14 +25,17 @@ function PasswordField({
         <input
           className="passwordfield__input"
           type={hidePasswordField ? type : 'text'}
-          name={label.toLowerCase()}
-          id={label.toLowerCase()}
+          name={label.split(' ').join('').toLowerCase()}
+          id={label.split(' ').join('').toLowerCase()}
           placeholder={label}
           value={value}
           onChange={handleOnChange}
           onBlur={onBlur}
         />
-        <label className="passwordfield__label" htmlFor={label.toLowerCase()}>
+        <label
+          className="passwordfield__label"
+          htmlFor={label.split(' ').join('').toLowerCase()}
+        >
           {label}
         </label>
         {icon && (
