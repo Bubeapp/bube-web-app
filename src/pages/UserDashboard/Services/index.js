@@ -1,6 +1,7 @@
 import React from 'react';
 import Button from '../../../components/Button';
-import DashhoardHeader from '../../../components/DashboardHeader';
+import DashboardHeader from '../../../components/DashboardHeader';
+import DashboardBody from '../../../components/DashboardBody';
 
 import circle_left_icon from '../../../assets/arrow-circle-left_icon.svg';
 import plus_icon from '../../../assets/plus_icon.svg';
@@ -9,7 +10,7 @@ import search_icon from '../../../assets/search_icon.svg';
 function Services() {
   return (
     <div>
-      <DashhoardHeader>
+      <DashboardHeader>
         <div className="dashboard__top">
           <Button classname="dashboard__request-btn btn btn--ghost">
             <img src={circle_left_icon} alt="Plus icon" />
@@ -41,7 +42,9 @@ function Services() {
             </form>
           </div>
         </div>
-      </DashhoardHeader>
+      </DashboardHeader>
+
+      <DashboardBody></DashboardBody>
     </div>
   );
 }

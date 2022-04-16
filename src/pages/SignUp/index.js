@@ -1,15 +1,50 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useFormik } from 'formik';
+import * as Yup from 'yup';
+
+import Form from '../../components/Form';
 import Button from '../../components/Button';
 import Checkbox from '../../components/Checkbox';
-import Form from '../../components/Form';
 import InputField from '../../components/InputField';
 import PasswordField from '../../components/PasswordField';
 
+const validationSchema = Yup.object().shape({
+  username: Yup.string().required('Please enter a username'),
+  firstname: Yup.string().required('Please enter your firstname'),
+  lastname: Yup.string().required('Please enter your lastname'),
+  email: Yup.string()
+    .email('Invalid email')
+    .required('Please enter your email address'),
+  phone: Yup.number().required(),
+  password: Yup.string().min(8).required('Password field is required'),
+});
+
+const initialValues = {
+  username: '',
+  firstname: '',
+  lastname: '',
+  email: '',
+  phone: '',
+  password: '',
+  confirmPassword: '',
+};
+
+const onSubmit = values => {
+  console.log('Form Data:', values);
+};
+
 function SignUp() {
+  const { values, errors, handleChange, handleSubmit, setFieldTouched, touched } =
+    useFormik({
+      initialValues,
+      onSubmit,
+      validationSchema,
+    });
+
   return (
     <div className="signup">
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <div className="signup__header">
           <h2>Create Account</h2>
           <p>
@@ -21,12 +56,75 @@ function SignUp() {
         </div>
         <Button classname="btn btn--gmail btn--full">Sign up with Gmail</Button>
         <span className="signup__mail-opt">Or sign up with email</span>
-        <InputField type="text" label="Fullname" />
-        <InputField type="email" label="Email" />
-        <PasswordField type="password" label="Password" icon />
-        <PasswordField type="password" label="Confirm Password" icon />
-        <Checkbox />
-        <Button classname="btn btn--primary btn--full">Sign up</Button>
+        <InputField
+          type="text"
+          label="Username"
+          value={values.username}
+          handleOnChange={handleChange}
+          errormessage={errors.username}
+          onBlur={() => setFieldTouched('username')}
+          visible={touched.username}
+        />
+        <InputField
+          type="text"
+          label="Firstname"
+          value={values.firstname}
+          handleOnChange={handleChange}
+          errormessage={errors.firstname}
+          onBlur={() => setFieldTouched('firstname')}
+          visible={touched.firstname}
+        />
+        <InputField
+          type="text"
+          label="Lastname"
+          value={values.lastname}
+          handleOnChange={handleChange}
+          errormessage={errors.lastname}
+          onBlur={() => setFieldTouched('lastname')}
+          visible={touched.lastname}
+        />
+        <InputField
+          type="email"
+          label="Email"
+          value={values.email}
+          handleOnChange={handleChange}
+          errormessage={errors.email}
+          onBlur={() => setFieldTouched('email')}
+          visible={touched.email}
+        />
+        <InputField
+          type="number"
+          label="Phone"
+          value={values.phone}
+          handleOnChange={handleChange}
+          errormessage={errors.phone}
+          onBlur={() => setFieldTouched('phone')}
+          visible={touched.phone}
+        />
+        <PasswordField
+          type="password"
+          label="Password"
+          icon
+          value={values.password}
+          handleOnChange={handleChange}
+          errormessage={errors.password}
+          onBlur={() => setFieldTouched('password')}
+          visible={touched.password}
+        />
+        <PasswordField
+          type="password"
+          label="Confirm Password"
+          icon
+          value={values.confirmPassword}
+          handleOnChange={handleChange}
+          errormessage={errors['confirm password']}
+          onBlur={() => setFieldTouched('confirmPassword')}
+          visible={touched.confirmPassword}
+        />
+        <Checkbox handleOnChange={handleChange} />
+        <Button type="submit" classname="btn btn--primary btn--full">
+          Sign up
+        </Button>
       </Form>
     </div>
   );

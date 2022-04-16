@@ -1,13 +1,10 @@
 import React from 'react';
-import { Formik } from 'formik';
 
-function Form({ children }) {
+function Form({ children, onSubmit }) {
   return (
-    <Formik>
-      <form className="form" action="">
-        {children}
-      </form>
-    </Formik>
+    <form className="form" action="" onSubmit={onSubmit}>
+      {children}
+    </form>
   );
 }
 
