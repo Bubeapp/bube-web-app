@@ -9,11 +9,6 @@
     margin-right: 2.4rem;
     // background-color: red;
 
-    .back-btn {
-      padding: 0.8rem 1.6rem;
-      margin-bottom: 4.8rem;
-    }
-
     h2 {
       font-size: var(--fs-hd-700);
       font-weight: var(--fw-700);
@@ -89,5 +84,10 @@
     & > *:not(:last-child) {
       margin-right: 2.4rem;
     }
+  }
+
+  &__delete-btn {
+    display: flex;
+    justify-content: space-between;
   }
 }

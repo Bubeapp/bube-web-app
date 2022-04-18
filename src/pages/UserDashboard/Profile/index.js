@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -9,8 +9,16 @@ import Container from '../../../layouts/Container';
 
 import circle_left_icon from '../../../assets/arrow-circle-left_icon.svg';
 import user_avatar from '../../../assets/user_avatar.png';
+import CustomModal from '../../../components/Modal';
+import Form from '../../../components/Form';
+import PasswordField from '../../../components/PasswordField';
 
 function Profile() {
+  const [openModal, setOpenModal] = useState(false);
+
+  const handleOpen = () => setOpenModal(true);
+  const handleClose = () => setOpenModal(false);
+
   const validationSchema = Yup.object().shape({
     username: Yup.string(),
     email: Yup.string().email(),
@@ -165,9 +173,23 @@ function Profile() {
                     Cancel
                   </Button>
                 </div>
-                <Button classname="btn btn--gmail">Delete Account</Button>
+                <Button type="button" onClick={handleOpen} classname="btn btn--gmail">
+                  Delete Account
+                </Button>
               </div>
             </form>
+
+            <CustomModal open={openModal} handleClose={handleClose}>
+              <Form>
+                <h3>Delete Account</h3>
+                <PasswordField type="password" label="Password" />
+                <PasswordField type="password" label="Confirm Password" />
+                <div className="profile__delete-btn">
+                  <Button classname="btn btn--gmail">Delete account</Button>
+                  <Button classname="btn btn--cancel">Cancel</Button>
+                </div>
+              </Form>
+            </CustomModal>
           </div>
         </div>
       </Container>
