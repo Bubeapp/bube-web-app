@@ -3,7 +3,7 @@
   font-weight: var(--fw-700);
   padding: 1.2rem 1.6rem;
   border: none;
-  border-radius: 0.8rem;
+  border-radius: 0.4rem;
   cursor: pointer;
 
   @include respond(mobile-l) {
@@ -57,5 +57,10 @@
   &--ghost {
     border: 1px solid var(--clr-primary-200);
     color: var(--clr-primary-500);
+  }
+
+  &--cancel {
+    color: var(--clr-blk-500);
+    background-color: var(--clr-primary-50);
   }
 }
