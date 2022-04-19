@@ -4,3 +4,17 @@
 .margin-btm-0 {
   margin-bottom: 0 !important;
 }
+
+button.css-ueukts-MuiButtonBase-root-MuiToggleButton-root {
+  padding: 0 !important;
+  color: var(--clr-white) !important;
+  border: none;
+}
+
+.MuiToggleButton-root {
+  background: transparent;
+
+  &:hover {
+    color: hsl(0, 0%, 100%) !important;
+  }
+}

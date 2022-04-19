@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Checkbox({ handleOnChange }) {
+function Checkbox({ handleOnChange, label }) {
   return (
     <>
       <fieldset className="checkbox">
@@ -13,7 +13,7 @@ function Checkbox({ handleOnChange }) {
         />
 
         <label className="checkbox__label" htmlFor="checkbox">
-          I agree to Bube's terms of service and privacy policy.
+          {label}
         </label>
       </fieldset>
     </>

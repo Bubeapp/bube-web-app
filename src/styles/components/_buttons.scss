@@ -63,9 +63,14 @@
     color: var(--clr-blk-500);
     background-color: var(--clr-primary-50);
   }
-}
 
-.back-btn {
-  padding: 0.8rem 1.6rem;
-  margin-bottom: 4.8rem;
+  &--back {
+    display: flex;
+    align-items: center;
+    padding: 1.2rem 1.6rem;
+
+    img {
+      margin-right: 0.8rem;
+    }
+  }
 }

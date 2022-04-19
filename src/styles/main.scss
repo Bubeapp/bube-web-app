@@ -2,7 +2,6 @@
 @import './abstract/variables';
 @import './abstract/mixins';
 @import './abstract/placeholder';
-@import './abstract/utilities';
 
 // Components Imports
 @import './components/buttons';
@@ -16,6 +15,7 @@
 @import './components/slider';
 @import './components/dropdown';
 @import './components/services';
+@import './components/tooltip';
 
 // Layout Imports
 @import './layouts/grid';
@@ -33,3 +33,5 @@
 @import './pages/profile';
 @import './pages/notifications';
 @import './pages/settings';
+
+@import './abstract/utilities';

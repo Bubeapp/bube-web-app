@@ -4,10 +4,10 @@ import * as Yup from 'yup';
 
 import Button from '../../../components/Button';
 import InputField from '../../../components/InputField';
+import ButtonBack from '../../../components/Button/ButtonBack';
 
 import Container from '../../../layouts/Container';
 
-import circle_left_icon from '../../../assets/arrow-circle-left_icon.svg';
 import user_avatar from '../../../assets/user_avatar.png';
 import CustomModal from '../../../components/Modal';
 import Form from '../../../components/Form';
@@ -82,10 +82,7 @@ function Profile() {
       <Container>
         <div className="profile__container">
           <div className="profile__side">
-            <Button classname="dashboard__request-btn back-btn btn btn--ghost">
-              <img src={circle_left_icon} alt="Plus icon" />
-              <span>Back</span>
-            </Button>
+            <ButtonBack />
             <h2>Profile</h2>
           </div>
           <div className="profile__main">
@@ -122,6 +119,7 @@ function Profile() {
                   value={values.username}
                   handleOnChange={handleChange}
                   onBlur={() => setFieldTouched('username')}
+                  errormessage={errors.username}
                 />
                 <InputField
                   type="email"
@@ -129,6 +127,7 @@ function Profile() {
                   value={values.email}
                   handleOnChange={handleChange}
                   onBlur={() => setFieldTouched('email')}
+                  errormessage={errors.email}
                 />
               </div>
 
@@ -139,6 +138,7 @@ function Profile() {
                   value={values.firstname}
                   handleOnChange={handleChange}
                   onBlur={() => setFieldTouched('firstname')}
+                  errormessage={errors.firstname}
                 />
                 <InputField
                   type="text"
@@ -146,6 +146,7 @@ function Profile() {
                   value={values.lastname}
                   handleOnChange={handleChange}
                   onBlur={() => setFieldTouched('lastname')}
+                  errormessage={errors.lastname}
                 />
               </div>
 
@@ -156,6 +157,7 @@ function Profile() {
                   value={values.phone}
                   handleOnChange={handleChange}
                   onBlur={() => setFieldTouched('phone')}
+                  errormessage={errors.phone}
                 />
                 <div>&nbsp;</div>
               </div>

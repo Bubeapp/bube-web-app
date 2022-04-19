@@ -1,30 +1,75 @@
 import React from 'react';
 
-import circle_left_icon from '../../../assets/arrow-circle-left_icon.svg';
-import Button from '../../../components/Button';
+import settings_icon from '../../../assets/setting-2_icon.svg';
+import check_icon from '../../../assets/check_icon.svg';
+import dots_icon from '../../../assets/dots-horizontal_icon.svg';
+
+import ButtonBack from '../../../components/Button/ButtonBack';
+import Checkbox from '../../../components/Checkbox';
+import CustomTooltip from '../../../components/Tooltip';
+import CustomToggle from '../../../components/ToggleButton';
+import NotificationCard from '../../../components/NotificationCard';
 
 function Notification() {
   return (
     <div className="notifications">
       <div className="notification__container">
-        <Button classname="dashboard__request-btn back-btn btn btn--ghost">
-          <img src={circle_left_icon} alt="Plus icon" />
-          <span>Back</span>
-        </Button>
+        <ButtonBack />
 
         <div className="notification__header">
           <h2>Notifications</h2>
           <div className="notification__actions">
             <div className="notification__hide">
-              <input type="checkbox" id="hide-notification" name="hide-notification" />
-              <label htmlFor="hide-notification">Hide notifications</label>
+              <Checkbox label="Hide Notifications" />
             </div>
 
-            <Button></Button>
-            <Button></Button>
-            <Button></Button>
+            <CustomTooltip
+              className="notification__tooltip"
+              title="Go to settings"
+              icon={settings_icon}
+            />
+            <CustomTooltip
+              className="notification__tooltip"
+              title="Mark all as read"
+              icon={check_icon}
+            />
+
+            <CustomToggle className="notification__toggle" icon={dots_icon}>
+              <ul className="notification__list">
+                <li className="notification__item">Clear all</li>
+              </ul>
+            </CustomToggle>
           </div>
         </div>
+
+        <NotificationCard
+          title="Hello Has Requested for your service."
+          body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor at nibh amet lacus. Facilisis aliquam turpis quis odio sagittis, sed. Semper quis sit pharetra sit sagittis. Odio enim id arcu ipsum ac."
+          datetime="2022-03-11  11:22am"
+        />
+
+        <NotificationCard
+          title="Hello Has Requested for your service."
+          body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor at nibh amet lacus. Facilisis aliquam turpis quis odio sagittis, sed. Semper quis sit pharetra sit sagittis. Odio enim id arcu ipsum ac."
+          datetime="2022-03-11  11:22am"
+        />
+        <NotificationCard
+          title="Hello Has Requested for your service."
+          body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor at nibh amet lacus. Facilisis aliquam turpis quis odio sagittis, sed. Semper quis sit pharetra sit sagittis. Odio enim id arcu ipsum ac."
+          datetime="2022-03-11  11:22am"
+        />
+
+        <NotificationCard
+          title="Hello Has Requested for your service."
+          body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor at nibh amet lacus. Facilisis aliquam turpis quis odio sagittis, sed. Semper quis sit pharetra sit sagittis. Odio enim id arcu ipsum ac."
+          datetime="2022-03-11  11:22am"
+        />
+
+        <NotificationCard
+          title="Hello Has Requested for your service."
+          body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Tortor at nibh amet lacus. Facilisis aliquam turpis quis odio sagittis, sed. Semper quis sit pharetra sit sagittis. Odio enim id arcu ipsum ac."
+          datetime="2022-03-11  11:22am"
+        />
       </div>
     </div>
   );
