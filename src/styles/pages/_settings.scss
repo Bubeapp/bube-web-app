@@ -1,0 +1,28 @@
+.settings {
+  margin-top: 2.4rem;
+
+  &__container {
+    @extend %container;
+  }
+
+  &__header {
+    @extend %header;
+  }
+
+  &__card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3.2rem 1.6rem;
+    background-color: var(--clr-white);
+    border-radius: 0.8rem;
+
+    &:not(:last-child) {
+      margin-bottom: 1.6rem;
+    }
+
+    h3 {
+      font-size: var(--fs-hd-500);
+    }
+  }
+}

@@ -142,7 +142,10 @@ function SignUp() {
           onBlur={() => setFieldTouched('confirmpassword')}
           visible={touched.confirmpassword}
         />
-        <Checkbox handleOnChange={handleChange} />
+        <Checkbox
+          handleOnChange={handleChange}
+          label="I agree to Bube's terms of service and privacy policy."
+        />
         <Button
           type="submit"
           classname="btn btn--primary btn--full"

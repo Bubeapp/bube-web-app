@@ -32,6 +32,18 @@
   }
 }
 
+%container {
+  max-width: 112rem;
+  margin: 0 auto;
+}
+
+%header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2.4rem 0;
+}
+
 %section-spacing {
   padding: 9.6rem 0;
 }

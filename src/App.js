@@ -15,6 +15,9 @@ import ForgotPassword from './pages/ForgotPassword';
 
 import Dashboard from './pages/UserDashboard/Dashboard';
 import Services from './pages/UserDashboard/Services';
+import Profile from './pages/UserDashboard/Profile';
+import Notification from './pages/UserDashboard/Notification';
+import Settings from './pages/UserDashboard/Settings';
 import AuthProvider from './contexts/auth/authContext';
 
 function App() {
@@ -27,6 +30,9 @@ function App() {
         <Routes>
           <Route exact path="/dashboard/:user" element={<Dashboard />} />
           <Route exact path="/services/:service" element={<Services />} />
+          <Route exact path="/profile/:user" element={<Profile />} />
+          <Route exact path="/notification/:user" element={<Notification />} />
+          <Route exact path="/settings/:user" element={<Settings />} />
           <Route exact path="/signup" element={<SignUp />} />
           <Route exact path="/signin" element={<SignIn />} />
           <Route exact path="/success" element={<Success />} />
