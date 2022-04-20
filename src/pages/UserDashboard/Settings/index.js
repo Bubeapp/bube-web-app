@@ -30,7 +30,7 @@ function Settings() {
 
         <div className="settings__card">
           <h3>Version</h3>
-          <Button>Change</Button>
+          <span>1.0</span>
         </div>
       </div>
     </div>

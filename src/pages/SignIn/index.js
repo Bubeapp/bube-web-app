@@ -82,7 +82,7 @@ function SignIn() {
           classname="btn btn--primary btn--full"
           disabled={!(dirty && isValid) || isSubmitting}
         >
-          Sign up
+          Sign in
         </Button>
       </Form>
     </div>

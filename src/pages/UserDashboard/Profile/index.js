@@ -187,8 +187,8 @@ function Profile() {
                 <PasswordField type="password" label="Password" />
                 <PasswordField type="password" label="Confirm Password" />
                 <div className="profile__delete-btn">
-                  <Button classname="btn btn--gmail">Delete account</Button>
                   <Button classname="btn btn--cancel">Cancel</Button>
+                  <Button classname="btn btn--gmail">Delete account</Button>
                 </div>
               </Form>
             </CustomModal>
