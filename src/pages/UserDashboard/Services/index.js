@@ -8,6 +8,7 @@ import DashboardBody from '../../../components/DashboardBody';
 import circle_left_icon from '../../../assets/arrow-circle-left_icon.svg';
 
 import search_icon from '../../../assets/search_icon.svg';
+import DashboardSearchBar from '../../../components/DashboardSearchBar';
 
 function Services() {
   return (
@@ -28,17 +29,7 @@ function Services() {
             <span>234 services available in this catergory.</span>
           </div>
           <div className="dashboard__search">
-            <form className="dashboard__search-form">
-              <button>
-                <img src={search_icon} alt="search icon" />
-              </button>
-              <input
-                type="search"
-                placeholder="Search for services"
-                name="search"
-                id="search"
-              />
-            </form>
+            <DashboardSearchBar />
           </div>
         </div>
       </DashboardHeader>
