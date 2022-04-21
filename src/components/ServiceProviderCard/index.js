@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Button from '../Button';
-
 import CustomRatings from '../Ratings';
 
 function ServiceProviderCard({ image, name, owner, avatar, type, address }) {

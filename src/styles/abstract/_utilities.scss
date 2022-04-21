@@ -28,6 +28,16 @@ button.css-ueukts-MuiButtonBase-root-MuiToggleButton-root {
   margin-right: 2.4rem;
 }
 
+.css-gac2fo-MuiChip-root {
+  background: var(--clr-blk-200) !important;
+
+  span {
+    color: var(--clr-blk-700);
+    font-size: var(--fs-300);
+    font-family: inherit;
+  }
+}
+
 .flex-dir-cl {
   flex-direction: column;
 }
