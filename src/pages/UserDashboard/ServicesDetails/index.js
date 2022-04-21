@@ -10,6 +10,7 @@ import DashboardBody from '../../../components/DashboardBody';
 import CustomRatings from '../../../components/Ratings';
 
 import service_avatar from '../../../assets/service_avatar_01.png';
+import map_location from '../../../assets/map_location.png';
 import ReviewCard from '../../../components/ReviewCard';
 
 function ServicesDetails() {
@@ -124,6 +125,18 @@ function ServicesDetails() {
           <div className="service__see-more">
             <Link to="/">See more reviews</Link>
           </div>
+        </div>
+
+        <div className="service__location">
+          <h4>Location</h4>
+
+          <div className="service__map">
+            <img src={map_location} alt="Map" />
+          </div>
+
+          <address className="service__address">
+            2118 Thornridge Cir. Syracuse, Connecticut 35624
+          </address>
         </div>
       </DashboardBody>
     </div>
