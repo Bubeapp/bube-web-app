@@ -19,6 +19,7 @@ import Profile from './pages/UserDashboard/Profile';
 import Notification from './pages/UserDashboard/Notification';
 import Settings from './pages/UserDashboard/Settings';
 import AuthProvider from './contexts/auth/authContext';
+import ServicesListings from './pages/UserDashboard/ServiceListings';
 
 function App() {
   const { pathname } = useLocation();
@@ -30,6 +31,7 @@ function App() {
         <Routes>
           <Route exact path="/dashboard/:user" element={<Dashboard />} />
           <Route exact path="/services/:service" element={<Services />} />
+          <Route exact path="/services/listing" element={<ServicesListings />} />
           <Route exact path="/profile/:user" element={<Profile />} />
           <Route exact path="/notification/:user" element={<Notification />} />
           <Route exact path="/settings/:user" element={<Settings />} />

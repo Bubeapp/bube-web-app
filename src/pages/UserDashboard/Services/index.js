@@ -1,10 +1,12 @@
 import React from 'react';
+
 import Button from '../../../components/Button';
+import ButtonMakeRequest from '../../../components/Button/ButtonMakeRequest';
 import DashboardHeader from '../../../components/DashboardHeader';
 import DashboardBody from '../../../components/DashboardBody';
 
 import circle_left_icon from '../../../assets/arrow-circle-left_icon.svg';
-import plus_icon from '../../../assets/plus_icon.svg';
+
 import search_icon from '../../../assets/search_icon.svg';
 
 function Services() {
@@ -17,10 +19,7 @@ function Services() {
             <span>Back</span>
           </Button>
 
-          <Button classname="dashboard__request-btn btn btn--primary">
-            <img src={plus_icon} alt="Plus icon" />
-            <span>Make Request</span>
-          </Button>
+          <ButtonMakeRequest />
         </div>
 
         <div className="dashboard__bottom">

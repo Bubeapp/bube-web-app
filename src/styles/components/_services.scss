@@ -1,5 +1,6 @@
 .services {
-  &__categories {
+  &__categories,
+  &__grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
     grid-gap: 2.4rem;
@@ -43,5 +44,124 @@
     // &::after:hover {
     //   background-color: hsla(0, 0%, 0%, 0.104);
     // }
+  }
+
+  &__sub {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 2.4rem;
+
+    h4 {
+      color: var(--clr-blk-300);
+    }
+  }
+
+  &__map-view {
+    display: inline-block;
+    background: transparent;
+    color: var(--clr-blk-300);
+
+    &::after {
+      content: '';
+      display: block;
+      background-color: var(--clr-primary-500);
+      width: 100%;
+      height: 0.2rem;
+      margin-top: 0.2rem;
+    }
+  }
+
+  &__view {
+    &-container {
+      display: flex;
+      max-height: 100vh;
+    }
+
+    &-side {
+      max-width: 42rem;
+      padding: 0 2.4rem;
+      padding-top: 2.4rem;
+      flex-shrink: 0;
+    }
+
+    &-list {
+      // & > *:not(:last-child) {
+      //   margin-bottom: 2.4rem;
+      // }
+
+      @extend .inbox__chat-list;
+    }
+
+    // &-main {}
+
+    &-map {
+      height: 100%;
+
+      img {
+        object-fit: cover;
+        height: 100%;
+      }
+    }
+  }
+}
+
+.service {
+  &__provider {
+    border-radius: 00.8rem;
+    overflow: hidden;
+    background-color: hsl(0, 0%, 100%);
+  }
+
+  &__img {
+    width: 100%;
+  }
+
+  &__details {
+    padding: 2.4rem 1.2rem;
+  }
+
+  &__flex,
+  &__info {
+    display: flex;
+  }
+
+  &__info {
+    flex-shrink: 0;
+
+    img {
+      display: block;
+      width: 3.2rem;
+      height: 3.2rem;
+      flex-shrink: 0;
+      margin-right: 0.4rem;
+    }
+  }
+
+  &__name {
+    font-size: var(--fs-300);
+    font-weight: var(--fw-700);
+    color: var(--clr-blk-600);
+    line-height: 1.6rem;
+  }
+
+  &__type {
+    font-size: var(--fs-200);
+    line-height: 1.6rem;
+  }
+
+  &__reviews {
+    font-weight: var(--fw-700);
+    color: var(--clr-primary-500);
+    transition: all 0.2rem;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__address {
+    margin: 1.2rem 0;
+    font-size: var(--fs-300);
   }
 }
