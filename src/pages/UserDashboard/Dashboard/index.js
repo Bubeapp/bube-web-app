@@ -3,18 +3,20 @@ import React, { useState } from 'react';
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
 
-import Button from '../../../components/Button';
 import TabPanel from '../../../components/TabPanel';
 import ServicesCard from '../../../components/ServicesCard';
 import DashhoardHeader from '../../../components/DashboardHeader';
 import DashboardBody from '../../../components/DashboardBody';
+import DashboardSearchBar from '../../../components/DashboardSearchBar';
+import ButtonMakeRequest from '../../../components/Button/ButtonMakeRequest';
+import RequestCard from '../../../components/RequestCard';
+import RequestList from '../../../components/RequestList';
 
-import plus_icon from '../../../assets/plus_icon.svg';
-import search_icon from '../../../assets/search_icon.svg';
 import categories_img_01 from '../../../assets/categories_img_01.png';
 import categories_img_02 from '../../../assets/categories_img_02.png';
 import categories_img_03 from '../../../assets/categories_img_03.png';
-import categories_img_04 from '../../../assets/categories_img_04.png';
+import request_img from '../../../assets/request_img.png';
+import Inbox from '../../../components/Inbox';
 
 function Dashboard() {
   const [value, setValue] = useState(0);
@@ -39,10 +41,7 @@ function Dashboard() {
             <span>Welcome Back!</span>
           </div>
 
-          <Button classname="dashboard__request-btn btn btn--primary">
-            <img src={plus_icon} alt="Plus icon" />
-            <span>Make Request</span>
-          </Button>
+          <ButtonMakeRequest handleOnClick={() => console.log('Make Request')} />
         </div>
 
         <div className="dashboard__bottom">
@@ -54,17 +53,11 @@ function Dashboard() {
             </Tabs>
           </div>
           <div className="dashboard__search">
-            <form className="dashboard__search-form">
-              <button>
-                <img src={search_icon} alt="search icon" />
-              </button>
-              <input
-                type="search"
-                placeholder="Search for services"
-                name="search"
-                id="search"
-              />
-            </form>
+            <DashboardSearchBar
+              onSubmit={() => {
+                console.log('Search Query');
+              }}
+            />
           </div>
         </div>
       </DashhoardHeader>
@@ -94,10 +87,49 @@ function Dashboard() {
           </div>
         </TabPanel>
         <TabPanel value={value} index={1}>
-          My Request
+          <RequestList>
+            <RequestCard
+              title="Plumbing"
+              image={request_img}
+              summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus eveniet magni
+          dolorum tempore expedita eius asperiores, dolores blanditiis corrupti
+          obcaecati, perspiciatis omnis incidunt illum? Culpa laboriosam quod dolores
+          mollitia vel."
+              amount={500}
+              datetime="15 May 2020 8:30 am"
+            />
+            <RequestCard
+              title="Plumbing"
+              image={request_img}
+              summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus eveniet magni
+          dolorum tempore expedita eius asperiores, dolores blanditiis corrupti
+          obcaecati."
+              amount={500}
+              datetime="15 May 2020 8:30 am"
+            />
+            <RequestCard
+              title="Plumbing"
+              image={request_img}
+              summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus eveniet magni
+          dolorum tempore expedita eius asperiores, dolores blanditiis corrupti
+          obcaecati."
+              amount={500}
+              datetime="15 May 2020 8:30 am"
+            />
+            <RequestCard
+              title="Plumbing"
+              image={request_img}
+              summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus eveniet magni
+          dolorum tempore expedita eius asperiores, dolores blanditiis corrupti
+          obcaecati, perspiciatis omnis incidunt illum? Culpa laboriosam quod dolores
+          mollitia vel."
+              amount={500}
+              datetime="15 May 2020 8:30 am"
+            />
+          </RequestList>
         </TabPanel>
         <TabPanel value={value} index={2}>
-          Inbox
+          <Inbox />
         </TabPanel>
       </DashboardBody>
     </div>

@@ -5,6 +5,10 @@
   margin-bottom: 0 !important;
 }
 
+.margin-btm-8 {
+  margin-bottom: 0.8rem;
+}
+
 button.css-ueukts-MuiButtonBase-root-MuiToggleButton-root {
   padding: 0 !important;
   color: var(--clr-white) !important;
@@ -17,4 +21,17 @@ button.css-ueukts-MuiButtonBase-root-MuiToggleButton-root {
   &:hover {
     color: hsl(0, 0%, 100%) !important;
   }
+}
+
+.css-ryrseu-MuiRating-root {
+  font-size: 2.2rem !important;
+  margin-right: 2.4rem;
+}
+
+.flex-dir-cl {
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
 }
