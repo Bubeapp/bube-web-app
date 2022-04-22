@@ -17,7 +17,7 @@ function Footer() {
       <Container>
         <div className="footer">
           <p>&copy; Bube 2022</p>
-          <ul className="footer__list">
+          <ul className="footer__list footer__flex-dir-col">
             <li className="footer__item">
               <Link to="/" className="footer__link">
                 Contact

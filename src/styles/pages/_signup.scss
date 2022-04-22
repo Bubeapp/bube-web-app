@@ -1,6 +1,10 @@
 .signup {
   // margin-bottom: 6.4rem;
 
+  @include respond(tablet-port) {
+    padding: 0 2.4rem;
+  }
+
   &__header {
     @include authHeader;
     margin-bottom: 3.2rem;
