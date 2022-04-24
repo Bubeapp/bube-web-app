@@ -6,7 +6,7 @@ import illustration_02 from '../../../assets/illustration_02.svg';
 
 function AppFeaturesSection02() {
   return (
-    <section className="app-features-2__section">
+    <section className="app-features-2__section" id="section--app-features-2">
       <Container>
         <h2 className="app-features-2__caption">
           <span className="accent">Bube</span> search algorithm chooses from 5,000+{' '}

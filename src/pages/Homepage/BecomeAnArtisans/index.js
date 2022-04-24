@@ -5,7 +5,7 @@ import Container from '../../../layouts/Container';
 
 function BecomeAnArtisans() {
   return (
-    <section className="become-an-artisan__section">
+    <section className="become-an-artisan__section" id="section--become-an-artisan">
       <Container otherClassNames="flex">
         <div className="col-1-of-2">
           <div className="become-an-artisan__content">

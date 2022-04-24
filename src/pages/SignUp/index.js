@@ -70,7 +70,7 @@ function SignUp() {
           <h2>Create Account</h2>
           <p>
             Already have an account?{' '}
-            <Link className="signup__link" to="/">
+            <Link className="signup__link" to="/signin">
               Sign In
             </Link>
           </p>

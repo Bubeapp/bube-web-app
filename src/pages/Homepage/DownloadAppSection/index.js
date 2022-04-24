@@ -6,7 +6,7 @@ import illustration_03 from '../../../assets/illustration_03.png';
 
 function DownloadAppSection() {
   return (
-    <section className="download__section">
+    <section className="download__section" id="section--download">
       <Container>
         <div className="download__download flex">
           <div className="col-1-of-2">

@@ -1,6 +1,4 @@
 import React from 'react';
-import Button from '../../../components/Button';
-
 import Container from '../../../layouts/Container';
 
 import illustration_01 from '../../../assets/illustration_01.png';
@@ -8,7 +6,7 @@ import DownloadAppCta from '../../../components/DownloadAppCta';
 
 function AppFeaturesSection01() {
   return (
-    <section className="app-features__section">
+    <section className="app-features__section" id="section--app-features">
       <Container otherClassNames="flex">
         <div className="col-1-of-2">
           <div className="app-features__feature">
