@@ -1,4 +1,8 @@
 .signin {
+  @include respond(tablet-port) {
+    padding: 0 2.4rem;
+  }
+
   &__header {
     @extend .signup__header;
     @include authHeader;

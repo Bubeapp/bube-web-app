@@ -6,7 +6,7 @@ import target_lock from '../../../assets/target-lock_icon.svg';
 
 function HeroSection() {
   return (
-    <section className="hero__section">
+    <header className="hero__section" id="section--header">
       <Container>
         <h1 className="hero__heading">
           The easiest way to access <span className="accent">artisans</span> around you
@@ -35,7 +35,7 @@ function HeroSection() {
 
         <Slider />
       </Container>
-    </section>
+    </header>
   );
 }
 

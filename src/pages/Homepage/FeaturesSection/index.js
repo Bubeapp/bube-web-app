@@ -12,7 +12,7 @@ import badge_check_icon from '../../../assets/badge-check_icon.svg';
 
 function FeaturesSection() {
   return (
-    <section className="features__section">
+    <section className="features__section" id="section--features">
       <Container otherClassNames="flex">
         <div className="col-1-of-3">
           <div className="features__content">

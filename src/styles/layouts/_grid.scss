@@ -9,6 +9,10 @@ Global Container
   @include respond(laptop-s) {
     padding: 0 2.4rem;
   }
+
+  @include respond(mobile-m) {
+    padding: 0 1.2rem;
+  }
 }
 
 [class^='col-'] {

@@ -38,10 +38,35 @@ button.css-ueukts-MuiButtonBase-root-MuiToggleButton-root {
   }
 }
 
+.css-1z0bax7-MuiSvgIcon-root,
+.css-1tzp3k3-MuiSvgIcon-root {
+  display: none !important;
+
+  @include respond(tablet-port) {
+    display: block !important;
+    cursor: pointer;
+  }
+}
+
+.css-1tzp3k3-MuiSvgIcon-root {
+  // color: var(--clr-white);
+  position: absolute;
+  top: 1.2rem;
+  right: 1.6rem;
+  // margin-top: -1.6rem;
+  // margin-left: auto;
+}
+
 .flex-dir-cl {
   flex-direction: column;
 }
 
 .align-center {
   align-items: center;
+}
+
+.hidden {
+  @include respond(tablet-port) {
+    display: none;
+  }
 }

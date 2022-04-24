@@ -9,7 +9,7 @@ function DropDownMenu({ children, name, userAvatar }) {
       {userAvatar && (
         <img className="dropdown__avatar" src={userAvatar} alt="User avatar" />
       )}
-      <Link className="dropdown__link" to="/">
+      <Link className="dropdown__link" to="#">
         {name}
       </Link>
       {children}

@@ -6,6 +6,12 @@
 
   &__top {
     margin-bottom: 4.8rem;
+
+    & > *:not(:last-child) {
+      @include respond(tablet-port) {
+        margin-bottom: 2.4rem;
+      }
+    }
   }
 
   &__top,
@@ -13,6 +19,19 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    @include respond(tablet-port) {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  &__bottom {
+    & > * {
+      @include respond(tablet-port) {
+        width: 100%;
+      }
+    }
   }
 
   &__welcome {
@@ -35,6 +54,12 @@
 
     img {
       margin-right: 0.8rem;
+    }
+  }
+
+  &__tabs {
+    @include respond(tablet-port) {
+      margin-bottom: 2.4rem;
     }
   }
 
@@ -97,6 +122,10 @@
     div {
       display: flex;
       align-items: center;
+    }
+
+    @include respond(tablet-port) {
+      margin-bottom: 2.4rem;
     }
   }
 

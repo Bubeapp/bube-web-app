@@ -15,13 +15,13 @@ function VerifyEmail({ email }) {
       <Link className="btn btn--primary btn--full" to="/">
         Open email app
       </Link>
-      <p>
+      <p onClick={() => console.log('Resend code')}>
         Didn't recieved the email?{' '}
-        <Link className="verifyemail__link" to="/">
+        <Link className="verifyemail__link" to="#">
           Click to resend email
         </Link>
       </p>
-      <Link className="verifyemail__link btn btn--bg-none" to="/">
+      <Link className="verifyemail__link btn btn--bg-none" to="/signin">
         Back to Login
       </Link>
     </div>

@@ -1,4 +1,8 @@
 .verifyemail {
+  @include respond(tablet-port) {
+    margin: 0 2.4rem;
+  }
+
   @extend .form;
 
   img {

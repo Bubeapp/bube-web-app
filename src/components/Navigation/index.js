@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import React, { useRef, useState } from 'react';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
 import Button from '../Button';
 import NavItem from '../NavItem';
@@ -21,7 +23,20 @@ import notification_icon from '../../assets/notification_icon.svg';
 
 function Navigation() {
   const [isSignedIn, setIsSignedIn] = useState(true);
+  const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
+  const navGroup = useRef();
+  const navGroupDropdown = useRef();
+
+  const navigate = useNavigate();
+
   const { pathname } = useLocation();
+
+  const toggleMenu = e => {
+    setToggleMobileMenu(!toggleMobileMenu);
+
+    if (!isSignedIn) navGroup.current?.classList.toggle('hidden');
+    if (isSignedIn) navGroupDropdown?.current.classList.toggle('hidden');
+  };
 
   // adds Bottom Margin and backgroundColor
   // on NavBar component except on homepage
@@ -38,24 +53,38 @@ function Navigation() {
     <nav className="navbar" style={styleNavBar()}>
       <Container>
         <div className="navbar__nav">
-          <img className="navbar__logo" src={bube_logo} alt="Bube logo" />
-          <NavList>
-            <NavItem name="Home" />
-            <NavItem name="Features" />
-            <NavItem name="Download" />
-            <NavItem name="About Us" />
-            <NavItem name="Contact" />
-          </NavList>
-          <Button
-            onClick={() => console.log('Goto sign up page')}
-            classname="navbar__cta btn btn--primary"
-          >
-            {pathname === '/'
-              ? 'Login / Register'
-              : pathname === '/signup'
-              ? 'Login'
-              : 'Sign up'}
-          </Button>
+          <img
+            onClick={() => navigate('/')}
+            className="navbar__logo"
+            src={bube_logo}
+            alt="Bube logo"
+          />
+
+          <div className="navbar__nav-group hidden" ref={navGroup}>
+            <CloseIcon onClick={toggleMenu} sx={{ fontSize: '3rem' }} />
+            <NavList>
+              <NavItem name="Home" href={'/'} />
+              <NavItem name="Features" href={'/#section--features'} />
+              <NavItem name="Download" href={'/#section--download'} />
+              <NavItem name="About Us" href={'/#section--about'} />
+              <NavItem name="Contact" href={'/#section--footer'} />
+            </NavList>
+            <Button
+              onClick={() => {
+                if (pathname === '/signup') navigate('/signin');
+                else if (pathname !== '/signup') navigate('/signup');
+                toggleMenu();
+              }}
+              classname="navbar__cta btn btn--primary"
+            >
+              {pathname === '/'
+                ? 'Login / Register'
+                : pathname === '/signup'
+                ? 'Login'
+                : 'Sign up'}
+            </Button>
+          </div>
+          <MenuIcon onClick={toggleMenu} sx={{ fontSize: '4rem', color: '#4B4B66' }} />
         </div>
       </Container>
     </nav>
@@ -65,29 +94,37 @@ function Navigation() {
         <div className="navbar__nav">
           <img className="navbar__logo" src={bube_logo} alt="Bube logo" />
 
-          <NavList>
-            <NavItem name="Home" />
-            <NavItem name="Jobs" />
-            <NavItem name="Download" />
-            <DropDownMenu name="Help">
-              <ul className="dropdown__menu">
-                <DropDownItem icon={help_center} title="Help Center" />
-                <DropDownItem icon={question_icon} title="Ask Question " />
-              </ul>
-            </DropDownMenu>
-            <DropDownMenu name="Account" userAvatar={user_avatar}>
-              <ul className="dropdown__menu">
-                <DropDownItem icon={user_icon} title="Profile" />
-                <DropDownItem
-                  icon={notification_icon}
-                  title="Notifications"
-                  notifications={3}
-                />
-                <DropDownItem icon={setting_icon} title="Settings" />
-                <DropDownItem icon={logout_icon} title="Logout" />
-              </ul>
-            </DropDownMenu>
-          </NavList>
+          <div
+            className="navbar__nav-group navbar__nav-group-secondary hidden"
+            ref={navGroupDropdown}
+          >
+            <CloseIcon onClick={toggleMenu} sx={{ fontSize: '3rem' }} />
+            <NavList>
+              <NavItem name="Home" href={'/dashboard'} />
+              <NavItem name="Jobs" />
+              <NavItem name="Download" />
+              <DropDownMenu name="Help">
+                <ul className="dropdown__menu">
+                  <DropDownItem icon={help_center} title="Help Center" />
+                  <DropDownItem icon={question_icon} title="Ask Question " />
+                </ul>
+              </DropDownMenu>
+              <DropDownMenu name="Account" userAvatar={user_avatar}>
+                <ul className="dropdown__menu">
+                  <DropDownItem icon={user_icon} title="Profile" />
+                  <DropDownItem
+                    icon={notification_icon}
+                    title="Notifications"
+                    notifications={3}
+                  />
+                  <DropDownItem icon={setting_icon} title="Settings" />
+                  <DropDownItem icon={logout_icon} title="Logout" />
+                </ul>
+              </DropDownMenu>
+            </NavList>
+          </div>
+
+          <MenuIcon onClick={toggleMenu} sx={{ fontSize: '4rem', color: '#4B4B66' }} />
         </div>
       </div>
     </nav>

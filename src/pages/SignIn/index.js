@@ -51,7 +51,7 @@ function SignIn() {
           <h2>Welcome Back!</h2>
           <p>
             Don't have an account?{' '}
-            <Link className="signin__link" to="/">
+            <Link className="signin__link" to="/signup">
               Sign up
             </Link>
           </p>

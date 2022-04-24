@@ -32,6 +32,16 @@
   align-items: center;
   padding: 1.6rem 0;
 
+  @include respond(tablet-port) {
+    flex-direction: column;
+  }
+
+  & > *:not(:last-child) {
+    @include respond(tablet-port) {
+      margin-bottom: 2.4rem;
+    }
+  }
+
   &__section {
     padding: 6.4rem 0;
   }
@@ -47,6 +57,23 @@
   &__list:last-of-type &__item {
     &:not(:last-child) {
       margin-right: 1.6rem;
+
+      @include respond(tablet-port) {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__flex-dir-col {
+    @include respond(tablet-port) {
+      flex-direction: column;
+    }
+
+    & > *:not(:last-child) {
+      @include respond(tablet-port) {
+        margin-right: 0 !important;
+        margin-bottom: 1.6rem;
+      }
     }
   }
 

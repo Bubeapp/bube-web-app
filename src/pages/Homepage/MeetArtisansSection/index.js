@@ -11,7 +11,7 @@ import chevron_right from '../../../assets/chevron-right_icon.svg';
 
 function MeetArtisansSection() {
   return (
-    <section className="meet-artisans__section">
+    <section className="meet-artisans__section" id="section--meet-artisans">
       <Container>
         <h2 className="meet-artisans__caption">
           Meet top <span className="accent">artisans</span>{' '}
