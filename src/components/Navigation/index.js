@@ -22,20 +22,20 @@ import question_icon from '../../assets/message-question_icon.svg';
 import notification_icon from '../../assets/notification_icon.svg';
 
 function Navigation() {
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const [isSignedIn, setIsSignedIn] = useState(true);
   const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
-
   const navGroup = useRef();
   const navGroupDropdown = useRef();
 
   const navigate = useNavigate();
+
   const { pathname } = useLocation();
 
   const toggleMenu = e => {
     setToggleMobileMenu(!toggleMobileMenu);
 
-    if (!isSignedIn) navGroup.current.classList.toggle('hidden');
-    else navGroupDropdown.current.classList.toggle('hidden');
+    if (!isSignedIn) navGroup.current?.classList.toggle('hidden');
+    if (isSignedIn) navGroupDropdown?.current.classList.toggle('hidden');
   };
 
   // adds Bottom Margin and backgroundColor
@@ -60,7 +60,7 @@ function Navigation() {
             alt="Bube logo"
           />
 
-          <div className="navbar__nav-group" ref={navGroup}>
+          <div className="navbar__nav-group hidden" ref={navGroup}>
             <CloseIcon onClick={toggleMenu} sx={{ fontSize: '3rem' }} />
             <NavList>
               <NavItem name="Home" href={'/'} />
@@ -95,12 +95,12 @@ function Navigation() {
           <img className="navbar__logo" src={bube_logo} alt="Bube logo" />
 
           <div
-            className="navbar__nav-group navbar__nav-group-secondary"
+            className="navbar__nav-group navbar__nav-group-secondary hidden"
             ref={navGroupDropdown}
           >
             <CloseIcon onClick={toggleMenu} sx={{ fontSize: '3rem' }} />
             <NavList>
-              <NavItem name="Home" />
+              <NavItem name="Home" href={'/dashboard'} />
               <NavItem name="Jobs" />
               <NavItem name="Download" />
               <DropDownMenu name="Help">

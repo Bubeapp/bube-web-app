@@ -62,7 +62,7 @@ function ResetPassword() {
           Reset password
         </Button>
         <Button classname="forgotpassword__btn btn btn--bg-none">
-          <Link className="forgotpassword__resend" to="/">
+          <Link className="forgotpassword__resend" to="/signin">
             Back to Login
           </Link>
         </Button>

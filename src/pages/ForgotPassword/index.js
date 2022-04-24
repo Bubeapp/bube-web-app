@@ -47,9 +47,13 @@ function ForgotPassword() {
         <Button type="submit" classname="btn btn--primary btn--full">
           Send reset instructions
         </Button>
-        <Button classname="forgotpassword__btn btn btn--bg-none">
+        <Button
+          type="button"
+          onClick={() => console.log('Resend Code')}
+          classname="forgotpassword__btn btn btn--bg-none"
+        >
           Didn't get code?{' '}
-          <Link className="forgotpassword__resend" to="/">
+          <Link className="forgotpassword__resend" to="#">
             Resend code
           </Link>
         </Button>

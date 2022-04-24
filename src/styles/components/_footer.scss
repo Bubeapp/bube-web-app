@@ -57,6 +57,10 @@
   &__list:last-of-type &__item {
     &:not(:last-child) {
       margin-right: 1.6rem;
+
+      @include respond(tablet-port) {
+        margin-bottom: 0;
+      }
     }
   }
 

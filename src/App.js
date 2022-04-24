@@ -30,13 +30,13 @@ function App() {
       <div className="app" style={{ backgroundColor: 'hsla(0, 0%, 95%, 1)' }}>
         {pathname !== '/faqs' && <Navigation />}
         <Routes>
-          <Route exact path="/dashboard/:user" element={<Dashboard />} />
-          <Route exact path="/services/:service" element={<Services />} />
+          <Route exact path="/dashboard" element={<Dashboard />} />
+          <Route exact path="/services" element={<Services />} />
           <Route exact path="/services/listing" element={<ServicesListings />} />
           <Route exact path="/service/:details" element={<ServicesDetails />} />
-          <Route exact path="/profile/:user" element={<Profile />} />
-          <Route exact path="/notification/:user" element={<Notification />} />
-          <Route exact path="/settings/:user" element={<Settings />} />
+          <Route exact path="/profile" element={<Profile />} />
+          <Route exact path="/notifications" element={<Notification />} />
+          <Route exact path="/settings" element={<Settings />} />
           <Route exact path="/signup" element={<SignUp />} />
           <Route exact path="/signin" element={<SignIn />} />
           <Route exact path="/success" element={<Success />} />
