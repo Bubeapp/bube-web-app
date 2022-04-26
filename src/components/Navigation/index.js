@@ -22,7 +22,7 @@ import question_icon from '../../assets/message-question_icon.svg';
 import notification_icon from '../../assets/notification_icon.svg';
 
 function Navigation() {
-  const [isSignedIn, setIsSignedIn] = useState(true);
+  const [isSignedIn, setIsSignedIn] = useState(false);
   const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
   const navGroup = useRef();
   const navGroupDropdown = useRef();

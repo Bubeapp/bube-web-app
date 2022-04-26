@@ -42,9 +42,9 @@ function SignUp() {
     confirmpassword: '',
   };
 
-  const onSubmit = (values, onSubmitProps) => {
-    signUp({ ...values });
-    setTimeout(() => onSubmitProps.setSubmitting(false), 5000);
+  const onSubmit = async (values, onSubmitProps) => {
+    await signUp({ ...values });
+    onSubmitProps.setSubmitting(false);
   };
 
   const {

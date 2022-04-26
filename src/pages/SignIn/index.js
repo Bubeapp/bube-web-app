@@ -23,9 +23,10 @@ function SignIn() {
     password: '',
   };
 
-  const onSubmit = (values, onSubmitProps) => {
-    signIn({ ...values });
-    setTimeout(() => onSubmitProps.setSubmitting(false), 5000);
+  const onSubmit = async (values, onSubmitProps) => {
+    await signIn({ ...values });
+    onSubmitProps.setSubmitting(false);
+    console.log('Submited');
   };
 
   const {
