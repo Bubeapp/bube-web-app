@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -18,7 +18,10 @@ import categories_img_03 from '../../../assets/categories_img_03.png';
 import request_img from '../../../assets/request_img.png';
 import Inbox from '../../../components/Inbox';
 
+import { UserContext } from '../../../contexts/user/userContext';
+
 function Dashboard() {
+  const { currentUser } = useContext(UserContext);
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -37,7 +40,7 @@ function Dashboard() {
       <DashhoardHeader>
         <div className="dashboard__top">
           <div className="dashboard__welcome">
-            <h2>Hello John,</h2>
+            <h2>{`Hello ${currentUser.username},`}</h2>
             <span>Welcome Back!</span>
           </div>
 

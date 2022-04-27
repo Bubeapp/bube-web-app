@@ -1,5 +1,5 @@
-import React, { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useContext, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -9,6 +9,7 @@ import InputField from '../../components/InputField';
 import PasswordField from '../../components/PasswordField';
 
 import { AuthContext } from '../../contexts/auth/authContext';
+// import { UserContext } from '../../contexts/user/userContext';
 
 function SignIn() {
   const { signIn } = useContext(AuthContext);
@@ -26,7 +27,6 @@ function SignIn() {
   const onSubmit = async (values, onSubmitProps) => {
     await signIn({ ...values });
     onSubmitProps.setSubmitting(false);
-    console.log('Submited');
   };
 
   const {

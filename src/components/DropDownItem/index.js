@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-function DropDownItem({ icon, title, notifications }) {
+function DropDownItem({ icon, title, notifications, onClick }) {
   return (
-    <li className="dropdown__menu-item">
+    <li onClick={onClick} className="dropdown__menu-item">
       <Link
         className="dropdown__menu-link"
         to={`/${title.split(' ').join('').toLowerCase()}`}

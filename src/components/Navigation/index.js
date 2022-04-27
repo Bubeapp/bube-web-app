@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useContext, useRef, useState } from 'react';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
@@ -21,8 +21,13 @@ import setting_icon from '../../assets/setting_icon.svg';
 import question_icon from '../../assets/message-question_icon.svg';
 import notification_icon from '../../assets/notification_icon.svg';
 
+import { UserContext } from '../../contexts/user/userContext';
+import { AuthContext } from '../../contexts/auth/authContext';
+
 function Navigation() {
-  const [isSignedIn, setIsSignedIn] = useState(false);
+  const { isSignedIn, currentUser, setSignedIn, setUser } = useContext(UserContext);
+  const { signOut } = useContext(AuthContext);
+  // const [isSignedIn, setIsSignedIn] = useState(false);
   const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
   const navGroup = useRef();
   const navGroupDropdown = useRef();
@@ -49,7 +54,7 @@ function Navigation() {
     };
   };
 
-  return !isSignedIn ? (
+  return !isSignedIn && !currentUser ? (
     <nav className="navbar" style={styleNavBar()}>
       <Container>
         <div className="navbar__nav">
@@ -92,7 +97,12 @@ function Navigation() {
     <nav className="navbar">
       <div className="container">
         <div className="navbar__nav">
-          <img className="navbar__logo" src={bube_logo} alt="Bube logo" />
+          <img
+            onClick={() => navigate('/dashboard')}
+            className="navbar__logo"
+            src={bube_logo}
+            alt="Bube logo"
+          />
 
           <div
             className="navbar__nav-group navbar__nav-group-secondary hidden"
@@ -118,7 +128,15 @@ function Navigation() {
                     notifications={3}
                   />
                   <DropDownItem icon={setting_icon} title="Settings" />
-                  <DropDownItem icon={logout_icon} title="Logout" />
+                  <DropDownItem
+                    onClick={async () => {
+                      await signOut();
+                      setUser(null);
+                      setSignedIn(false);
+                    }}
+                    icon={logout_icon}
+                    title="Logout"
+                  />
                 </ul>
               </DropDownMenu>
             </NavList>

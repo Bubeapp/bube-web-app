@@ -1,22 +1,15 @@
 import React, { createContext, useState } from 'react';
 import axios from '../../util/axios';
 
-const loginToken =
-  'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MjY3NmNlZjMwNTllOWI5MDVmODNjZGEiLCJlbWFpbCI6ImttYmFnd3UxMkBnbWFpbC5jb20iLCJyb2xlcyI6WyJ1c2VyIl0sInVzZXJuYW1lIjoid2hpdGVnb2QiLCJpc1ZlcmlmaWVkIjpmYWxzZSwic3RhdHVzIjoiQUNUSVZFIiwiaWF0IjoxNjUwOTQ1MjY5LCJleHAiOjE2NTg3MjEyNjl9.VJd0hpRiLvoHTn4rTORSFLDwKdogKx8KrSS2J69383c';
-
 export const AuthContext = createContext({
-  isSignedIn: false,
-  token: null,
-  currentUser: null,
+  token: sessionStorage.getItem('jwtToken') || null,
   signUp: () => {},
   signIn: () => {},
   signOut: () => {},
 });
 
 const AuthProvider = ({ children }) => {
-  const [isSignedIn, setIsSignedIn] = useState(false);
   const [token, setToken] = useState(null);
-  const [currentUser, setCurrentUser] = useState(null);
 
   const signUp = async userData => {
     const newUser = {
@@ -48,21 +41,22 @@ const AuthProvider = ({ children }) => {
       );
 
       if (status !== 200 && !results?.success) throw Error();
-      console.log(results?.data);
+      // console.log(results?.data);
+      const { token } = results?.data;
+      sessionStorage.setItem('jwtToken', token);
+      setToken(token);
     } catch (err) {
       console.log('Something went wrong', err);
     }
   };
 
   const signOut = () => {
+    sessionStorage.removeItem('jwtToken');
     setToken(null);
-    setCurrentUser(null);
   };
 
   return (
-    <AuthContext.Provider
-      value={{ isSignedIn, currentUser, token, signUp, signIn, signOut }}
-    >
+    <AuthContext.Provider value={{ token, signUp, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   );
