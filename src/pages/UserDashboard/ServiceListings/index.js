@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -6,7 +6,7 @@ import Tab from '@mui/material/Tab';
 import ButtonMakeRequest from '../../../components/Button/ButtonMakeRequest';
 import DashhoardHeader from '../../../components/DashboardHeader';
 import DashboardSearchBar from '../../../components/DashboardSearchBar';
-import Dashboardody from '../../../components/DashboardBody';
+// import Dashboardody from '../../../components/DashboardBody';
 // import Button from '../../../components/Button';
 // import ServiceProviderCard from '../../../components/ServiceProviderCard';
 
@@ -15,7 +15,10 @@ import Dashboardody from '../../../components/DashboardBody';
 
 import ServiceMapView from '../../../components/ServiceMapView';
 
+import { UserContext } from '../../../contexts/user/userContext';
+
 function ServicesListings() {
+  const { currentUser } = useContext(UserContext);
   const [value, setValue] = useState(0);
 
   const handleChange = (event, newValue) => {
@@ -34,7 +37,7 @@ function ServicesListings() {
       <DashhoardHeader>
         <div className="dashboard__top">
           <div className="dashboard__welcome">
-            <h2>Hello John,</h2>
+            <h2>{`Hello ${currentUser?.username},`}</h2>
             <span>Welcome Back!</span>
           </div>
 

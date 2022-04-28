@@ -9,7 +9,7 @@ export const AuthContext = createContext({
 });
 
 const AuthProvider = ({ children }) => {
-  const [token, setToken] = useState(null);
+  const [token, setToken] = useState(sessionStorage.getItem('jwtToken') || null);
 
   const signUp = async userData => {
     const newUser = {
@@ -51,7 +51,7 @@ const AuthProvider = ({ children }) => {
   };
 
   const signOut = () => {
-    sessionStorage.removeItem('jwtToken');
+    sessionStorage.clear();
     setToken(null);
   };
 

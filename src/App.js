@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 
 import Footer from './components/Footer';
@@ -53,7 +53,7 @@ function App() {
           path="/services/:details"
           element={<ProtectedRoute component={ServicesDetails} />}
         />
-        <Route exact path="/profile" element={<ProtectedRoute component={Profile} />} />
+        <Route exact path="/me" element={<ProtectedRoute component={Profile} />} />
         <Route
           exact
           path="/notifications"
@@ -69,7 +69,7 @@ function App() {
         <Route
           exact
           path="/signin"
-          element={!currentUser ? <SignIn /> : <Navigate to="/dashboard" />}
+          element={!currentUser ? <SignIn /> : <Navigate to={'/dashboard'} />}
         />
         <Route exact path="/logout" element={<Navigate to="/signin" />} />
         <Route exact path="/success" element={<Success />} />

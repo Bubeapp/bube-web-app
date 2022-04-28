@@ -1,5 +1,5 @@
-import React, { useEffect, useContext, useRef, useState } from 'react';
-import { Link, useNavigate, useLocation } from 'react-router-dom';
+import React, { useContext, useRef, useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
 
@@ -121,13 +121,14 @@ function Navigation() {
               </DropDownMenu>
               <DropDownMenu name="Account" userAvatar={user_avatar}>
                 <ul className="dropdown__menu">
-                  <DropDownItem icon={user_icon} title="Profile" />
+                  <DropDownItem icon={user_icon} title="Profile" href="me" />
                   <DropDownItem
                     icon={notification_icon}
                     title="Notifications"
+                    href="notifications"
                     notifications={3}
                   />
-                  <DropDownItem icon={setting_icon} title="Settings" />
+                  <DropDownItem icon={setting_icon} title="Settings" href="settings" />
                   <DropDownItem
                     onClick={async () => {
                       await signOut();

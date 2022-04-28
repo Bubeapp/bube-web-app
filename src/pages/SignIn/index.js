@@ -1,5 +1,5 @@
-import React, { useContext, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -83,7 +83,7 @@ function SignIn() {
           classname="btn btn--primary btn--full"
           disabled={!(dirty && isValid) || isSubmitting}
         >
-          Sign in
+          {isSubmitting ? 'Please wait...' : 'Sign in'}
         </Button>
       </Form>
     </div>

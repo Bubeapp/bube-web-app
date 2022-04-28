@@ -15,7 +15,9 @@ const UserProvider = ({ children }) => {
   const { decodedToken, isExpired } = useJwt(token);
 
   const [isSignedIn, setIsSignedIn] = useState(false);
-  const [currentUser, setCurrentUser] = useState(null);
+  const [currentUser, setCurrentUser] = useState(
+    JSON.parse(sessionStorage.getItem('user')) || null
+  );
 
   const setUser = user => {
     setCurrentUser(user);
@@ -41,6 +43,7 @@ const UserProvider = ({ children }) => {
 
         setUser(user);
         setSignedIn(true);
+        sessionStorage.setItem('user', JSON.stringify(user));
       } catch (err) {
         console.log(err);
       }

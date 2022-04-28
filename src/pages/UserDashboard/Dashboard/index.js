@@ -40,7 +40,7 @@ function Dashboard() {
       <DashhoardHeader>
         <div className="dashboard__top">
           <div className="dashboard__welcome">
-            <h2>{`Hello ${currentUser.username},`}</h2>
+            <h2>{`Hello ${currentUser?.username},`}</h2>
             <span>Welcome Back!</span>
           </div>
 
