@@ -85,6 +85,11 @@
       flex-shrink: 0;
     }
 
+    &-main {
+      width: 100%;
+      // height: 100%;
+    }
+
     &-list {
       // & > *:not(:last-child) {
       //   margin-bottom: 2.4rem;
@@ -227,8 +232,14 @@
   &__map {
     margin-top: 1.2rem;
     margin-bottom: 1.2rem;
+    height: 100%;
   }
 
   // &__address {
   // }
 }
+
+// #map {
+//   width: 100%;
+//   height: 100%;
+// }

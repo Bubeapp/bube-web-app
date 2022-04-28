@@ -9,6 +9,7 @@ import InputField from '../../components/InputField';
 import PasswordField from '../../components/PasswordField';
 
 import { AuthContext } from '../../contexts/auth/authContext';
+// import { UserContext } from '../../contexts/user/userContext';
 
 function SignIn() {
   const { signIn } = useContext(AuthContext);
@@ -23,9 +24,9 @@ function SignIn() {
     password: '',
   };
 
-  const onSubmit = (values, onSubmitProps) => {
-    signIn({ ...values });
-    setTimeout(() => onSubmitProps.setSubmitting(false), 5000);
+  const onSubmit = async (values, onSubmitProps) => {
+    await signIn({ ...values });
+    onSubmitProps.setSubmitting(false);
   };
 
   const {
@@ -82,7 +83,7 @@ function SignIn() {
           classname="btn btn--primary btn--full"
           disabled={!(dirty && isValid) || isSubmitting}
         >
-          Sign in
+          {isSubmitting ? 'Please wait...' : 'Sign in'}
         </Button>
       </Form>
     </div>

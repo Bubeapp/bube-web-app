@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
 
@@ -13,7 +13,10 @@ import CustomModal from '../../../components/Modal';
 import Form from '../../../components/Form';
 import PasswordField from '../../../components/PasswordField';
 
+import { UserContext } from '../../../contexts/user/userContext';
+
 function Profile() {
+  const { currentUser } = useContext(UserContext);
   const [openModal, setOpenModal] = useState(false);
 
   const handleOpen = () => setOpenModal(true);
@@ -28,11 +31,11 @@ function Profile() {
   });
 
   const initialValues = {
-    username: 'kescript',
-    email: 'kescript@gmail.com',
-    firstname: 'Kester',
-    lastname: 'Nnamani',
-    phone: '09045328988',
+    username: currentUser.username,
+    email: currentUser.email,
+    firstname: currentUser.firstname,
+    lastname: currentUser.lastname,
+    phone: 234 + currentUser.phone,
   };
 
   const onSubmit = (values, onSubmitProps) => {
