@@ -10,7 +10,7 @@ function CustomModal({ children, open, handleOpen, handleClose }) {
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
       >
-        {children}
+        <div className="modal-container">{children}</div>
       </Modal>
     </div>
   );
