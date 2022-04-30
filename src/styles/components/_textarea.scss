@@ -1,0 +1,31 @@
+.textarea {
+  font-size: var(--fs-400);
+  font-family: inherit;
+  font-weight: inherit;
+  width: 100%;
+  min-height: 9.6rem;
+  background: hsla(0, 0%, 100%, 1);
+  border-radius: 0.4rem;
+  border: 1.3px solid transparent;
+  outline: none;
+  padding: 0.8rem 1.2rem;
+  color: var(--clr-blk-600);
+  transition: all 0.2s;
+
+  &:focus {
+    border: 1.3px solid var(--clr-primary-500);
+  }
+
+  &::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: var(--clr-blk-200);
+    border-radius: 0.8rem;
+  }
+}

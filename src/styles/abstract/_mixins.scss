@@ -86,6 +86,12 @@
     }
   }
 
+  @if ($breakpoint == mobile-xl) {
+    @media screen and (max-width: 640px) {
+      @content;
+    }
+  }
+
   @if ($breakpoint == tablet-port) {
     @media only screen and (max-width: 840px) {
       @content;

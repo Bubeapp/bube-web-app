@@ -73,9 +73,17 @@
   }
 
   &__view {
+    @include respond(mobile-xl) {
+      overflow-x: scroll;
+    }
+
     &-container {
       display: flex;
       max-height: 100vh;
+
+      @include respond(mobile-xl) {
+        width: 64rem;
+      }
     }
 
     &-side {
@@ -83,6 +91,10 @@
       padding: 0 2.4rem;
       padding-top: 2.4rem;
       flex-shrink: 0;
+
+      @include respond(tablet-port) {
+        max-width: 40rem;
+      }
     }
 
     &-main {

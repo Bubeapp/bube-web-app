@@ -6,6 +6,10 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(40rem, 1fr));
     grid-gap: 2.4rem;
+
+    @include respond(mobile-l) {
+      grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    }
   }
 
   &__header {
