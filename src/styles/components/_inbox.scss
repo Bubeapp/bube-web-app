@@ -2,8 +2,17 @@
   display: flex;
   max-height: 100vh;
 
+  @include respond(mobile-xl) {
+    width: 64rem;
+    overflow-x: scroll;
+  }
+
   &__side {
     width: 30rem;
+
+    @include respond(tablet-port) {
+      width: 28rem;
+    }
   }
 
   &__inner {
