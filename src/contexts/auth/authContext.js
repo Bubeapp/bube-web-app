@@ -6,6 +6,8 @@ export const AuthContext = createContext({
   signUp: () => {},
   signIn: () => {},
   signOut: () => {},
+  forgotpassword: () => {},
+  resetpassword: () => {},
 });
 
 const AuthProvider = ({ children }) => {
@@ -55,8 +57,24 @@ const AuthProvider = ({ children }) => {
     setToken(null);
   };
 
+  const forgotpassword = async email => {
+    console.log(email);
+    // try {
+    //   const res = await axios.post('/password-reset-request', email);
+    //   console.log(res);
+    // } catch (err) {
+    //   console.log(err);
+    // }
+  };
+
+  const resetpassword = async password => {
+    console.log(password);
+  };
+
   return (
-    <AuthContext.Provider value={{ token, signUp, signIn, signOut }}>
+    <AuthContext.Provider
+      value={{ token, signUp, signIn, signOut, forgotpassword, resetpassword }}
+    >
       {children}
     </AuthContext.Provider>
   );

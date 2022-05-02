@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { useFormik } from 'formik';
 import * as Yup from 'yup';
@@ -6,20 +6,23 @@ import * as Yup from 'yup';
 import Button from '../../components/Button';
 import Form from '../../components/Form';
 import InputField from '../../components/InputField';
-
-const validationSchema = Yup.object().shape({
-  email: Yup.string().email('Invalid email').required('Email field is required'),
-});
-
-const initialValues = {
-  email: '',
-};
-
-const onSubmit = values => {
-  console.log(values);
-};
+import { AuthContext } from '../../contexts/auth/authContext';
 
 function ForgotPassword() {
+  const { forgotpassword } = useContext(AuthContext);
+
+  const validationSchema = Yup.object().shape({
+    email: Yup.string().email('Invalid email').required('Email field is required'),
+  });
+
+  const initialValues = {
+    email: '',
+  };
+
+  const onSubmit = values => {
+    forgotpassword(values);
+  };
+
   const { values, errors, handleChange, handleSubmit, setFieldTouched, touched } =
     useFormik({
       initialValues,

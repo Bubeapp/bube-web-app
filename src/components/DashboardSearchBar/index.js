@@ -5,7 +5,7 @@ import search_icon from '../../assets/search_icon.svg';
 function DashboardSearchBar({ onSubmit }) {
   return (
     <form onSubmit={onSubmit} className="dashboard__search-form">
-      <button>
+      <button type="submit">
         <img src={search_icon} alt="search icon" />
       </button>
       <input
