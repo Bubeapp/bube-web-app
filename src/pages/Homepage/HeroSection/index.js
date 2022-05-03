@@ -1,10 +1,26 @@
 import React from 'react';
+import { useFormik } from 'formik';
+
 import Slider from '../../../components/Slider';
 import Container from '../../../layouts/Container';
 
 import target_lock from '../../../assets/target-lock_icon.svg';
 
 function HeroSection() {
+  const initialValues = {
+    search: '',
+  };
+
+  const onSubmit = (query, onSubmitProps) => {
+    console.log(query);
+    onSubmitProps.setSubmitting(false);
+  };
+
+  const { values, handleChange, handleSubmit, isSubmitting } = useFormik({
+    initialValues,
+    onSubmit,
+  });
+
   return (
     <header className="hero__section" id="section--header">
       <Container>
@@ -16,15 +32,21 @@ function HeroSection() {
           Bube makes it easier for you to connect with artisans around you for your
           various needs. Download the App today to get started
         </p>
-        <form className="hero__form">
+        <form className="hero__form" onSubmit={handleSubmit}>
           <input
             className="hero__search"
             type="search"
             placeholder="Search for services"
             name="search"
             id="search"
+            value={values.searchQuery}
+            onChange={handleChange}
           />
-          <button className="hero__btn btn btn--primary btn--rounded">
+          <button
+            disabled={isSubmitting}
+            type="submit"
+            className="hero__btn btn btn--primary btn--rounded"
+          >
             Send Request
           </button>
         </form>

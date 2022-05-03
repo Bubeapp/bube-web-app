@@ -9,16 +9,14 @@ import circle_left_icon from '../../../assets/arrow-circle-left_icon.svg';
 
 import search_icon from '../../../assets/search_icon.svg';
 import DashboardSearchBar from '../../../components/DashboardSearchBar';
+import ButtonBack from '../../../components/Button/ButtonBack';
 
 function Services() {
   return (
     <div>
       <DashboardHeader>
         <div className="dashboard__top">
-          <Button classname="dashboard__request-btn btn btn--ghost">
-            <img src={circle_left_icon} alt="Plus icon" />
-            <span>Back</span>
-          </Button>
+          <ButtonBack />
 
           <ButtonMakeRequest />
         </div>

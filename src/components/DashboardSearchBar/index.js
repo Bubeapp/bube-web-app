@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import search_icon from '../../assets/search_icon.svg';
 
-function DashboardSearchBar({ onSubmit }) {
+function DashboardSearchBar() {
+  const [searchQuery, setSearchQuery] = useState('');
+
+  const handleInputChange = event => {
+    setSearchQuery(event.target.value);
+  };
+
+  const handleOnSubmit = event => {
+    event.preventDefault();
+    console.log('Search Query: ', searchQuery);
+  };
+
   return (
-    <form onSubmit={onSubmit} className="dashboard__search-form">
+    <form onSubmit={handleOnSubmit} className="dashboard__search-form">
       <button type="submit">
         <img src={search_icon} alt="search icon" />
       </button>
@@ -13,6 +24,8 @@ function DashboardSearchBar({ onSubmit }) {
         placeholder="Search for services"
         name="search"
         id="search"
+        value={searchQuery}
+        onChange={handleInputChange}
       />
     </form>
   );

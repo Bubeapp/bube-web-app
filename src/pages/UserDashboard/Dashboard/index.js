@@ -24,7 +24,7 @@ import Form from '../../../components/Form';
 import TextArea from '../../../components/TextArea';
 import DatePicker from '../../../components/DatePicker';
 import Button from '../../../components/Button';
-import CustomRadio from '../../../components/Radio';
+// import CustomRadio from '../../../components/Radio';
 import {
   FormControl,
   FormControlLabel,
@@ -78,11 +78,7 @@ function Dashboard() {
               </Tabs>
             </div>
             <div className="dashboard__search">
-              <DashboardSearchBar
-                onSubmit={() => {
-                  console.log('Search Query');
-                }}
-              />
+              <DashboardSearchBar />
             </div>
           </div>
         </DashhoardHeader>
