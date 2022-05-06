@@ -5,6 +5,14 @@
 .notification {
   &__container {
     @extend %container;
+
+    @include respond(tablet-port) {
+      padding: 0 3.2rem;
+    }
+
+    @include respond(mobile-l) {
+      padding: 0 2.4rem;
+    }
   }
 
   &__actions {
@@ -13,10 +21,32 @@
     & > *:not(:last-child) {
       margin-right: 1.6rem;
     }
+
+    @include respond(mobile-xl) {
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    & > *:first-child {
+      @include respond(mobile-xl) {
+        flex: 1;
+      }
+    }
   }
 
   &__header {
     @extend %header;
+
+    @include respond(mobile-xl) {
+      flex-direction: column;
+      align-items: start;
+    }
+
+    & > *:not(:last-child) {
+      @include respond(mobile-xl) {
+        margin-bottom: 2.4rem;
+      }
+    }
   }
 
   &__icon {
@@ -67,6 +97,16 @@
     padding: 1.6rem 1.2rem;
     background-color: var(--clr-white);
     border-radius: 0.8rem;
+
+    @include respond(mobile-xl) {
+      flex-direction: column;
+    }
+
+    & > *:not(:last-child) {
+      @include respond(mobile-xl) {
+        margin-bottom: 1.6rem;
+      }
+    }
 
     h4 {
       font-size: var(--fs-400);

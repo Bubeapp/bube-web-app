@@ -73,4 +73,14 @@
       margin-right: 0.8rem;
     }
   }
+
+  &--grey {
+    color: var(--clr-blk-600);
+    background-color: var(--clr-blk-200);
+  }
+
+  &--badge {
+    color: var(--clr-warning-500);
+    background-color: var(--clr-warning-100);
+  }
 }

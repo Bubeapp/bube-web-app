@@ -1,4 +1,5 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import axios from '../../../util/axios';
 
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -24,7 +25,8 @@ import Form from '../../../components/Form';
 import TextArea from '../../../components/TextArea';
 import DatePicker from '../../../components/DatePicker';
 import Button from '../../../components/Button';
-// import CustomRadio from '../../../components/Radio';
+import LoadingSpinner from '../../../components/LoadingSpinner';
+
 import {
   FormControl,
   FormControlLabel,
@@ -32,9 +34,11 @@ import {
   Radio,
   RadioGroup,
 } from '@mui/material';
+import { ServicesContext } from '../../../contexts/services/serviceContext';
 
 function Dashboard() {
   const { currentUser } = useContext(UserContext);
+  const { categories, getCategories } = useContext(ServicesContext);
   const [openModal, setOpenModal] = useState(false);
   const [value, setValue] = useState(0);
 
@@ -51,6 +55,10 @@ function Dashboard() {
       'aria-controls': `simple-tabpanel-${index}`,
     };
   }
+
+  useEffect(() => {
+    getCategories();
+  }, [getCategories]);
 
   return (
     <>
@@ -86,6 +94,17 @@ function Dashboard() {
           <TabPanel value={value} index={0}>
             <div className="services">
               <div className="services__categories">
+                {categories ? (
+                  categories.map(category => (
+                    <ServicesCard
+                      key={category._id}
+                      cardTitle={category.name}
+                      cardImage={category.image_cover}
+                    />
+                  ))
+                ) : (
+                  <LoadingSpinner />
+                )}
                 <ServicesCard
                   cardTitle="Events and entertainment"
                   cardImage={categories_img_01}

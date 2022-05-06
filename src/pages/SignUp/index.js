@@ -151,7 +151,7 @@ function SignUp() {
           classname="btn btn--primary btn--full"
           disabled={!(dirty && isValid) || isSubmitting}
         >
-          Sign in
+          {isSubmitting ? 'Please wait...' : 'Sign in'}
         </Button>
       </Form>
     </div>

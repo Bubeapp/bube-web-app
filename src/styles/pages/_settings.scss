@@ -3,6 +3,14 @@
 
   &__container {
     @extend %container;
+
+    @include respond(tablet-port) {
+      padding: 0 3.2rem;
+    }
+
+    @include respond(mobile-l) {
+      padding: 0 2.4rem;
+    }
   }
 
   &__header {

@@ -21,6 +21,20 @@ function ServiceMapView() {
         attribution:
           '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       }).addTo(map);
+
+      L.marker([position.coords.latitude, position.coords.longitude])
+        .addTo(map)
+        .bindPopup(
+          L.popup({
+            maxWidth: 250,
+            minWidth: 100,
+            autoClose: false,
+            closeOnClick: false,
+            className: `running-popup`,
+          })
+        )
+        .setPopupContent('Kola Painting & Company')
+        .openPopup();
     };
 
     if (navigator.geolocation)

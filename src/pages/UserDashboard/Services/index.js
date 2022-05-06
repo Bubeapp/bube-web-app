@@ -1,17 +1,18 @@
 import React from 'react';
 
-import Button from '../../../components/Button';
+// import Button from '../../../components/Button';
 import ButtonMakeRequest from '../../../components/Button/ButtonMakeRequest';
 import DashboardHeader from '../../../components/DashboardHeader';
 import DashboardBody from '../../../components/DashboardBody';
 
-import circle_left_icon from '../../../assets/arrow-circle-left_icon.svg';
-
-import search_icon from '../../../assets/search_icon.svg';
 import DashboardSearchBar from '../../../components/DashboardSearchBar';
 import ButtonBack from '../../../components/Button/ButtonBack';
+import { useLocation } from 'react-router-dom';
 
 function Services() {
+  const { pathname } = useLocation();
+  const category = pathname.replace(/%20/g, ' ').split('/').slice(-1).toString();
+
   return (
     <div>
       <DashboardHeader>
@@ -23,7 +24,7 @@ function Services() {
 
         <div className="dashboard__bottom">
           <div className="dashboard__service">
-            <h3>Home Improvements</h3>
+            <h3>{category}</h3>
             <span>234 services available in this catergory.</span>
           </div>
           <div className="dashboard__search">

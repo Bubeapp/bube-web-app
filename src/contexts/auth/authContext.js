@@ -1,4 +1,5 @@
 import React, { createContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from '../../util/axios';
 
 export const AuthContext = createContext({
@@ -12,6 +13,7 @@ export const AuthContext = createContext({
 
 const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(sessionStorage.getItem('jwtToken') || null);
+  const navigate = useNavigate();
 
   const signUp = async userData => {
     const newUser = {
@@ -28,6 +30,10 @@ const AuthProvider = ({ children }) => {
 
       if (status !== 200 && !results?.success) throw Error();
       console.log(results?.data);
+      sessionStorage.setItem('jwtToken', results?.data?.token);
+      sessionStorage.setItem('newUser', JSON.stringify(results?.data?.user));
+      await setToken(results?.data?.token);
+      navigate('/verify');
     } catch (err) {
       console.log('Something went wrong', err);
     }
@@ -59,12 +65,12 @@ const AuthProvider = ({ children }) => {
 
   const forgotpassword = async email => {
     console.log(email);
-    // try {
-    //   const res = await axios.post('/password-reset-request', email);
-    //   console.log(res);
-    // } catch (err) {
-    //   console.log(err);
-    // }
+    try {
+      const res = await axios.post('/password-reset-request', email);
+      console.log(res);
+    } catch (err) {
+      console.log(err);
+    }
   };
 
   const resetpassword = async password => {

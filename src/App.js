@@ -40,7 +40,7 @@ function App() {
         />
         <Route
           exact
-          path="/services"
+          path="/services/:listing"
           element={<ProtectedRoute component={Services} />}
         />
         <Route
@@ -48,9 +48,10 @@ function App() {
           path="/services/listing"
           element={<ProtectedRoute component={ServicesListings} />}
         />
+
         <Route
           exact
-          path="/services/:details"
+          path="/services/details"
           element={<ProtectedRoute component={ServicesDetails} />}
         />
         <Route exact path="/me" element={<ProtectedRoute component={Profile} />} />
