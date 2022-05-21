@@ -4,8 +4,9 @@ import * as L from 'leaflet';
 import ServiceProviderCard from '../ServiceProviderCard';
 
 import service_avatar from '../../assets/service_avatar_01.png';
+import Button from '../Button';
 
-function ServiceMapView() {
+function ServiceMapView({ backToListView }) {
   const mapRef = useRef();
 
   useEffect(() => {
@@ -55,6 +56,10 @@ function ServiceMapView() {
         <div className="services__view-side">
           <div className="services__sub">
             <h4>Search results (02) </h4>
+
+            <Button onClick={backToListView} classname="services__map-view btn">
+              Back to List
+            </Button>
           </div>
           <div className="services__view-list">
             <ServiceProviderCard

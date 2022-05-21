@@ -6,21 +6,20 @@ import Tab from '@mui/material/Tab';
 import ButtonMakeRequest from '../../../components/Button/ButtonMakeRequest';
 import DashhoardHeader from '../../../components/DashboardHeader';
 import DashboardSearchBar from '../../../components/DashboardSearchBar';
-// import Dashboardody from '../../../components/DashboardBody';
-// import Button from '../../../components/Button';
-// import ServiceProviderCard from '../../../components/ServiceProviderCard';
-
-// import service_thumbnail from '../../../assets/service_thumbnail_01.png';
-// import service_avatar from '../../../assets/service_avatar_01.png';
-
 import ServiceMapView from '../../../components/ServiceMapView';
+import ServiceProviderList from '../../../components/ServiceProviderList';
+import ButtonBack from '../../../components/Button/ButtonBack';
+import TabPanel from '../../../components/TabPanel';
+import Inbox from '../../../components/Inbox';
+import DashboardBody from '../../../components/DashboardBody';
+import RequestList from '../../../components/RequestList';
 
 import { UserContext } from '../../../contexts/user/userContext';
-import ButtonBack from '../../../components/Button/ButtonBack';
 
 function ServicesListings() {
   const { currentUser } = useContext(UserContext);
   const [value, setValue] = useState(0);
+  const [viewOnMAp, setViewOnMap] = useState(false);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
@@ -102,8 +101,27 @@ function ServicesListings() {
           </div>
         </div> 
       </Dashboardody>*/}
+      <TabPanel value={value} index={0}>
+        {!viewOnMAp ? (
+          <DashboardBody>
+            <ServiceProviderList goToMapView={() => setViewOnMap(!viewOnMAp)} />
+          </DashboardBody>
+        ) : (
+          <ServiceMapView backToListView={() => setViewOnMap(!viewOnMAp)} />
+        )}
+      </TabPanel>
 
-      <ServiceMapView />
+      <TabPanel value={value} index={1}>
+        <DashboardBody>
+          <RequestList />
+        </DashboardBody>
+      </TabPanel>
+
+      <TabPanel value={value} index={2}>
+        <DashboardBody>
+          <Inbox />
+        </DashboardBody>
+      </TabPanel>
     </div>
   );
 }

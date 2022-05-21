@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from '../../../util/axios';
 
 import Tabs from '@mui/material/Tabs';
@@ -11,13 +11,11 @@ import DashhoardHeader from '../../../components/DashboardHeader';
 import DashboardBody from '../../../components/DashboardBody';
 import DashboardSearchBar from '../../../components/DashboardSearchBar';
 import ButtonMakeRequest from '../../../components/Button/ButtonMakeRequest';
-import RequestCard from '../../../components/RequestCard';
 import RequestList from '../../../components/RequestList';
 
 import categories_img_01 from '../../../assets/categories_img_01.png';
 import categories_img_02 from '../../../assets/categories_img_02.png';
 import categories_img_03 from '../../../assets/categories_img_03.png';
-import request_img from '../../../assets/request_img.png';
 import Inbox from '../../../components/Inbox';
 
 import { UserContext } from '../../../contexts/user/userContext';
@@ -128,46 +126,7 @@ function Dashboard() {
             </div>
           </TabPanel>
           <TabPanel value={value} index={1}>
-            <RequestList>
-              <RequestCard
-                title="Plumbing"
-                image={request_img}
-                summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus eveniet magni
-          dolorum tempore expedita eius asperiores, dolores blanditiis corrupti
-          obcaecati, perspiciatis omnis incidunt illum? Culpa laboriosam quod dolores
-          mollitia vel."
-                amount={500}
-                datetime="15 May 2020 8:30 am"
-              />
-              <RequestCard
-                title="Plumbing"
-                image={request_img}
-                summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus eveniet magni
-          dolorum tempore expedita eius asperiores, dolores blanditiis corrupti
-          obcaecati."
-                amount={500}
-                datetime="15 May 2020 8:30 am"
-              />
-              <RequestCard
-                title="Plumbing"
-                image={request_img}
-                summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus eveniet magni
-          dolorum tempore expedita eius asperiores, dolores blanditiis corrupti
-          obcaecati."
-                amount={500}
-                datetime="15 May 2020 8:30 am"
-              />
-              <RequestCard
-                title="Plumbing"
-                image={request_img}
-                summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus eveniet magni
-          dolorum tempore expedita eius asperiores, dolores blanditiis corrupti
-          obcaecati, perspiciatis omnis incidunt illum? Culpa laboriosam quod dolores
-          mollitia vel."
-                amount={500}
-                datetime="15 May 2020 8:30 am"
-              />
-            </RequestList>
+            <RequestList />
           </TabPanel>
           <TabPanel value={value} index={2}>
             <Inbox />

@@ -1,7 +1,7 @@
 import React from 'react';
 import Container from '../../layouts/Container';
 
-function Dashboardody({ children }) {
+function DashboardBody({ children }) {
   return (
     <div className="dashboard__body">
       <Container>{children}</Container>
@@ -9,4 +9,4 @@ function Dashboardody({ children }) {
   );
 }
 
-export default Dashboardody;
+export default DashboardBody;
