@@ -8,6 +8,7 @@ import DashboardBody from '../../../components/DashboardBody';
 import DashboardSearchBar from '../../../components/DashboardSearchBar';
 import ButtonBack from '../../../components/Button/ButtonBack';
 import { useLocation } from 'react-router-dom';
+import ServicesItem from '../../../components/ServicesItem';
 
 function Services() {
   const { pathname } = useLocation();
@@ -33,7 +34,22 @@ function Services() {
         </div>
       </DashboardHeader>
 
-      <DashboardBody></DashboardBody>
+      <DashboardBody>
+        <div className="services__container">
+          <div className="services__list">
+            <ServicesItem label="Contractor/Handyman" />
+            <ServicesItem label="Electrician" />
+            <ServicesItem label="Construction & Renovation" />
+            <ServicesItem label="Interior Designer" />
+            <ServicesItem label="Painter" />
+            <ServicesItem label="Contractor/Handyman" />
+            <ServicesItem label="Electrician" />
+            <ServicesItem label="Construction & Renovation" />
+            <ServicesItem label="Interior Designer" />
+            <ServicesItem label="Painter" />
+          </div>
+        </div>
+      </DashboardBody>
     </div>
   );
 }

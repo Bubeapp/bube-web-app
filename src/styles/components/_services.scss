@@ -10,6 +10,23 @@
     }
   }
 
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
+    grid-gap: 1.6rem;
+  }
+
+  &__listitem {
+    display: flex;
+    background-color: #ffffff;
+    padding: 1.2rem;
+    border-radius: 0.8rem;
+
+    & > *:not(:last-child) {
+      margin-right: 1.2rem;
+    }
+  }
+
   &__card {
     overflow: hidden;
     border-radius: 1.2rem;

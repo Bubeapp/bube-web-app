@@ -3,6 +3,7 @@ import axios from '../../../util/axios';
 
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
+import MyLocationIcon from '@mui/icons-material/MyLocation';
 
 import TabPanel from '../../../components/TabPanel';
 import ServicesCard from '../../../components/ServicesCard';
@@ -35,10 +36,11 @@ import {
   RadioGroup,
 } from '@mui/material';
 import { ServicesContext } from '../../../contexts/services/serviceContext';
+import InputFieldWithIcon from '../../../components/InputFieldWithIcon';
 
 function Dashboard() {
   const { currentUser } = useContext(UserContext);
-  const { categories, getCategories } = useContext(ServicesContext);
+  const { categories } = useContext(ServicesContext);
   const [openModal, setOpenModal] = useState(false);
   const [value, setValue] = useState(0);
 
@@ -55,10 +57,6 @@ function Dashboard() {
       'aria-controls': `simple-tabpanel-${index}`,
     };
   }
-
-  useEffect(() => {
-    getCategories();
-  }, [getCategories]);
 
   return (
     <>
@@ -182,6 +180,20 @@ function Dashboard() {
           <h3>Send Request</h3>
           <TextArea />
           <DatePicker />
+          <InputFieldWithIcon
+            type="number"
+            placeholder="Budget"
+            name="Budget"
+            id="Budget"
+            Icon={'USD'}
+          />
+          <InputFieldWithIcon
+            type="text"
+            placeholder="Location"
+            name="location"
+            id="location"
+            Icon={<MyLocationIcon />}
+          />
           <div className="">
             <FormControl>
               <FormLabel id="payment-method">Payment Method</FormLabel>

@@ -1,6 +1,14 @@
 .css-79ws1d-MuiModal-root {
-  top: 20% !important;
+  top: 50% !important;
+  transform: translateY(-50%);
+  height: 100%;
+  // min-height: 100vh;
+  overflow-y: scroll;
 }
+
+// .css-i9fmh8-MuiBackdrop-root-MuiModal-backdrop {
+//   height: 100% !important;
+// }
 
 .modal {
   &-container {

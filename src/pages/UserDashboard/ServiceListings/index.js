@@ -16,6 +16,7 @@ import DashboardSearchBar from '../../../components/DashboardSearchBar';
 import ServiceMapView from '../../../components/ServiceMapView';
 
 import { UserContext } from '../../../contexts/user/userContext';
+import ButtonBack from '../../../components/Button/ButtonBack';
 
 function ServicesListings() {
   const { currentUser } = useContext(UserContext);
@@ -36,12 +37,9 @@ function ServicesListings() {
     <div className="dashboard services__listings">
       <DashhoardHeader>
         <div className="dashboard__top">
-          <div className="dashboard__welcome">
-            <h2>{`Hello ${currentUser?.username},`}</h2>
-            <span>Welcome Back!</span>
-          </div>
+          <ButtonBack />
 
-          <ButtonMakeRequest handleOnClick={() => console.log('Make Request')} />
+          <ButtonMakeRequest />
         </div>
 
         <div className="dashboard__bottom">
