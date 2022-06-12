@@ -12,6 +12,22 @@
   animation: loadingspin 0.8s linear infinite;
 }
 
+.loader-container {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  top: 45%;
+  right: 0;
+  // bottom: 0;
+  left: 0;
+  // transform: translateY(-50%);
+
+  // &__full {
+  //   min-height: 80vh;
+  // }
+
+}
+
 .three-d-spinner {
   border-radius: 50%;
   width: 6rem;

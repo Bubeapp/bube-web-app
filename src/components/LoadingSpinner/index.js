@@ -1,8 +1,8 @@
 import React from 'react';
 
-function LoadingSpinner() {
+function LoadingSpinner({ full }) {
   return (
-    <div className="loader-container">
+    <div className={`loader-container ${full && 'loader-container__full'}`}>
       <div className="loader three-d-spinner">
         <div className="inner"></div>
         <div className="inner"></div>

@@ -1,6 +1,6 @@
 .verifyemail {
   @include respond(tablet-port) {
-    margin: 0 2.4rem;
+    margin: 0 auto;
   }
 
   @extend .form;

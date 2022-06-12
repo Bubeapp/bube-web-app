@@ -16,8 +16,8 @@ function InputField({
         <input
           className="inputfield__input"
           type={type ? type : 'text'}
-          name={label.split(' ').join('').toLowerCase()}
-          id={label.split(' ').join('').toLowerCase()}
+          name={label && label.split(' ').join('').toLowerCase()}
+          id={label && label.split(' ').join('').toLowerCase()}
           placeholder={label}
           value={value}
           onChange={handleOnChange}

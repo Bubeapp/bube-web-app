@@ -1,5 +1,5 @@
-import React, { useContext, useState } from 'react';
-import axios from '../../../util/axios';
+import React, { useContext, useEffect, useState } from 'react';
+// import axios from '../../../util/axios';
 
 import Tabs from '@mui/material/Tabs';
 import Tab from '@mui/material/Tab';
@@ -13,9 +13,6 @@ import DashboardSearchBar from '../../../components/DashboardSearchBar';
 import ButtonMakeRequest from '../../../components/Button/ButtonMakeRequest';
 import RequestList from '../../../components/RequestList';
 
-import categories_img_01 from '../../../assets/categories_img_01.png';
-import categories_img_02 from '../../../assets/categories_img_02.png';
-import categories_img_03 from '../../../assets/categories_img_03.png';
 import Inbox from '../../../components/Inbox';
 
 import { UserContext } from '../../../contexts/user/userContext';
@@ -35,12 +32,17 @@ import {
 } from '@mui/material';
 import { ServicesContext } from '../../../contexts/services/serviceContext';
 import InputFieldWithIcon from '../../../components/InputFieldWithIcon';
+import ServicesItem from '../../../components/ServicesItem';
 
 function Dashboard() {
   const { currentUser } = useContext(UserContext);
-  const { categories } = useContext(ServicesContext);
+  const { categories, getCategories } = useContext(ServicesContext);
+
+  const [filteredServices, setFilteredServices] = useState('');
   const [openModal, setOpenModal] = useState(false);
   const [value, setValue] = useState(0);
+
+  // console.log(services);
 
   const handleOpen = () => setOpenModal(true);
   const handleClose = () => setOpenModal(false);
@@ -55,6 +57,10 @@ function Dashboard() {
       'aria-controls': `simple-tabpanel-${index}`,
     };
   }
+
+  useEffect(() => {
+    getCategories();
+  }, []);
 
   return (
     <>
@@ -94,6 +100,7 @@ function Dashboard() {
                   categories.map(category => (
                     <ServicesCard
                       key={category._id}
+                      id={category._id}
                       cardTitle={category.name}
                       cardImage={category.image_cover}
                     />
@@ -101,27 +108,6 @@ function Dashboard() {
                 ) : (
                   <LoadingSpinner />
                 )}
-                <ServicesCard
-                  cardTitle="Events and entertainment"
-                  cardImage={categories_img_01}
-                />
-                <ServicesCard
-                  cardTitle="Home office improvement"
-                  cardImage={categories_img_02}
-                />
-                <ServicesCard cardTitle="Painting" cardImage={categories_img_03} />
-                <ServicesCard
-                  cardTitle="Construction & renovation"
-                  cardImage={categories_img_02}
-                />
-                <ServicesCard
-                  cardTitle="Thorough Cleaning"
-                  cardImage={categories_img_01}
-                />
-                <ServicesCard
-                  cardTitle="Beauty services"
-                  cardImage={categories_img_01}
-                />
               </div>
             </div>
           </TabPanel>

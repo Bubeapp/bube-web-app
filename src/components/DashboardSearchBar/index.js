@@ -1,17 +1,23 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 
 import search_icon from '../../assets/search_icon.svg';
+import { ServicesContext } from '../../contexts/services/serviceContext';
 
 function DashboardSearchBar() {
   const [searchQuery, setSearchQuery] = useState('');
-
-  const handleInputChange = event => {
-    setSearchQuery(event.target.value);
-  };
+  const { searchServices } = useContext(ServicesContext);
 
   const handleOnSubmit = event => {
     event.preventDefault();
     console.log('Search Query: ', searchQuery);
+    searchServices(searchQuery);
+    setSearchQuery('');
+  };
+
+  console.log(searchQuery);
+
+  const handleSearchChange = event => {
+    setSearchQuery(event.target.value);
   };
 
   return (
@@ -25,7 +31,7 @@ function DashboardSearchBar() {
         name="search"
         id="search"
         value={searchQuery}
-        onChange={handleInputChange}
+        onChange={handleSearchChange}
       />
     </form>
   );

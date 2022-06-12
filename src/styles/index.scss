@@ -43,6 +43,11 @@ picture {
   min-height: 100vh;
 }
 
+.main {
+  position: relative;
+  min-height: 68vh;
+}
+
 .accent {
   color: var(--clr-primary-500);
 }

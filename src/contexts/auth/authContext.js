@@ -7,6 +7,7 @@ export const AuthContext = createContext({
   signUp: () => {},
   signIn: () => {},
   signOut: () => {},
+  verifyEmail: () => {},
   forgotpassword: () => {},
   resetpassword: () => {},
 });
@@ -32,8 +33,8 @@ const AuthProvider = ({ children }) => {
       console.log(results?.data);
       sessionStorage.setItem('jwtToken', results?.data?.token);
       sessionStorage.setItem('newUser', JSON.stringify(results?.data?.user));
-      await setToken(results?.data?.token);
       navigate('/verify');
+      await setToken(results?.data?.token);
     } catch (err) {
       console.log('Something went wrong', err);
     }
@@ -49,7 +50,6 @@ const AuthProvider = ({ children }) => {
       );
 
       if (status !== 200 && !results?.success) throw Error();
-      // console.log(results?.data);
       const { token } = results?.data;
       sessionStorage.setItem('jwtToken', token);
       setToken(token);
@@ -63,10 +63,29 @@ const AuthProvider = ({ children }) => {
     setToken(null);
   };
 
+  const verify = async credentials => {
+    try {
+      const res = await axios.post('/auth/verify', credentials);
+      console.log(res);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const resendVerifyCode = async email => {
+    try {
+      console.log(email);
+      const res = await axios.post('/auth/resend-token', email);
+      console.log(res);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
   const forgotpassword = async email => {
     console.log(email);
     try {
-      const res = await axios.post('/password-reset-request', email);
+      const res = await axios.post('/auth/password-reset-request', email);
       console.log(res);
     } catch (err) {
       console.log(err);
@@ -79,7 +98,16 @@ const AuthProvider = ({ children }) => {
 
   return (
     <AuthContext.Provider
-      value={{ token, signUp, signIn, signOut, forgotpassword, resetpassword }}
+      value={{
+        token,
+        signUp,
+        signIn,
+        signOut,
+        forgotpassword,
+        resetpassword,
+        verify,
+        resendVerifyCode,
+      }}
     >
       {children}
     </AuthContext.Provider>
