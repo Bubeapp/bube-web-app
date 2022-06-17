@@ -4,16 +4,25 @@ import { useFormik } from 'formik';
 import Slider from '../../../components/Slider';
 import Container from '../../../layouts/Container';
 
+import axios from '../../../util/axios';
+
 import target_lock from '../../../assets/target-lock_icon.svg';
 
 function HeroSection() {
   const initialValues = {
-    search: '',
+    searchQuery: '',
   };
 
-  const onSubmit = (query, onSubmitProps) => {
-    console.log(query);
+  const servicesNearMe = () => {
+    console.log('servicesNearMe');
+  };
+
+  const onSubmit = async (values, onSubmitProps) => {
+    const { searchQuery } = values;
     onSubmitProps.setSubmitting(false);
+
+    const { data } = await axios.get(`/services?name=${searchQuery}`);
+    console.log(data);
   };
 
   const { values, handleChange, handleSubmit, isSubmitting } = useFormik({

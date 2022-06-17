@@ -84,7 +84,7 @@ function Services() {
           <div className="services__list">
             {services ? (
               services.map(service => (
-                <ServicesItem key={service._id} label={service.name} />
+                <ServicesItem key={service._id} label={service.name} id={service._id} />
               ))
             ) : (
               <LoadingSpinner />

@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import Button from '../Button';
 import CustomRatings from '../Ratings';
 
-function ServiceProviderCard({ image, name, owner, avatar, type, address }) {
+function ServiceProviderCard({ image, name, owner, avatar, type, address, rating }) {
   return (
     <div className="service__provider">
       {image && (
@@ -14,10 +14,10 @@ function ServiceProviderCard({ image, name, owner, avatar, type, address }) {
       )}
 
       <div className="service__details">
-        <div className="service__flex margin-btm-8">
+        <div className="service__flex margin-btm-8 space-btw service__name">
           <h2>{name}</h2>
           <div className="service__info">
-            <img src={avatar} alt="" />
+            {avatar && <img src={avatar} alt="" />}
             <div className="service__flex flex-dir-cl">
               <p className="service__name">{owner}</p>
               <p className="service__type">{type}</p>
@@ -25,8 +25,8 @@ function ServiceProviderCard({ image, name, owner, avatar, type, address }) {
           </div>
         </div>
 
-        <div className="service__flex align-center">
-          <CustomRatings name="read-only" value={3} />
+        <div className="service__flex align-center ">
+          <CustomRatings name="read-only" value={rating} />
           <Link className="service__reviews" to="/">
             Read Reviews
           </Link>
