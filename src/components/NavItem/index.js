@@ -1,12 +1,12 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 function NavItem({ name, href }) {
   return (
     <li className="navbar__item">
-      <Link className="navbar__link" to={href ? href : '/'}>
+      <HashLink smooth className="navbar__link" to={href ? href : '/'}>
         {name}
-      </Link>
+      </HashLink>
     </li>
   );
 }

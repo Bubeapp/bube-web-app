@@ -23,6 +23,10 @@ import ServicesDetails from './pages/UserDashboard/ServicesDetails';
 
 import { UserContext } from './contexts/user/userContext';
 import ProtectedRoute from './components/ProtectedRoute';
+import Terms from './pages/Terms';
+import GeneralTerms from './pages/Terms/DriversTerms';
+import DriversTerms from './pages/Terms/GeneralTerms';
+import PassengersTerms from './pages/Terms/PassengersTerms';
 
 function App() {
   const { currentUser } = useContext(UserContext);
@@ -52,7 +56,7 @@ function App() {
 
           <Route
             exact
-            path="/services/:serviceId"
+            path="/services/serviceId"
             element={<ProtectedRoute component={ServicesDetails} />}
           />
 
@@ -80,7 +84,11 @@ function App() {
           <Route exact path="/resetpassword" element={<ResetPassword />} />
           <Route exact path="/verify" element={<VerifyEmail />} />
           <Route exact path="/faqs" element={<FAQs />} />
-          
+          <Route exact path="/terms-of-use" element={<Terms />} />
+          <Route exact path="/terms-of-use/general" element={<GeneralTerms />} />
+          <Route exact path="/terms-of-use/drivers" element={<DriversTerms />} />
+          <Route exact path="/terms-of-use/passengers" element={<PassengersTerms />} />
+
           <Route
             exact
             path="/"

@@ -57,8 +57,8 @@ function SignIn() {
             </Link>
           </p>
         </div>
-        <Button classname="btn btn--gmail btn--full">Sign In with Gmail</Button>
-        <span className="signin__mail-opt">Or sign In with Gmail</span>
+        {/* <Button classname="btn btn--gmail btn--full">Sign In with Gmail</Button>
+        <span className="signin__mail-opt">Or sign In with Gmail</span> */}
         <InputField
           type="email"
           label="Email"
