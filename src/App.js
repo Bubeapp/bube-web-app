@@ -24,8 +24,8 @@ import ServicesDetails from './pages/UserDashboard/ServicesDetails';
 import { UserContext } from './contexts/user/userContext';
 import ProtectedRoute from './components/ProtectedRoute';
 import Terms from './pages/Terms';
-import GeneralTerms from './pages/Terms/DriversTerms';
-import DriversTerms from './pages/Terms/GeneralTerms';
+import DriversTerms from './pages/Terms/DriversTerms';
+import GeneralTerms from './pages/Terms/GeneralTerms';
 import PassengersTerms from './pages/Terms/PassengersTerms';
 
 function App() {

@@ -416,91 +416,219 @@ function DrivesTerms() {
             unpaid Fare will be thrown out.
           </p>
 
-          {/* 7.CUSTOMER SUPPORT
+          <h5>7.CUSTOMER SUPPORT</h5>
 
-We assist Drivers utilize Bube Services. We may discontinue providing customer assistance if you're late with a payment for more than 5 days.
+          <p>
+            We assist Drivers utilize Bube Services. We may discontinue providing
+            customer assistance if you're late with a payment for more than 5 days.
+          </p>
 
-Ratings and activity
+          <h5>Ratings and activity</h5>
 
-8.1 To ensure excellent service and provide Passengers peace of mind, you accept that they may rate you and submit comments on the quality of your Transportation Services. Your average rating will be connected to your Driver's account in Bube App. We may not count a rating or remark that was not provided in good faith.
+          <p>
+            8.1 To ensure excellent service and provide Passengers peace of mind, you
+            accept that they may rate you and submit comments on the quality of your
+            Transportation Services. Your average rating will be connected to your
+            Driver's account in Bube App. We may not count a rating or remark that was
+            not provided in good faith.
+          </p>
 
-8.2 In addition to the rating, we assess your activity. This score reflects how actively you accept, decline, ignore, and complete Transportation Service requests.
+          <p>
+            8.2 In addition to the rating, we assess your activity. This score reflects
+            how actively you accept, decline, ignore, and complete Transportation
+            Service requests.
+          </p>
 
-8.3 To provide trustworthy services to Passengers, we may require Drivers to maintain a minimum average rating and activity score. If you don't increase your average rating or activity score within the time restriction after receiving a notification from us, your Driver's account will be temporarily or permanently terminated. We may un-suspend your account if it was suspended due to a technical mistake or false ratings.
+          <p>
+            8.3 To provide trustworthy services to Passengers, we may require Drivers to
+            maintain a minimum average rating and activity score. If you don't increase
+            your average rating or activity score within the time restriction after
+            receiving a notification from us, your Driver's account will be temporarily
+            or permanently terminated. We may un-suspend your account if it was
+            suspended due to a technical mistake or false ratings.
+          </p>
 
-Market and campaign overviews
+          <h5>Market and campaign overviews</h5>
 
-Market overviews. We may provide you market overviews through the Bube App, Bube Driver Account, SMS, e-mail, or other means so you know when most Passengers need trips. These market overviews are ideas and aren't binding. Since the market overview projections are based on previous data, we can't guarantee they'll be accurate.
+          <p>
+            Market overviews. We may provide you market overviews through the Bube App,
+            Bube Driver Account, SMS, e-mail, or other means so you know when most
+            Passengers need trips. These market overviews are ideas and aren't binding.
+            Since the market overview projections are based on previous data, we can't
+            guarantee they'll be accurate.
+          </p>
 
-Minimum-wage campaigns. We may also run campaigns that promise money if you supply Transportation Services within a particular period. We'll compensate if you don't attain the minimum. The Bube app, Bube driver account, SMS, email, or another mechanism will provide the rules and regulations. We select whether, when, and to whom Drivers to provide campaigns. If we suspect fraud, we may hold your Fare until we're sure.
+          <p>
+            Minimum-wage campaigns. We may also run campaigns that promise money if you
+            supply Transportation Services within a particular period. We'll compensate
+            if you don't attain the minimum. The Bube app, Bube driver account, SMS,
+            email, or another mechanism will provide the rules and regulations. We
+            select whether, when, and to whom Drivers to provide campaigns. If we
+            suspect fraud, we may hold your Fare until we're sure.
+          </p>
 
-Passenger advertising. We may also undertake Passenger campaigns to promote Bube. If passengers' fares go lower due to our campaign, we'll reimburse you the value of the benefit. Bube Cost advertisement fee might be subtracted.
+          <p>
+            Passenger advertising. We may also undertake Passenger campaigns to promote
+            Bube. If passengers' fares go lower due to our campaign, we'll reimburse you
+            the value of the benefit. Bube Cost advertisement fee might be subtracted.
+          </p>
 
-Relationship between you, us, and passengers
+          <p>Relationship between you, us, and passengers</p>
 
-You accept that we offer an information society service, not transportation. Bube Platform and Bube Services link Passengers and Drivers to make city travel simpler. You acknowledge that you are offering Transportation Services as a business or profession, either on your own or via a corporation.
+          <p>
+            You accept that we offer an information society service, not transportation.
+            Bube Platform and Bube Services link Passengers and Drivers to make city
+            travel simpler. You acknowledge that you are offering Transportation
+            Services as a business or profession, either on your own or via a
+            corporation.
+          </p>
 
-10.2. You accept that no employment contract or working connection exists between us. You accept there's no partnership between us. You can't work for us or be our agent or representative. You agree to give up all claims against us if you are considered our employee by law or other reason.
+          <p>
+            10.2. You accept that no employment contract or working connection exists
+            between us. You accept there's no partnership between us. You can't work for
+            us or be our agent or representative. You agree to give up all claims
+            against us if you are considered our employee by law or other reason.
+          </p>
 
-10.3 You can't transfer your General Terms or Agreement rights and duties.
+          <p>
+            10.3 You can't transfer your General Terms or Agreement rights and duties.
+          </p>
 
-11. DATA PROCESSING
+          <h5>11. DATA PROCESSING</h5>
 
-The Privacy Notice may be found at https://Bube.app/privacy_policy.
+          <p>
+            The Privacy Notice may be found at{' '}
+            <a href="https://Bube.app/privacy_policy">
+              https://Bube.app/privacy_policy.
+            </a>{' '}
+          </p>
 
-LIABILITY
+          <h5>LIABILITY</h5>
 
-12.1. The Bube Platform is supplied "as is" We don't promise, warrant, or ensure problem-free Bube Platform usage. We can't guarantee that your usage of the Bube Platform will lead to Transportation Service requests since how Passengers utilize it relies on how they behave.
+          <p>
+            12.1. The Bube Platform is supplied "as is" We don't promise, warrant, or
+            ensure problem-free Bube Platform usage. We can't guarantee that your usage
+            of the Bube Platform will lead to Transportation Service requests since how
+            Passengers utilize it relies on how they behave.
+          </p>
 
-12.2. We and Bube's agents, directors, and employees are not liable for any loss or damage you receive by using the Bube Services. Included are:
+          <p>
+            12.2. We and Bube's agents, directors, and employees are not liable for any
+            loss or damage you receive by using the Bube Services. Included are:
+          </p>
 
-loss of money or property, direct or indirect
+          <p>loss of money or property, direct or indirect</p>
 
-lost profits or savings;
+          <p>lost profits or savings;</p>
 
-Loss of business, contracts, relationships, goodwill, and reputation;
+          <p>Loss of business, contracts, relationships, goodwill, and reputation;</p>
 
-loss of data;
+          <p>loss of data;</p>
 
-additional losses
+          <p>additional losses</p>
 
-12.3 If we breach the agreement, we're responsible for 50,000 Naira. You may only seek for compensation if we intentionally breached the terms.
+          <p>
+            12.3 If we breach the agreement, we're responsible for 50,000 Naira. You may
+            only seek for compensation if we intentionally breached the terms.
+          </p>
 
-12.4 We're not liable for what Passengers do or don't do. We're not liable for losses or damages to you or your car caused by the Passenger or other passengers.
+          <p>
+            12.4 We're not liable for what Passengers do or don't do. We're not liable
+            for losses or damages to you or your car caused by the Passenger or other
+            passengers.
+          </p>
 
-12.5. You are liable if you breach the General Terms, the Agreement, or any other laws or regulations, and you must cease and repair the situation when we or a state body instructs you to. You'll pay for any direct or indirect loss, damage, profits, expenses, penalties, or fines we incur because you breached the General Terms, the Agreement, or the law. If a passenger sues us because of your transportation services, you must pay us back within seven days. If we can sue you, you'll have to pay the legal fees to determine the harm and make a claim for compensation.
+          <p>
+            12.5. You are liable if you breach the General Terms, the Agreement, or any
+            other laws or regulations, and you must cease and repair the situation when
+            we or a state body instructs you to. You'll pay for any direct or indirect
+            loss, damage, profits, expenses, penalties, or fines we incur because you
+            breached the General Terms, the Agreement, or the law. If a passenger sues
+            us because of your transportation services, you must pay us back within
+            seven days. If we can sue you, you'll have to pay the legal fees to
+            determine the harm and make a claim for compensation.
+          </p>
 
-13. TIMING
+          <p>13. TIMING</p>
 
-13.1. These General Terms take effect when the registration form is received. Once you get the document or message and start or continue delivering Transportation Services on Bube Platform, agreements and other conditions will take effect.
+          <p>
+            13.1. These General Terms take effect when the registration form is
+            received. Once you get the document or message and start or continue
+            delivering Transportation Services on Bube Platform, agreements and other
+            conditions will take effect.
+          </p>
 
-13.2 You may cancel the Agreement with 7 days' notice. After that, you can't utilize Bube Platform and Services. Bube may discontinue the Agreement at any time with 3 days' notice.
+          <p>
+            13.2 You may cancel the Agreement with 7 days' notice. After that, you can't
+            utilize Bube Platform and Services. Bube may discontinue the Agreement at
+            any time with 3 days' notice.
+          </p>
 
-Bube may discontinue the Agreement and prohibit your access to the Bube Platform without notice if you infringe the General Terms or Agreement, any relevant laws or regulations, say terrible things about Bube, or affect Bube's brand, reputation, or company. In any of the aforementioned cases, we may deny your Driver account request.
+          <p>
+            Bube may discontinue the Agreement and prohibit your access to the Bube
+            Platform without notice if you infringe the General Terms or Agreement, any
+            relevant laws or regulations, say terrible things about Bube, or affect
+            Bube's brand, reputation, or company. In any of the aforementioned cases, we
+            may deny your Driver account request.
+          </p>
 
-13.4 We might limit your access to the Bube Platform and your Bube Driver Account while we investigate a probable violation or fraud. The access barrier will be removed after the inquiry disproves the accusations.
+          <p>
+            13.4 We might limit your access to the Bube Platform and your Bube Driver
+            Account while we investigate a probable violation or fraud. The access
+            barrier will be removed after the inquiry disproves the accusations.
+          </p>
 
-13.5: To provide Passengers the greatest service, we monitor Drivers on the Bube Platform. We may stop the agreement immediately if you don't reach the minimal rating and activity score.
+          <p>
+            13.5: To provide Passengers the greatest service, we monitor Drivers on the
+            Bube Platform. We may stop the agreement immediately if you don't reach the
+            minimal rating and activity score.
+          </p>
 
-14.AMENDMENTS
+          <h5>14.AMENDMENTS</h5>
 
-14.1. Changes to the Agreement take effect once you receive them by e-mail, the Bube App, or your Bube Driver Account and continue delivering Transportation Services.
+          <p>
+            14.1. Changes to the Agreement take effect once you receive them by e-mail,
+            the Bube App, or your Bube Driver Account and continue delivering
+            Transportation Services.
+          </p>
 
-14.2 If we alter the Terms, we'll post a new version on our website (https://Bube.app/legal) and notify you 14 days in advance. Using Bube Services means you agree to the new regulations.
+          <p>
+            14.2 If we alter the Terms, we'll post a new version on our website{' '}
+            <a href="https://Bube.app/legal">(https://Bube.app/legal)</a> and notify you
+            14 days in advance. Using Bube Services means you agree to the new
+            regulations.
+          </p>
 
-15. Applicable law and courts
+          <p>15. Applicable law and courts</p>
 
-15.1. The Terms and Agreement are governed by Nigerian law. If the General Terms or Agreement problem couldn't be resolved via discussions, it would go to Federal High Court.
+          <p>
+            15.1. The Terms and Agreement are governed by Nigerian law. If the General
+            Terms or Agreement problem couldn't be resolved via discussions, it would go
+            to Federal High Court.
+          </p>
 
-16. Notifications
+          <h5>16. Notifications</h5>
 
-16.1. Tell us if your contact details changes.
+          <p>16.1. Tell us if your contact details changes.</p>
 
-16.2. Any notification required by the GTA is sufficient if it is: I gave in person, delivered by courier with evidence of delivery, registered mail, email, or Bube App/Driver Account. Any message issued under this clause is deemed received: If delivered personally, at the time of delivery to the party; (ii) if delivered by courier, on the date the courier states the notice was delivered to the party; (iii) if sent by registered mail, 10 days after the document was given to the post office to be sent to the party; (iv) if made available to the party.
+          <p>
+            16.2. Any notification required by the GTA is sufficient if it is: I gave in
+            person, delivered by courier with evidence of delivery, registered mail,
+            email, or Bube App/Driver Account. Any message issued under this clause is
+            deemed received: If delivered personally, at the time of delivery to the
+            party; (ii) if delivered by courier, on the date the courier states the
+            notice was delivered to the party; (iii) if sent by registered mail, 10 days
+            after the document was given to the post office to be sent to the party;
+            (iv) if made available to the party.
+          </p>
 
-17. CONCLUSIONS
+          <h5>17. CONCLUSIONS</h5>
 
-If any section of the General Terms is unenforceable, the parties will replace it with a component that comes close to the original's purpose and economic impact. */}
+          <p>
+            If any section of the General Terms is unenforceable, the parties will
+            replace it with a component that comes close to the original's purpose and
+            economic impact.
+          </p>
         </div>
       </div>
     </div>
