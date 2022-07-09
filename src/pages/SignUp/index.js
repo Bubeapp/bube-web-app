@@ -25,9 +25,9 @@ function SignUp() {
       .required('Please enter your email address'),
     phone: Yup.number().required('Please enter phone number'),
     password: Yup.string().min(8).required('Password field is required'),
-    confirmpassword: Yup.string()
-      .oneOf([Yup.ref('password'), null], 'Passwords must match')
-      .required('Please confirm password'),
+    // confirmpassword: Yup.string()
+    //   .oneOf([Yup.ref('password'), null], 'Passwords must match')
+    //   .required('Please confirm password'),
   });
 
   ////////////////////////////////////////////
@@ -39,7 +39,6 @@ function SignUp() {
     email: '',
     phone: '',
     password: '',
-    confirmpassword: '',
   };
 
   const onSubmit = async (values, onSubmitProps) => {
@@ -75,8 +74,8 @@ function SignUp() {
             </Link>
           </p>
         </div>
-        <Button classname="btn btn--gmail btn--full">Sign up with Gmail</Button>
-        <span className="signup__mail-opt">Or sign up with email</span>
+        {/* <Button classname="btn btn--gmail btn--full">Sign up with Gmail</Button>
+        <span className="signup__mail-opt">Or sign up with email</span> */}
         <InputField
           type="text"
           label="Username"
@@ -132,16 +131,7 @@ function SignUp() {
           onBlur={() => setFieldTouched('password')}
           visible={touched.password}
         />
-        <PasswordField
-          type="password"
-          label="Confirm Password"
-          icon
-          value={values.confirmpassword}
-          handleOnChange={handleChange}
-          errormessage={errors.confirmpassword}
-          onBlur={() => setFieldTouched('confirmpassword')}
-          visible={touched.confirmpassword}
-        />
+
         <Checkbox
           handleOnChange={handleChange}
           label="I agree to Bube's terms of service and privacy policy."

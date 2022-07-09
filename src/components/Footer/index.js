@@ -29,7 +29,7 @@ function Footer() {
               </Link>
             </li>
             <li className="footer__item">
-              <Link to="/" className="footer__link">
+              <Link to="/terms-of-use" className="footer__link">
                 Terms of Service
               </Link>
             </li>
@@ -92,7 +92,7 @@ function Footer() {
             </li>
 
             <li className="footer__item">
-              <Link to="/" className="footer__link">
+              <Link to="/terms-of-use" className="footer__link">
                 Terms of service
               </Link>
             </li>

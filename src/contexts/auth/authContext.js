@@ -36,7 +36,7 @@ const AuthProvider = ({ children }) => {
       navigate('/verify');
       await setToken(results?.data?.token);
     } catch (err) {
-      console.log('Something went wrong', err);
+      console.log('Something went wrong', err.message);
     }
   };
 
