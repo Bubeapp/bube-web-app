@@ -36,9 +36,9 @@ import ServicesItem from '../../../components/ServicesItem';
 
 function Dashboard() {
   const { currentUser } = useContext(UserContext);
-  const { categories, getCategories } = useContext(ServicesContext);
+  const { categories, isLoading, getCategories } = useContext(ServicesContext);
 
-  const [filteredServices, setFilteredServices] = useState('');
+  // const [filteredServices, setFilteredServices] = useState('');
   const [openModal, setOpenModal] = useState(false);
   const [value, setValue] = useState(0);
 
@@ -96,18 +96,16 @@ function Dashboard() {
           <TabPanel value={value} index={0}>
             <div className="services">
               <div className="services__categories">
-                {categories ? (
-                  categories.map(category => (
-                    <ServicesCard
-                      key={category._id}
-                      id={category._id}
-                      cardTitle={category.name}
-                      cardImage={category.image_cover}
-                    />
-                  ))
-                ) : (
-                  <LoadingSpinner />
-                )}
+                {categories
+                  ? categories.map(category => (
+                      <ServicesCard
+                        key={category._id}
+                        id={category._id}
+                        cardTitle={category.name}
+                        cardImage={category.image_cover}
+                      />
+                    ))
+                  : isLoading && <LoadingSpinner />}
               </div>
             </div>
           </TabPanel>

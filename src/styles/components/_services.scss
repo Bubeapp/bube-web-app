@@ -15,6 +15,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
     grid-gap: 1.6rem;
+    position: relative;
+
+    & > .empty {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__listitem {
@@ -166,7 +173,7 @@
   &__details {
     padding: 2.4rem 1.2rem;
     display: grid;
-    grid-template-rows:1fr repeat(2, min-content) 1fr;
+    grid-template-rows: 1fr repeat(2, min-content) 1fr;
     height: 50%;
     // flex-direction: column;
     // // justify-content: space-between;
@@ -177,17 +184,17 @@
 
       @include respond(mobile-l) {
         max-width: 100%;
-       }
+      }
     }
   }
 
   &__name {
     @include respond(mobile-l) {
-     flex-direction: column;
+      flex-direction: column;
 
-     & > *:not(:last-child) {
-       margin-bottom: 1.2rem;
-     }
+      & > *:not(:last-child) {
+        margin-bottom: 1.2rem;
+      }
     }
   }
 
