@@ -12,7 +12,7 @@ function ServiceProviderList({ goToMapView }) {
   console.log(params);
 
   const truncate = (str, limit) => {
-    return str.length > limit ? str.slice(0, limit) + '...' : str;
+    return str?.length > limit ? str.slice(0, limit) + '...' : str;
   };
 
   useEffect(() => {
@@ -47,7 +47,7 @@ function ServiceProviderList({ goToMapView }) {
   return (
     <>
       <div className="services__sub">
-        <h4>Results ({businesses ? businesses.length : 0} )</h4>
+        <h4>Results ({businesses ? businesses?.length : 0} )</h4>
         <Button onClick={goToMapView} classname="services__map-view btn">
           Map View
         </Button>

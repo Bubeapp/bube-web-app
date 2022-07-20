@@ -1,12 +1,14 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useContext, useEffect, useRef } from 'react';
 import * as L from 'leaflet';
 
 import ServiceProviderCard from '../ServiceProviderCard';
 
 import service_avatar from '../../assets/service_avatar_01.png';
 import Button from '../Button';
+import { ServicesContext } from '../../contexts/services/serviceContext';
 
 function ServiceMapView({ backToListView }) {
+  const {} = useContext(ServicesContext);
   const mapRef = useRef();
 
   useEffect(() => {

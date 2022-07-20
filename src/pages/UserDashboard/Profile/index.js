@@ -95,7 +95,7 @@ function Profile() {
                   <img
                     ref={userAvatarRef}
                     className="profile__user-photo"
-                    src={user_avatar}
+                    src={currentUser?.photo}
                     alt="User profile avatar"
                   />
                   <input

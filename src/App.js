@@ -43,11 +43,19 @@ function App() {
             path="/dashboard"
             element={<ProtectedRoute component={Dashboard} />}
           />
+
+          <Route
+            exact
+            path="/services"
+            element={<ProtectedRoute component={Services} />}
+          />
+
           <Route
             exact
             path="/services/:categoryId"
             element={<ProtectedRoute component={Services} />}
           />
+
           <Route
             exact
             path="/services/:serviceId/businesses"
@@ -61,11 +69,13 @@ function App() {
           />
 
           <Route exact path="/me" element={<ProtectedRoute component={Profile} />} />
+
           <Route
             exact
             path="/notifications"
             element={<ProtectedRoute component={Notification} />}
           />
+
           <Route
             exact
             path="/settings"
@@ -73,6 +83,7 @@ function App() {
           />
 
           <Route exact path="/signup" element={<SignUp />} />
+
           <Route
             exact
             path="/signin"
