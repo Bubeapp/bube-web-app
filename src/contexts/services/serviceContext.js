@@ -2,6 +2,7 @@ import axios from '../../util/axios';
 import React, { createContext, useContext, useState } from 'react';
 import { AuthContext } from '../auth/authContext';
 import { useNavigate } from 'react-router-dom';
+// import * as L from 'leaflet';
 
 export const ServicesContext = createContext();
 

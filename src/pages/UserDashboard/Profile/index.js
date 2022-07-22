@@ -7,13 +7,12 @@ import InputField from '../../../components/InputField';
 import ButtonBack from '../../../components/Button/ButtonBack';
 
 import Container from '../../../layouts/Container';
-
-import user_avatar from '../../../assets/user_avatar.png';
 import CustomModal from '../../../components/Modal';
 import Form from '../../../components/Form';
 import PasswordField from '../../../components/PasswordField';
 
 import { UserContext } from '../../../contexts/user/userContext';
+import { IoPersonCircle } from 'react-icons/io5';
 
 function Profile() {
   const { currentUser } = useContext(UserContext);
@@ -92,12 +91,21 @@ function Profile() {
             <form onSubmit={handleSubmit} className="profile__form">
               <div className="profile__form-group">
                 <div className="profile__change-photo">
-                  <img
-                    ref={userAvatarRef}
-                    className="profile__user-photo"
-                    src={currentUser?.photo}
-                    alt="User profile avatar"
-                  />
+                  {currentUser?.photo ? (
+                    <img
+                      ref={userAvatarRef}
+                      className="profile__user-photo"
+                      src={currentUser?.photo}
+                      alt="User profile avatar"
+                    />
+                  ) : (
+                    <IoPersonCircle
+                      ref={userAvatarRef}
+                      color="#9284A4"
+                      className="profile__user-photo"
+                    />
+                  )}
+
                   <input
                     ref={fileInputRef}
                     className="profile__upload"

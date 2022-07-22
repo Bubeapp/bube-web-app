@@ -2,6 +2,7 @@ import React, { useContext, useRef, useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseIcon from '@mui/icons-material/Close';
+import { IoPersonCircle } from 'react-icons/io5';
 
 import Button from '../Button';
 import NavItem from '../NavItem';
@@ -12,8 +13,6 @@ import DropDownItem from '../DropDownItem';
 import Container from '../../layouts/Container';
 
 import bube_logo from '../../assets/bube_logo.svg';
-import user_avatar from '../../assets/user_avatar.png';
-
 import help_center from '../../assets/message-edit_icon.svg';
 import user_icon from '../../assets/user_avatar.svg';
 import logout_icon from '../../assets/logout_icon.svg';
@@ -27,7 +26,6 @@ import { AuthContext } from '../../contexts/auth/authContext';
 function Navigation() {
   const { isSignedIn, currentUser, setSignedIn, setUser } = useContext(UserContext);
   const { signOut } = useContext(AuthContext);
-  // const [isSignedIn, setIsSignedIn] = useState(false);
   const [toggleMobileMenu, setToggleMobileMenu] = useState(false);
   const navGroup = useRef();
   const navGroupDropdown = useRef();
@@ -35,6 +33,8 @@ function Navigation() {
   const navigate = useNavigate();
 
   const { pathname } = useLocation();
+
+  console.log(currentUser);
 
   const toggleMenu = e => {
     setToggleMobileMenu(!toggleMobileMenu);
@@ -119,7 +119,17 @@ function Navigation() {
                   <DropDownItem icon={question_icon} title="Ask Question " />
                 </ul>
               </DropDownMenu>
-              <DropDownMenu name="Account" userAvatar={user_avatar}>
+              <DropDownMenu
+                name="Account"
+                userAvatar={currentUser?.photo ? currentUser?.photo : false}
+                icon={
+                  currentUser?.avatar ? (
+                    false
+                  ) : (
+                    <IoPersonCircle size={48} color="#9284A4" />
+                  )
+                }
+              >
                 <ul className="dropdown__menu">
                   <DropDownItem icon={user_icon} title="Profile" href="me" />
                   <DropDownItem
@@ -131,7 +141,7 @@ function Navigation() {
                   <DropDownItem icon={setting_icon} title="Settings" href="settings" />
                   <DropDownItem
                     onClick={async () => {
-                      await signOut();
+                      signOut();
                       setUser(null);
                       setSignedIn(false);
                     }}

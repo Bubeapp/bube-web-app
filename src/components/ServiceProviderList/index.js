@@ -59,6 +59,7 @@ function ServiceProviderList({ goToMapView }) {
             businesses.map(business => (
               <ServiceProviderCard
                 key={business._id}
+                id={business._id}
                 image={business?.images[0]}
                 name={truncate(business?.name, 24)}
                 owner={business?.user?.fullName}

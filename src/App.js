@@ -64,7 +64,7 @@ function App() {
 
           <Route
             exact
-            path="/services/serviceId"
+            path="/businesses/:businessId"
             element={<ProtectedRoute component={ServicesDetails} />}
           />
 

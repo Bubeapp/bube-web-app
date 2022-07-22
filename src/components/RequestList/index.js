@@ -10,6 +10,8 @@ function RequestList() {
   const [isActive, setIsActive] = useState(false);
   const [activeRequest, setActiveRequest] = useState(false);
 
+  console.log(requests);
+
   useEffect(() => {
     getRequest();
   }, []);
@@ -32,7 +34,7 @@ function RequestList() {
               <RequestCard
                 key={request._id}
                 title="Plumbing"
-                image={request_img}
+                image={request.photos[0]}
                 summary={request.description}
                 amount={request.budget}
                 datetime={request.date}
@@ -43,14 +45,14 @@ function RequestList() {
               <RequestCard
                 key={request._id}
                 title="Plumbing"
-                image={request_img}
+                image={request.photos[0]}
                 summary={request.description}
                 amount={request.budget}
                 datetime={request.date}
               />
             ))}
 
-        <RequestCard
+        {/* <RequestCard
           title="Plumbing"
           image={request_img}
           summary="Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus eveniet magni
@@ -59,7 +61,7 @@ function RequestList() {
           mollitia vel."
           amount={500}
           datetime="15 May 2020 8:30 am"
-        />
+        /> */}
       </div>
     </div>
   );
