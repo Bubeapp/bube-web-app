@@ -36,27 +36,21 @@ function Footer() {
           </ul>
           <ul className="footer__list">
             <li className="footer__item">
-              <Link to="/" className="footer__link">
+              <a href="https://www.facebook.com/Bube_app" className="footer__link">
                 <img src={facebook_logo} alt="Facebook logo" />
-              </Link>
+              </a>
             </li>
 
             <li className="footer__item">
-              <Link to="/" className="footer__link">
-                <img src={twitter_logo} alt="Twitter logo" />
-              </Link>
-            </li>
-
-            <li className="footer__item">
-              <Link to="/" className="footer__link">
+              <a href="https://www.instagram.com/bube_app" className="footer__link">
                 <img src={instagram_logo} alt="Instagram logo" />
-              </Link>
+              </a>
             </li>
 
             <li className="footer__item">
-              <Link to="/" className="footer__link">
-                <img src={whatsapp_logo} alt="Whatsapp logo" />
-              </Link>
+              <a href=" https://twitter.com/Bube_app" className="footer__link">
+                <img src={twitter_logo} alt="Twitter logo" />
+              </a>
             </li>
           </ul>
         </div>
@@ -124,27 +118,21 @@ function Footer() {
         <div className="col-1-of-5">
           <ul className="footer__list">
             <li className="footer__item">
-              <Link to="/" className="footer__link">
+              <a href="https://www.facebook.com/Bube_app" className="footer__link">
                 <img src={facebook_logo} alt="Facebook logo" />
-              </Link>
+              </a>
             </li>
 
             <li className="footer__item">
-              <Link to="/" className="footer__link">
-                <img src={twitter_logo} alt="Twitter logo" />
-              </Link>
-            </li>
-
-            <li className="footer__item">
-              <Link to="/" className="footer__link">
+              <a href="https://www.instagram.com/bube_app" className="footer__link">
                 <img src={instagram_logo} alt="Instagram logo" />
-              </Link>
+              </a>
             </li>
 
             <li className="footer__item">
-              <Link to="/" className="footer__link">
-                <img src={whatsapp_logo} alt="Whatsapp logo" />
-              </Link>
+              <a href=" https://twitter.com/Bube_app" className="footer__link">
+                <img src={twitter_logo} alt="Twitter logo" />
+              </a>
             </li>
           </ul>
         </div>

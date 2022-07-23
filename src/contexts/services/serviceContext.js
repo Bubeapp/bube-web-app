@@ -10,6 +10,7 @@ const ServicesProvider = ({ children }) => {
   const navigate = useNavigate();
   const [categories, setCategories] = useState(null);
   const [searchRes, setSearchRes] = useState(null);
+  const [businesses, setBusinesses] = useState(null);
   const [services, setServices] = useState(null);
   const [category, setCategory] = useState(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -82,17 +83,44 @@ const ServicesProvider = ({ children }) => {
     }
   }
 
+  const getPosition = () => {
+    return new Promise(function (resolve, reject) {
+      navigator.geolocation.getCurrentPosition(
+        position => resolve(position),
+        err => reject(err)
+      );
+    });
+  };
+
+  const getBusinesses = async function (serviceId) {
+    const {
+      coords: { latitude: lat, longitude: lng },
+    } = await getPosition();
+
+    const {
+      data: {
+        data: { businesses: results },
+      },
+    } = await axios.get(
+      `/services/${serviceId}/businesses?latitude=${lat}&longitude=${lng}`
+    );
+    console.log(results);
+    setBusinesses(results);
+  };
+
   return (
     <ServicesContext.Provider
       value={{
         isLoading,
         categories,
         services,
+        businesses,
         searchRes,
         searchServices,
         getCategory,
         getCategories,
         getServicesFromCategory,
+        getBusinesses,
       }}
     >
       {children}

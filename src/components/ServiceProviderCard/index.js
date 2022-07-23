@@ -13,11 +13,12 @@ function ServiceProviderCard({
   address,
   rating,
   id,
+  onClick,
 }) {
   const navigate = useNavigate();
 
   return (
-    <div className="service__provider">
+    <div className="service__provider" onClick={onClick}>
       {image && (
         <div className="service__img">
           <img src={image} alt={name} />

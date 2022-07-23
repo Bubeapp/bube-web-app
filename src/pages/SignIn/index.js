@@ -9,7 +9,6 @@ import InputField from '../../components/InputField';
 import PasswordField from '../../components/PasswordField';
 
 import { AuthContext } from '../../contexts/auth/authContext';
-// import { UserContext } from '../../contexts/user/userContext';
 
 function SignIn() {
   const { signIn } = useContext(AuthContext);
@@ -24,9 +23,10 @@ function SignIn() {
     password: '',
   };
 
-  const onSubmit = async (values, onSubmitProps) => {
+  const onSubmit = async (values, { resetForm }, onSubmitProps) => {
     await signIn({ ...values });
     onSubmitProps.setSubmitting(false);
+    resetForm();
   };
 
   const {
@@ -57,8 +57,6 @@ function SignIn() {
             </Link>
           </p>
         </div>
-        {/* <Button classname="btn btn--gmail btn--full">Sign In with Gmail</Button>
-        <span className="signin__mail-opt">Or sign In with Gmail</span> */}
         <InputField
           type="email"
           label="Email"
@@ -78,6 +76,12 @@ function SignIn() {
           onBlur={() => setFieldTouched('password')}
           visible={touched.password}
         />
+
+        <p>
+          <Link className="signin__link" to="/forgotpassword">
+            Forgot Password
+          </Link>
+        </p>
         <Button
           type="submit"
           classname="btn btn--primary btn--full"

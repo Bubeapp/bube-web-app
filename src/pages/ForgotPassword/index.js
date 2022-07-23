@@ -19,8 +19,10 @@ function ForgotPassword() {
     email: '',
   };
 
-  const onSubmit = values => {
+  const onSubmit = (values, { resetForm }, onSubmitProps) => {
     forgotpassword(values);
+
+    resetForm();
   };
 
   const { values, errors, handleChange, handleSubmit, setFieldTouched, touched } =
