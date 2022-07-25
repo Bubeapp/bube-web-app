@@ -24,7 +24,7 @@ function Footer() {
               </Link>
             </li>
             <li className="footer__item">
-              <Link to="/" className="footer__link">
+              <Link to="/privacy" className="footer__link">
                 Privacy Policy
               </Link>
             </li>

@@ -21,7 +21,7 @@ function ForgotPassword() {
 
   const onSubmit = (values, { resetForm }, onSubmitProps) => {
     forgotpassword(values);
-
+    onSubmitProps.setSubmitting(false);
     resetForm();
   };
 

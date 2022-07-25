@@ -1,0 +1,50 @@
+.privacy {
+  h2 {
+    margin-bottom: 2.4rem;
+  }
+
+  h3 {
+    margin: 4.8rem 0 2.4rem;
+  }
+
+  h4 {
+    margin: 4.8rem 0 2.4rem;
+  }
+
+  h5 {
+    margin: 4.8rem 0 1.6rem;
+  }
+
+  p {
+    &:not(:last-child) {
+      text-align: justify;
+      margin-bottom: 1.6rem;
+    }
+  }
+
+  ul {
+    margin-bottom: 2.4rem;
+  }
+
+  a:link,
+  a:visited {
+    color: var(--clr-primary-500);
+  }
+
+  &__content {
+    max-width: 80rem;
+    margin: 0 auto;
+  }
+
+  &__list {
+    list-style: none;
+
+    h4 {
+      margin: 4.8rem 0 2.4rem;
+    }
+
+    li {
+      margin-bottom: 1.2rem;
+    }
+  }
+}

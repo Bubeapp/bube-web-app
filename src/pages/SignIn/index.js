@@ -24,8 +24,8 @@ function SignIn() {
   };
 
   const onSubmit = async (values, { resetForm }, onSubmitProps) => {
-    await signIn({ ...values });
-    onSubmitProps.setSubmitting(false);
+    signIn({ ...values });
+    onSubmitProps?.setSubmitting(false);
     resetForm();
   };
 
