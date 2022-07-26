@@ -27,14 +27,13 @@ const AuthProvider = ({ children }) => {
     };
 
     try {
-      const { status, data: results } = await axios.post('/auth/register', newUser);
+      const { data: results } = await axios.post('/auth/register', newUser);
 
-      if (status !== 200 && !results?.success) throw Error();
-      console.log(results?.data);
+      if (!results?.success) throw new Error('Unable to account create an account');
       sessionStorage.setItem('jwtToken', results?.data?.token);
       sessionStorage.setItem('newUser', JSON.stringify(results?.data?.user));
       navigate('/verify');
-      await setToken(results?.data?.token);
+      setToken(results?.data?.token);
     } catch (err) {
       console.log('Something went wrong', err.message);
     }
@@ -44,12 +43,14 @@ const AuthProvider = ({ children }) => {
     const userLoginDetails = { email: userData.email, password: userData.password };
 
     try {
-      const { status, data: results } = await axios.post(
-        '/auth/login',
-        userLoginDetails
-      );
+      const { data: results } = await axios.post('/auth/login', userLoginDetails);
 
-      if (status !== 200 && !results?.success) throw Error();
+      console.log(results);
+
+      if (!results?.success)
+        throw new Error(
+          'Unable to login. Please check email and password are correct.'
+        );
       const { token } = results?.data;
       sessionStorage.setItem('jwtToken', token);
       setToken(token);
@@ -65,7 +66,13 @@ const AuthProvider = ({ children }) => {
 
   const verify = async credentials => {
     try {
-      const res = await axios.post('/auth/verify', credentials);
+      const res = await axios.post(
+        '/auth/verify',
+        credentials
+        // headers: {
+        //   Authorization: `Bearer "$2b$10$34NJoRYUpe1yNSoN.JGY8OpdwhtyOI9yDGV6H9.2/vYNVL7dLsy7q"`,
+        // },
+      );
       console.log(res);
     } catch (err) {
       console.error(err);
@@ -83,7 +90,6 @@ const AuthProvider = ({ children }) => {
   };
 
   const forgotpassword = async email => {
-    console.log(email);
     try {
       const res = await axios.post('/auth/password-reset-request', email);
       console.log(res);

@@ -27,6 +27,7 @@ import Terms from './pages/Terms';
 import DriversTerms from './pages/Terms/DriversTerms';
 import GeneralTerms from './pages/Terms/GeneralTerms';
 import PassengersTerms from './pages/Terms/PassengersTerms';
+import Privacy from './pages/Privacy';
 
 function App() {
   const { currentUser } = useContext(UserContext);
@@ -43,11 +44,19 @@ function App() {
             path="/dashboard"
             element={<ProtectedRoute component={Dashboard} />}
           />
+
+          <Route
+            exact
+            path="/services"
+            element={<ProtectedRoute component={Services} />}
+          />
+
           <Route
             exact
             path="/services/:categoryId"
             element={<ProtectedRoute component={Services} />}
           />
+
           <Route
             exact
             path="/services/:serviceId/businesses"
@@ -56,16 +65,18 @@ function App() {
 
           <Route
             exact
-            path="/services/serviceId"
+            path="/businesses/:businessId"
             element={<ProtectedRoute component={ServicesDetails} />}
           />
 
           <Route exact path="/me" element={<ProtectedRoute component={Profile} />} />
+
           <Route
             exact
             path="/notifications"
             element={<ProtectedRoute component={Notification} />}
           />
+
           <Route
             exact
             path="/settings"
@@ -73,11 +84,13 @@ function App() {
           />
 
           <Route exact path="/signup" element={<SignUp />} />
+
           <Route
             exact
             path="/signin"
             element={!currentUser ? <SignIn /> : <Navigate to={'/dashboard'} />}
           />
+
           <Route exact path="/logout" element={<Navigate to="/signin" />} />
           <Route exact path="/success" element={<Success />} />
           <Route exact path="/forgotpassword" element={<ForgotPassword />} />
@@ -88,6 +101,7 @@ function App() {
           <Route exact path="/terms-of-use/general" element={<GeneralTerms />} />
           <Route exact path="/terms-of-use/drivers" element={<DriversTerms />} />
           <Route exact path="/terms-of-use/passengers" element={<PassengersTerms />} />
+          <Route exact path="/privacy" element={<Privacy />} />
 
           <Route
             exact

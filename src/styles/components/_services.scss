@@ -15,6 +15,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(30rem, 1fr));
     grid-gap: 1.6rem;
+    position: relative;
+
+    & > .empty {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
   }
 
   &__listitem {
@@ -166,7 +173,7 @@
   &__details {
     padding: 2.4rem 1.2rem;
     display: grid;
-    grid-template-rows:1fr repeat(2, min-content) 1fr;
+    grid-template-rows: 1fr repeat(2, min-content) 1fr;
     height: 50%;
     // flex-direction: column;
     // // justify-content: space-between;
@@ -177,17 +184,17 @@
 
       @include respond(mobile-l) {
         max-width: 100%;
-       }
+      }
     }
   }
 
   &__name {
     @include respond(mobile-l) {
-     flex-direction: column;
+      flex-direction: column;
 
-     & > *:not(:last-child) {
-       margin-bottom: 1.2rem;
-     }
+      & > *:not(:last-child) {
+        margin-bottom: 1.2rem;
+      }
     }
   }
 
@@ -198,13 +205,15 @@
 
   &__info {
     flex-shrink: 0;
+    justify-content: flex-start;
+    align-items: center;
 
     img {
       display: block;
       width: 3.2rem;
       height: 3.2rem;
       flex-shrink: 0;
-      margin-right: 0.4rem;
+      margin-right: 0.8rem;
       border-radius: 10rem;
     }
   }
@@ -299,13 +308,14 @@
     margin-top: 1.2rem;
     margin-bottom: 1.2rem;
     height: 100%;
+    // width: 100%;
   }
 
   // &__address {
   // }
 }
 
-// #map {
-//   width: 100%;
-//   height: 100%;
-// }
+#service__map {
+  width: 100%;
+  height: 500px;
+}

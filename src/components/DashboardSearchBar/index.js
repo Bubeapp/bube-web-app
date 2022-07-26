@@ -9,12 +9,9 @@ function DashboardSearchBar() {
 
   const handleOnSubmit = event => {
     event.preventDefault();
-    console.log('Search Query: ', searchQuery);
     searchServices(searchQuery);
     setSearchQuery('');
   };
-
-  console.log(searchQuery);
 
   const handleSearchChange = event => {
     setSearchQuery(event.target.value);

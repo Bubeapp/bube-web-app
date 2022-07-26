@@ -8,53 +8,31 @@ import DashboardBody from '../../../components/DashboardBody';
 
 import DashboardSearchBar from '../../../components/DashboardSearchBar';
 import ButtonBack from '../../../components/Button/ButtonBack';
-import ServicesItem from '../../../components/ServicesItem';
+// import ServicesItem from '../../../components/ServicesItem';
+
+// import Empty from '../../../components/Empty';
+// import LoadingSpinner from '../../../components/LoadingSpinner';
 
 import { ServicesContext } from '../../../contexts/services/serviceContext';
-import LoadingSpinner from '../../../components/LoadingSpinner';
-
-import axios from '../../../util/axios';
+import ServicesList from '../../../components/ServicesList';
 
 function Services() {
   const params = useParams();
-  console.log(params);
-
-  const [services, setServices] = useState(null);
-  const [category, setCategory] = useState(null);
+  const {
+    category,
+    services,
+    getCategory,
+    getServicesFromCategory,
+  } = useContext(ServicesContext);
 
   useEffect(() => {
-    async function getCategory() {
-      try {
-        const {
-          data: {
-            data: { category: result },
-          },
-        } = await axios.get(`/categories/${params.categoryId}`);
-        setCategory(result);
-      } catch (err) {
-        console.log(err);
-      }
+    if (params?.categoryId) {
+      getCategory(params.categoryId);
+      getServicesFromCategory(params.categoryId);
     }
-
-    getCategory();
-
-    async function getServicesFromCategory(categoryId) {
-      try {
-        const {
-          data: {
-            data: { services: results },
-          },
-        } = await axios.get(`/categories/${categoryId}/services`);
-        setServices(results);
-      } catch (err) {
-        console.error(err);
-      }
-    }
-
-    getServicesFromCategory(params.categoryId);
   }, [params]);
 
-  if (!services) return <LoadingSpinner full />;
+  // if (!services) return <LoadingSpinner full />;
 
   return (
     <div className="dashboard">
@@ -68,10 +46,9 @@ function Services() {
         <div className="dashboard__bottom">
           <div className="dashboard__service">
             <h3>{category?.name}</h3>
-            <span>
-              {`${services && services.length > 0 ? services.length : 0}`} services
-              available in this catergory.
-            </span>
+            <span>{`${
+              services?.length > 0 ? services?.length : 0
+            } services available`}</span>
           </div>
           <div className="dashboard__search">
             <DashboardSearchBar />
@@ -81,15 +58,7 @@ function Services() {
 
       <DashboardBody>
         <div className="services__container">
-          <div className="services__list">
-            {services ? (
-              services.map(service => (
-                <ServicesItem key={service._id} label={service.name} id={service._id} />
-              ))
-            ) : (
-              <LoadingSpinner />
-            )}
-          </div>
+          <ServicesList services={services} />
         </div>
       </DashboardBody>
     </div>
