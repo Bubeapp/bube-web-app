@@ -7,7 +7,6 @@ import bube_logo from '../../assets/bube_logo.svg';
 import facebook_logo from '../../assets/facebook_logo.svg';
 import twitter_logo from '../../assets/twitter_icon.svg';
 import instagram_logo from '../../assets/instagram_icon.svg';
-import whatsapp_logo from '../../assets/whatsapp_icon.svg';
 
 function Footer() {
   const { pathname } = useLocation();
@@ -80,7 +79,7 @@ function Footer() {
             </li>
 
             <li className="footer__item">
-              <Link to="/" className="footer__link">
+              <Link to="/privacy" className="footer__link">
                 Privacy policy
               </Link>
             </li>
