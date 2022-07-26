@@ -432,7 +432,7 @@ function Privacy() {
           </p>
 
           <p>
-            By Email: <a href="mailto:">privacy-officer@bube.app</a>
+            By Email: <a href="mailto:support@bube.app">privacy-officer@bube.app</a>
           </p>
 
           <p>
