@@ -34,7 +34,7 @@ const UserProvider = ({ children }) => {
         data: {
           data: { requests: results },
         },
-      } = await axios.get('/requests', {
+      } = await axios.get('/me/requests', {
         headers: { Authorization: `Bearer ${token}` },
       });
 

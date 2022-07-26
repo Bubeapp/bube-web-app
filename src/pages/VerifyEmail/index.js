@@ -21,12 +21,10 @@ function VerifyEmail() {
 
   const validationSchema = Yup.object().shape({
     code: Yup.number().required('Enter verification code that was sent to your email'),
-    email: Yup.string().email().required('Please enter your email address'),
   });
 
   const initialValues = {
     code: '',
-    email: '',
   };
 
   const onSubmit = async (values, onSubmitProps) => {
@@ -64,17 +62,6 @@ function VerifyEmail() {
       <p>
         Please check your email, We've sent a verification code to <span>{email}</span>
       </p>
-
-      <InputField
-        name="email"
-        value={values.email}
-        handleOnChange={handleChange}
-        placeholder="Email"
-        label="Email"
-        errormessage={errors.email}
-        onBlur={() => setFieldTouched('email')}
-        visible={touched.email}
-      />
 
       <InputField
         type="number"

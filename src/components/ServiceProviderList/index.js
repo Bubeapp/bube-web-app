@@ -1,47 +1,20 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import ServiceProviderCard from '../ServiceProviderCard';
 
 import Button from '../Button';
-import axios from '../../util/axios';
 import { useParams } from 'react-router-dom';
+import { ServicesContext } from '../../contexts/services/serviceContext';
 
 function ServiceProviderList({ goToMapView }) {
-  const [businesses, setBusinesses] = useState(null);
-
+  const { businesses, getBusinesses } = useContext(ServicesContext);
   const params = useParams();
-  console.log(params);
 
   const truncate = (str, limit) => {
     return str?.length > limit ? str.slice(0, limit) + '...' : str;
   };
 
   useEffect(() => {
-    const getPosition = () => {
-      return new Promise(function (resolve, reject) {
-        navigator.geolocation.getCurrentPosition(
-          position => resolve(position),
-          err => reject(err)
-        );
-      });
-    };
-
-    const getBusiness = async function () {
-      const {
-        coords: { latitude: lat, longitude: lng },
-      } = await getPosition();
-
-      const {
-        data: {
-          data: { businesses: results },
-        },
-      } = await axios.get(
-        `/services/${params.serviceId}/businesses?latitude=${lat}&longitude=${lng}`
-      );
-      console.log(results);
-      setBusinesses(results);
-    };
-
-    getBusiness();
+    getBusinesses(params.serviceId);
   }, [params]);
 
   return (
@@ -59,6 +32,7 @@ function ServiceProviderList({ goToMapView }) {
             businesses.map(business => (
               <ServiceProviderCard
                 key={business._id}
+                id={business._id}
                 image={business?.images[0]}
                 name={truncate(business?.name, 24)}
                 owner={business?.user?.fullName}

@@ -90,7 +90,6 @@ const AuthProvider = ({ children }) => {
   };
 
   const forgotpassword = async email => {
-    console.log(email);
     try {
       const res = await axios.post('/auth/password-reset-request', email);
       console.log(res);

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 
 import settings_icon from '../../../assets/setting-2_icon.svg';
 import check_icon from '../../../assets/check_icon.svg';
@@ -9,8 +9,22 @@ import Checkbox from '../../../components/Checkbox';
 import CustomTooltip from '../../../components/Tooltip';
 import CustomToggle from '../../../components/ToggleButton';
 import NotificationCard from '../../../components/NotificationCard';
+import axios from '../../../util/axios';
+import { AuthContext } from '../../../contexts/auth/authContext';
 
 function Notification() {
+  const { token } = useContext(AuthContext);
+  useEffect(() => {
+    try {
+      const res = axios.get('/me/notifications', {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+
+      console.log(res);
+    } catch (err) {
+      console.log(err.message);
+    }
+  });
   return (
     <div className="notifications">
       <div className="notification__container">

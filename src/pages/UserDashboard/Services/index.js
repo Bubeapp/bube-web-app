@@ -20,10 +20,9 @@ function Services() {
   const params = useParams();
   const {
     category,
-    getCategory,
-
-    getServicesFromCategory,
     services,
+    getCategory,
+    getServicesFromCategory,
   } = useContext(ServicesContext);
 
   useEffect(() => {

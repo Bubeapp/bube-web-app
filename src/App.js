@@ -27,6 +27,7 @@ import Terms from './pages/Terms';
 import DriversTerms from './pages/Terms/DriversTerms';
 import GeneralTerms from './pages/Terms/GeneralTerms';
 import PassengersTerms from './pages/Terms/PassengersTerms';
+import Privacy from './pages/Privacy';
 
 function App() {
   const { currentUser } = useContext(UserContext);
@@ -64,7 +65,7 @@ function App() {
 
           <Route
             exact
-            path="/services/serviceId"
+            path="/businesses/:businessId"
             element={<ProtectedRoute component={ServicesDetails} />}
           />
 
@@ -89,6 +90,7 @@ function App() {
             path="/signin"
             element={!currentUser ? <SignIn /> : <Navigate to={'/dashboard'} />}
           />
+
           <Route exact path="/logout" element={<Navigate to="/signin" />} />
           <Route exact path="/success" element={<Success />} />
           <Route exact path="/forgotpassword" element={<ForgotPassword />} />
@@ -99,6 +101,7 @@ function App() {
           <Route exact path="/terms-of-use/general" element={<GeneralTerms />} />
           <Route exact path="/terms-of-use/drivers" element={<DriversTerms />} />
           <Route exact path="/terms-of-use/passengers" element={<PassengersTerms />} />
+          <Route exact path="/privacy" element={<Privacy />} />
 
           <Route
             exact

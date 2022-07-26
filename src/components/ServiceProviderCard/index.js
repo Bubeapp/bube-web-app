@@ -1,12 +1,24 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 import Button from '../Button';
 import CustomRatings from '../Ratings';
 
-function ServiceProviderCard({ image, name, owner, avatar, type, address, rating }) {
+function ServiceProviderCard({
+  image,
+  name,
+  owner,
+  avatar,
+  type,
+  address,
+  rating,
+  id,
+  onClick,
+}) {
+  const navigate = useNavigate();
+
   return (
-    <div className="service__provider">
+    <div className="service__provider" onClick={onClick}>
       {image && (
         <div className="service__img">
           <img src={image} alt={name} />
@@ -34,7 +46,12 @@ function ServiceProviderCard({ image, name, owner, avatar, type, address, rating
 
         <p className="service__address">{address}</p>
 
-        <Button classname="btn btn--primary btn--full">Connect</Button>
+        <Button
+          classname="btn btn--primary btn--full"
+          onClick={() => navigate(`/businesses/${id}`)}
+        >
+          Connect
+        </Button>
       </div>
     </div>
   );
